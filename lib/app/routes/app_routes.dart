@@ -4,4 +4,5 @@ part of 'app_pages.dart';
 abstract class Routes{
 
   static const HOME = '/home';
+  static const SPLASHS_SCREEN = '/splashs-screen';
 }
