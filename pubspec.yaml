@@ -23,6 +23,8 @@ environment:
 dependencies:
   get: 3.11.1
   splashscreen:
+  google_fonts: ^1.1.0
+
   flutter:
     sdk: flutter
 
