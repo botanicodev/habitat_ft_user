@@ -12,7 +12,7 @@ class SplashsScreenView extends GetView<SplashsScreenController> {
         children: [
           SplashScreen(
             seconds: 3,
-            navigateAfterSeconds: Routes.HOME,
+            navigateAfterSeconds: Routes.LOGIN,
           ),
           Center(child: Text('Personalizar Splash')),
         ],
