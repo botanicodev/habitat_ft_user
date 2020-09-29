@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 
 class Background extends StatelessWidget {
-  final Widget child;
+  final List<Widget> children;
 
-  const Background({Key key, @required this.child}) : super(key: key);
+  const Background({Key key, @required this.children}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,10 @@ class Background extends StatelessWidget {
             color: HColors.GRIS_01,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: child,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: children,
+          ),
         ),
       ),
     );
