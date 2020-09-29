@@ -7,13 +7,10 @@ class EmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 25),
-      child: TextField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'Email',
-        ),
+    return TextField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: 'Email',
       ),
     );
   }
