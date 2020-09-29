@@ -17,8 +17,8 @@ class LoginView extends GetView<LoginController> {
       body: Background(
         children: [
           Logo(),
-          HTitle(text: '¡Bienvenido!'),
-          SubTitle(text: 'Inicio de sesion'),
+          HTitle('¡Bienvenido!'),
+          SubTitle('Inicio de sesion'),
           EmailTextField(),
           PasswordTextField(),
           LoginButton(),

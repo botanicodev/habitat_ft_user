@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 
 class SubTitle extends StatelessWidget {
-
   final String text;
-  
-  const SubTitle({
-    Key key, @required this.text,
+
+  const SubTitle(
+    this.text, {
+    Key key,
   }) : super(key: key);
 
   @override
