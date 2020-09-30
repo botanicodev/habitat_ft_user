@@ -14,7 +14,15 @@ class SplashsScreenView extends GetView<SplashsScreenController> {
             seconds: 3,
             navigateAfterSeconds: Routes.LOGIN,
           ),
-          Center(child: Text('Personalizar Splash')),
+          Container(
+            child: Image.asset(
+              'assets/img/SplashScreen.png',
+              fit: BoxFit.cover,
+              height: Get.height,
+              width: Get.width,
+            ),
+          )
+          // Center(child: Text('Personalizar Splash')),
         ],
       ),
     );
