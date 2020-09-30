@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
 
 class Logo extends StatelessWidget {
   const Logo({
@@ -8,10 +7,6 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 115,
-      width: 115,
-      color: HColors.CELESTE_HABITAT,
-    );
+    return Image.asset('assets/logo/LogoLoginLightblue.png');
   }
 }
