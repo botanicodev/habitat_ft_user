@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 
 class LoginButton extends StatelessWidget {
+
+  final Function onPressed;
+
   const LoginButton({
-    Key key,
+    Key key, @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -13,11 +16,10 @@ class LoginButton extends StatelessWidget {
       buttonColor: HColors.CELESTE_HABITAT,
       minWidth: 306,
       height: 50,
+      splashColor: HColors.CELESTE_OSCURO_2,
       child: RaisedButton(
-        // color: HColors.CELESTE_HABITAT,
         elevation: 0,
-        splashColor: Colors.blueGrey,
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           'Ingresar',
           style: GoogleFonts.spartan(
