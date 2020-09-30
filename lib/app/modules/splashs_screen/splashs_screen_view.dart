@@ -22,7 +22,6 @@ class SplashsScreenView extends GetView<SplashsScreenController> {
               width: Get.width,
             ),
           )
-          // Center(child: Text('Personalizar Splash')),
         ],
       ),
     );
