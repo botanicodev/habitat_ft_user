@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 
-class LoginButton extends StatelessWidget {
+import '../login_controller.dart';
 
-  final Function onPressed;
-
-  const LoginButton({
-    Key key, @required this.onPressed,
-  }) : super(key: key);
+class LoginButton extends GetView<LoginController> {
+  const LoginButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class LoginButton extends StatelessWidget {
       splashColor: HColors.CELESTE_OSCURO_2,
       child: RaisedButton(
         elevation: 0,
-        onPressed: onPressed,
+        onPressed: controller.login,
         child: Text(
           'Ingresar',
           style: GoogleFonts.spartan(
