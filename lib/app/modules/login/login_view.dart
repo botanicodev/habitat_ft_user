@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
-import 'package:habitat_ft_user/app/routes/app_pages.dart';
 
 import 'widgets/background.dart';
 import 'widgets/email_text_field.dart';
@@ -20,11 +19,9 @@ class LoginView extends GetView<LoginController> {
           Logo(),
           HTitle('¡Bienvenido!'),
           SubTitle('Inicio de sesion'),
-          EmailTextField(),
-          PasswordTextField(),
-          LoginButton(
-            onPressed: () => Get.offAllNamed(Routes.HOME),
-          ),
+          EmailTextField(controller: controller.emailController),
+          PasswordTextField(controller: controller.passwordController),
+          LoginButton(onPressed: controller.login),
         ],
       ),
     );
