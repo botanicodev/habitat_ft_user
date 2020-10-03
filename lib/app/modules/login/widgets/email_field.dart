@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import '../login_controller.dart';
 
-class EmailTextField extends GetView<LoginController> {
-  const EmailTextField({Key key}) : super(key: key);
+class EmailField extends GetView<LoginController> {
+  const EmailField({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
