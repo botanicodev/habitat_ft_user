@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/routes/app_pages.dart';
 
 class AuthController extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -24,5 +25,6 @@ class AuthController extends GetxController {
 
   signOut(){
     _auth.signOut();
+    Get.offAllNamed(Routes.LOGIN);
   }
 }
