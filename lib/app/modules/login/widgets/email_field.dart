@@ -8,11 +8,16 @@ class EmailField extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller.emailController,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Email',
+    return Obx(
+      () => TextField(
+        controller: controller.emailController,
+        onChanged: (text) => controller.error.value = '',
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Email',
+          errorMaxLines: 4,
+          errorText: controller.error.value == '' ? null : '',
+        ),
       ),
     );
   }

@@ -9,13 +9,16 @@ class LoginController extends GetxController {
   TextEditingController emailController;
   TextEditingController passwordController;
 
+  RxString error = ''.obs;
+  RxBool loading = false.obs;
+
   @override
   void onInit() {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     //Borrar
-    emailController.value = TextEditingValue(text:'hola@hola.com');
-    passwordController.value = TextEditingValue(text:'123456789');
+    // emailController.value = TextEditingValue(text:'hola@hola.com');
+    // passwordController.value = TextEditingValue(text:'123456789');
   }
 
   @override
@@ -29,12 +32,15 @@ class LoginController extends GetxController {
 
   void login() async {
     try {
+      loading.value = true;
       await _authController.signInWithEmailAndPassword(
           emailController.text, passwordController.text);
       Get.offAllNamed(Routes.HOME);
     } catch (e) {
-      Get.snackbar('Error login', e.message,
-          snackPosition: SnackPosition.BOTTOM);
+      error.value = e.message;
+      passwordController.value = TextEditingValue(text: '');
+    } finally {
+      loading.value = false;
     }
   }
 

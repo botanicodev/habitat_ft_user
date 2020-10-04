@@ -7,12 +7,17 @@ class PasswordField extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller.passwordController,
-      obscureText: true,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Contraseña',
+    return Obx(
+      () => TextField(
+        controller: controller.passwordController,
+        onChanged: (text) => controller.error.value = '',
+        obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          errorText:
+              controller.error.value == '' ? null : controller.error.value,
+          labelText: 'Contraseña',
+        ),
       ),
     );
   }
