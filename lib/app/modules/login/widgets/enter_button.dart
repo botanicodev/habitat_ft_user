@@ -5,8 +5,8 @@ import 'package:habitat_ft_user/app/config/styles.dart';
 
 import '../login_controller.dart';
 
-class LoginButton extends GetView<LoginController> {
-  const LoginButton({Key key}) : super(key: key);
+class EnterButton extends GetView<LoginController> {
+  const EnterButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

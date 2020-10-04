@@ -8,7 +8,7 @@ import 'widgets/welcome_title.dart';
 import 'widgets/sub_title.dart';
 import 'widgets/email_field.dart';
 import 'widgets/password_field.dart';
-import 'widgets/login_button.dart';
+import 'widgets/enter_button.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
@@ -21,7 +21,7 @@ class LoginView extends GetView<LoginController> {
           SubTitle(),
           EmailField(),
           PasswordField(),
-          LoginButton(),
+          EnterButton(),
         ],
       ),
     );
