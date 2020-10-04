@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 
-import 'widgets/drawer_body.dart';
+import 'widgets/home_drawer.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
@@ -12,7 +12,7 @@ class HomeView extends GetView<HomeController> {
         title: Text('Habitat(logo)'), // TODO poner logo de habitat
         centerTitle: true,
       ),
-      drawer: DrawerBody(),
+      drawer: HomeDrawer(),
       body: Center(child: Text('Talleres', style: TextStyle(fontSize: 20))),
     );
   }
