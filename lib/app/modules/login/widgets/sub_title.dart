@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 
 class SubTitle extends StatelessWidget {
@@ -9,7 +8,7 @@ class SubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Inicio de sesion',
-      style: GoogleFonts.spartan(
+      style: TextStyle(
           color: HColors.GRIS_50, fontWeight: FontWeight.w600),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
 
@@ -23,7 +22,7 @@ class UserTile extends StatelessWidget {
         ),
         title: Text(
           Get.find<AuthController>().user.email, // TODO aca va el nombre y apellido del usuerio loguedo
-          style: GoogleFonts.spartan(
+          style: TextStyle(
             color: HColors.BLANCO,
             fontSize: 20,
             fontWeight: FontWeight.w600,

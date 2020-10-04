@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 
 class WelcomeTitle extends StatelessWidget {
@@ -9,7 +8,7 @@ class WelcomeTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '¡Bienvenido!',
-      style: GoogleFonts.spartan(
+      style: TextStyle(
           color: HColors.CELESTE_HABITAT,
           fontSize: 30,
           fontWeight: FontWeight.w300),
