@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 
 import 'widgets/drawer_body.dart';
