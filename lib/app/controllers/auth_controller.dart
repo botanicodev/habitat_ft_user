@@ -19,11 +19,11 @@ class AuthController extends GetxController {
   @override
   void onClose() {}
 
-  signInWithEmailAndPassword(String email, String password) {
-    _auth.signInWithEmailAndPassword(email: email, password: password);
+  signInWithEmailAndPassword(String email, String password) async {
+    await _auth.signInWithEmailAndPassword(email: email, password: password);
   }
 
-  signOut(){
+  signOut() {
     _auth.signOut();
     Get.offAllNamed(Routes.LOGIN);
   }
