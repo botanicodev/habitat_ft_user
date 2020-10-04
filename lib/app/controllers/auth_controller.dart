@@ -1,24 +1,28 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
-import 'package:habitat_ft_user/app/services/user_service.dart';
-import 'package:habitat_ft_user/app/modules/login/user_model.dart' as H;
+import 'package:habitat_ft_user/app/services/profile_user_service.dart';
+import 'package:habitat_ft_user/app/modules/login/profile_user_model.dart';
 
 class AuthController extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  UserService _userService = Get.find<UserService>();
+  ProfileUserService _userService = Get.find<ProfileUserService>();
 
   Rx<User> _user = Rx<User>();
-  Rx<H.User> _profile = Rx<H.User>();
+  Rx<ProfileUser> _profile = Rx<ProfileUser>();
 
   User get user => _user.value;
-  H.User get profile => _profile.value;
+  ProfileUser get profile => _profile.value;
+
+  StreamSubscription _userSubscription;
 
   @override
   void onInit() {
     _user.bindStream(_auth.authStateChanges());
-    _user.listen((user) async{
+    _userSubscription = _user.listen((user) async {
       _profile.value = await _userService.find(user.uid);
     });
   }
@@ -27,7 +31,9 @@ class AuthController extends GetxController {
   void onReady() {}
 
   @override
-  void onClose() {}
+  void onClose() {
+    _userSubscription?.cancel();
+  }
 
   signInWithEmailAndPassword(String email, String password) async {
     await _auth.signInWithEmailAndPassword(email: email, password: password);

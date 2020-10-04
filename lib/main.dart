@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
 
 import 'app/routes/app_pages.dart';
-import 'app/services/user_service.dart';
+import 'app/services/profile_user_service.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put<UserService>(UserService());
+    Get.put<ProfileUserService>(ProfileUserService());
     Get.put<AuthController>(AuthController());
 
     return GetMaterialApp(
