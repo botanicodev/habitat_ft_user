@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
+import 'package:habitat_ft_user/app/config/styles.dart';
 
 class WelcomeTitle extends StatelessWidget {
   const WelcomeTitle({Key key}) : super(key: key);
@@ -8,10 +8,7 @@ class WelcomeTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '¡Bienvenido!',
-      style: TextStyle(
-          color: HColors.CELESTE_HABITAT,
-          fontSize: 30,
-          fontWeight: FontWeight.w300),
+      style: HStyles.TITULO_1_CELESTE,
     );
   }
 }

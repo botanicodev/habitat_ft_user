@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
+import 'package:habitat_ft_user/app/config/styles.dart';
 
 import '../login_controller.dart';
 
@@ -22,11 +23,7 @@ class LoginButton extends GetView<LoginController> {
                 onPressed: controller.login,
                 child: Text(
                   'Ingresar',
-                  style: TextStyle(
-                    color: HColors.BLANCO,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: HStyles.TITULO_1_BLANCO,
                 ),
               ),
             ),

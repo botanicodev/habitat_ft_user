@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
+import 'package:habitat_ft_user/app/config/styles.dart';
 import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
 
 class UserTile extends StatelessWidget {
@@ -22,11 +23,7 @@ class UserTile extends StatelessWidget {
         ),
         title: Text(
           Get.find<AuthController>().user.email, // TODO aca va el nombre y apellido del usuerio loguedo
-          style: TextStyle(
-            color: HColors.BLANCO,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
+          style: HStyles.SUB_TITULO_1_BLANCO,
         ),
       ),
     );
