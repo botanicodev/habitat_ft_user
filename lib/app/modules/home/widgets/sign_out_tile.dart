@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
 
-class SignOutButton extends StatelessWidget {
-  const SignOutButton({
+class SignOutTile extends StatelessWidget {
+  const SignOutTile({
     Key key,
   }) : super(key: key);
 
