@@ -4,8 +4,8 @@ import 'package:habitat_ft_user/app/config/colors.dart';
 import 'user_tile.dart';
 import 'sign_out_tile.dart';
 
-class HomeDrawer extends StatelessWidget {
-  const HomeDrawer({Key key}) : super(key: key);
+class HDrawer extends StatelessWidget {
+  const HDrawer({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
