@@ -13,14 +13,14 @@ class HStyles {
     color: HColors.CELESTE_HABITAT,
     fontSize: TITULO_1.fontSize,
     fontWeight: TITULO_1.fontWeight,
-    // // letterSpacing: TITULO_1.letterSpacing,
+    // letterSpacing: TITULO_1.letterSpacing,
   );
 
   static final TITULO_1_BLANCO = TextStyle(
     color: HColors.BLANCO,
     fontSize: 16,
     fontWeight: TITULO_1.fontWeight,
-    // // letterSpacing: TITULO_1.letterSpacing,
+    // letterSpacing: TITULO_1.letterSpacing,
   );
 
   static final TITULO_2 = TextStyle(
@@ -38,7 +38,14 @@ class HStyles {
   static final TITULO_3_BLANCO = TextStyle(
     color: HColors.BLANCO,
     fontSize: 20,
-    fontWeight: FontWeight.w600,
+    fontWeight: TITULO_3.fontWeight,
+    // letterSpacing: -4,
+  );
+
+  static final TITULO_3_CELESTE = TextStyle(
+    color: HColors.CELESTE_HABITAT,
+    fontSize: 20,
+    fontWeight: TITULO_3.fontWeight,
     // letterSpacing: -4,
   );
 
@@ -51,7 +58,7 @@ class HStyles {
   static final SUB_TITULO_1_BLANCO = TextStyle(
     color: HColors.BLANCO,
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: SUB_TITULO_1.fontWeight,
     // letterSpacing: -1.3,
   );
 
