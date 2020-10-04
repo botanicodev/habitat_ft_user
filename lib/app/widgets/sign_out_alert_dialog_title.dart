@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
 
-class DialogSignOutTitle extends StatelessWidget {
-  const DialogSignOutTitle({
+class SignOutAlertDialogTitle extends StatelessWidget {
+  const SignOutAlertDialogTitle({
     Key key,
   }) : super(key: key);
 

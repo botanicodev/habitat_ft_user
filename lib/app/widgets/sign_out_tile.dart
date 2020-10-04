@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
 
-import 'sing_out_dialog.dart';
+import 'sing_out_alert_dialog.dart';
 
 class SignOutTile extends StatelessWidget {
   const SignOutTile({
@@ -28,7 +28,7 @@ class SignOutTile extends StatelessWidget {
               ),
               title: Text('Cerrar sesion', style: HStyles.TITULO_3_BLANCO),
               onTap: () {
-                Get.dialog(SignOutDialog());
+                Get.dialog(SignOutAlertDialog());
               },
             ),
           ),

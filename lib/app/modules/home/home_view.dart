@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
-
-import 'widgets/hdrawer.dart';
+import 'package:habitat_ft_user/app/widgets/hdrawer.dart';
 
 class HomeView extends GetView<HomeController> {
   @override

@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
 
-class SingOutDialogButtons extends StatelessWidget {
-  const SingOutDialogButtons({
+class SingOutAlertDialogButtons extends StatelessWidget {
+  const SingOutAlertDialogButtons({
     Key key,
   }) : super(key: key);
 
