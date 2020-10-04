@@ -4,7 +4,7 @@ import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
 import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
 
-class UserTile extends StatelessWidget {
+class UserTile extends GetView<AuthController> {
   const UserTile({
     Key key,
   }) : super(key: key);
@@ -21,10 +21,16 @@ class UserTile extends StatelessWidget {
             color: HColors.COMPLEMENTO_1,
           ),
         ),
-        title: Text(
-          Get.find<AuthController>().user.email, // TODO aca va el nombre y apellido del usuerio loguedo
-          style: HStyles.SUB_TITULO_1_BLANCO,
-        ),
+        title: buildText(),
+      ),
+    );
+  }
+
+  Widget buildText() {
+    return Obx(
+      () => Text(
+        '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
+        style: HStyles.SUB_TITULO_1_BLANCO,
       ),
     );
   }
