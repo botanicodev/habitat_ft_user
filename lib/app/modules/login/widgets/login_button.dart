@@ -10,23 +10,27 @@ class LoginButton extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
-      buttonColor: HColors.CELESTE_HABITAT,
-      minWidth: 306,
-      height: 50,
-      splashColor: HColors.CELESTE_OSCURO_2,
-      child: RaisedButton(
-        elevation: 0,
-        onPressed: controller.login,
-        child: Text(
-          'Ingresar',
-          style: GoogleFonts.spartan(
-            color: HColors.BLANCO,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
+    return Obx(
+      () => controller.loading.value
+          ? CircularProgressIndicator()
+          : ButtonTheme(
+              buttonColor: HColors.CELESTE_HABITAT,
+              minWidth: 306,
+              height: 50,
+              splashColor: HColors.CELESTE_OSCURO_2,
+              child: RaisedButton(
+                elevation: 0,
+                onPressed: controller.login,
+                child: Text(
+                  'Ingresar',
+                  style: GoogleFonts.spartan(
+                    color: HColors.BLANCO,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
     );
   }
 }
