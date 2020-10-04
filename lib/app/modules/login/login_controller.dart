@@ -17,8 +17,8 @@ class LoginController extends GetxController {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     //Borrar
-    emailController.value = TextEditingValue(text: 'hola@hola.com');
-    passwordController.value = TextEditingValue(text: '123456789');
+    // emailController.value = TextEditingValue(text: 'hola@hola.com');
+    // passwordController.value = TextEditingValue(text: '123456789');
   }
 
   @override
