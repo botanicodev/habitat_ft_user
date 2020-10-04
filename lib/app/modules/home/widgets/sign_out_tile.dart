@@ -46,13 +46,11 @@ class SignOutDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: HColors.GRIS_01,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0))),
       content: Container(
         width: 274,
         height: 160,
-        // decoration: BoxDecoration(
-        //   shape: BoxShape.rectangle,
-        //   borderRadius: BorderRadius.all(Radius.circular(32.0)),
-        // ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
