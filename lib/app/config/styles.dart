@@ -29,6 +29,13 @@ class HStyles {
     // letterSpacing: -4,
   );
 
+  static final TITULO_2_CELESTE_OSCURO = TextStyle(
+    color: HColors.CELESTE_OSCURO,
+    fontSize: TITULO_2.fontSize,
+    fontWeight: TITULO_2.fontWeight,
+    // letterSpacing: -4,
+  );
+
   static final TITULO_3 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w600,
