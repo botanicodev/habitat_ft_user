@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/config/assets.dart';
 import 'package:habitat_ft_user/app/modules/splashs_screen/splashs_screen_controller.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
 import 'package:splashscreen/splashscreen.dart';
@@ -16,7 +17,7 @@ class SplashsScreenView extends GetView<SplashsScreenController> {
           ),
           Container(
             child: Image.asset(
-              'assets/img/SplashScreen.png',
+              HAssets.SPLASH_SCREEN,
               fit: BoxFit.cover,
               height: Get.height,
               width: Get.width,

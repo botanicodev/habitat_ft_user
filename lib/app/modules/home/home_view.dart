@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/config/assets.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
@@ -11,7 +12,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: HColors.CELESTE_HABITAT,
-        title: Image.asset('assets/logo/LogoAppBarWhite.png'),
+        title: Image.asset(HAssets.WHITE_LOGO_MIN),
         centerTitle: true,
       ),
       drawer: HDrawer(),
