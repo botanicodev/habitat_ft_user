@@ -5,4 +5,5 @@ abstract class Routes{
 
   static const HOME = '/home';
   static const SPLASHS_SCREEN = '/splashs-screen';
+  static const LOGIN = '/login';
 }

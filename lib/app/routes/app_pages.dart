@@ -1,3 +1,5 @@
+import 'package:habitat_ft_user/app/modules/login/login_view.dart';
+import 'package:habitat_ft_user/app/modules/login/login_binding.dart';
 import 'package:habitat_ft_user/app/modules/splashs_screen/splashs_screen_view.dart';
 import 'package:habitat_ft_user/app/modules/splashs_screen/splashs_screen_binding.dart';
 import 'package:habitat_ft_user/app/modules/home/home_view.dart';
@@ -18,6 +20,11 @@ class AppPages {
       name: Routes.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: Routes.LOGIN, 
+      page:()=> LoginView(), 
+      binding: LoginBinding(),
     ),
   ];
 }
