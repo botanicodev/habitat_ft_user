@@ -14,14 +14,20 @@ class WorkshopsPending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height * 0.4,
-      child: ListView.builder(
-        itemCount: list.length,
-        itemBuilder: (context, i) {
-          return WorkshopTile(workshop: list[i]);
-        },
-      ),
-    );
+    if (hasWorkshop()) {
+      return Text('No posee talleres pendientes por realizar');
+    } else {
+      return Container(
+        height: Get.height * 0.4,
+        child: ListView.builder(
+          itemCount: list.length,
+          itemBuilder: (context, i) {
+            return WorkshopTile(workshop: list[i]);
+          },
+        ),
+      );
+    }
   }
+
+  bool hasWorkshop() => list == null || list.length == 0;
 }
