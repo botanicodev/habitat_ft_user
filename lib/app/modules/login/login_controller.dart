@@ -17,8 +17,8 @@ class LoginController extends GetxController {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     //Borrar
-    emailController.value = TextEditingValue(text: 'hola@hola.com');
-    passwordController.value = TextEditingValue(text: '123456789');
+    // emailController.value = TextEditingValue(text: 'hola@hola.com');
+    // passwordController.value = TextEditingValue(text: '123456789');
   }
 
   @override
@@ -35,8 +35,7 @@ class LoginController extends GetxController {
     try {
       await _authController.signInWithEmailAndPassword(
           emailController.text, passwordController.text);
-      Get.offAllNamed(Routes
-          .HOME); // TODO, armarlo con OBX del FirebaseUser y sacar el navegar
+      Get.offAllNamed(Routes.HOME);
     } catch (e) {
       error.value = e.message;
       passwordController.value = TextEditingValue(text: '');

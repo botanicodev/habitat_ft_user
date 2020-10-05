@@ -26,7 +26,6 @@ class SingOutAlertDialogButtons extends StatelessWidget {
           icon: Icon(
             Icons.check_circle_outline_rounded,
             color: HColors.CONFIRMAR,
-            // size: 35,
           ),
           onPressed: Get.find<AuthService>().signOut,
         ),

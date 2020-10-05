@@ -22,6 +22,7 @@ class AuthService extends GetxService {
   @override
   void onInit() {
     _user.bindStream(_auth.authStateChanges());
+    
     _userSubscription = _user.listen((user) async {
       _profile.value = await _userService.find(user.uid);
     });
