@@ -8,6 +8,9 @@ class WorkshopsTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Talleres', style: HStyles.TITULO_2_CELESTE_OSCURO);
+    return Padding(
+      padding: const EdgeInsets.only(top: 40,bottom: 25),
+      child: Center(child: Text('Talleres', style: HStyles.TITULO_2_CELESTE_OSCURO)),
+    );
   }
 }
