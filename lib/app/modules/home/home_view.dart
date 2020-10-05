@@ -19,13 +19,7 @@ class HomeView extends GetView<HomeController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           WorkshopsTitle(),
-          Obx(
-            () => controller.isLoadingPending.value
-                ? CircularProgressIndicator()
-                : WorkshopsPending(
-                    list: controller.pendingWorkshops,
-                  ),
-          ),
+          WorkshopsPending(),
         ],
       ),
     );

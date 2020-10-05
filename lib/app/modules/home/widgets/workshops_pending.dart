@@ -1,33 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/workshop_model.dart';
+import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 
 import 'workshop_tile.dart';
 
-class WorkshopsPending extends StatelessWidget {
-  final List<Workshop> list;
-
+class WorkshopsPending extends GetView<HomeController> {
   const WorkshopsPending({
     Key key,
-    @required this.list,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return Obx(() => controller.isLoadingPending.value
+        ? CircularProgressIndicator()
+        : buildListView());
+  }
+
+  bool hasWorkshop() =>
+      controller.pendingWorkshops != null &&
+      controller.pendingWorkshops.length > 0;
+
+  Widget buildListView() {
     if (hasWorkshop()) {
-      return Text('No posee talleres pendientes por realizar');
-    } else {
       return Container(
         height: Get.height * 0.4,
         child: ListView.builder(
-          itemCount: list.length,
+          itemCount: controller.pendingWorkshops.length,
           itemBuilder: (context, i) {
-            return WorkshopTile(workshop: list[i]);
+            return WorkshopTile(workshop: controller.pendingWorkshops[i]);
           },
         ),
       );
+    } else {
+      return Text('No posee talleres pendientes por realizar');
     }
   }
-
-  bool hasWorkshop() => list == null || list.length == 0;
 }
