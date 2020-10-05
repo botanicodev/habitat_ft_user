@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/assets.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
-import 'package:habitat_ft_user/app/models/workshop_model.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 import 'package:habitat_ft_user/app/widgets/hdrawer.dart';
 
@@ -20,14 +19,12 @@ class HomeView extends GetView<HomeController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           WorkshopsTitle(),
-          WorkshopsPending(
-            list: [
-              Workshop(title:'Titulo taller'),
-              Workshop(title:'Titulo taller'),
-              Workshop(title:'Titulo taller'),
-              Workshop(title:'Titulo taller'),
-              Workshop(title:'Titulo taller'),
-            ],
+          Obx(
+            () => controller.isLoadingPending.value
+                ? CircularProgressIndicator()
+                : WorkshopsPending(
+                    list: controller.pendingWorkshops,
+                  ),
           ),
         ],
       ),
