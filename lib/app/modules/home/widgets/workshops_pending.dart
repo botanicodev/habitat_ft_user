@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/models/workshop_model.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 
 import 'workshop_tile.dart';
