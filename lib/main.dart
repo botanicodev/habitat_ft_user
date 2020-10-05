@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:habitat_ft_user/app/services/auth_service.dart';
+import 'package:habitat_ft_user/app/services/workshop_service.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/services/profile_user_service.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put<ProfileUserService>(ProfileUserService());
     Get.put<AuthService>(AuthService());
+    Get.put<WorkshopService>(WorkshopService());
 
     return GetMaterialApp(
       title: "Habitat",
