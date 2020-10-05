@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/models/workshop_model.dart';
 
 import 'workshop_tile.dart';
 
 class WorkshopsPending extends StatelessWidget {
+  final List<Workshop> list;
+
   const WorkshopsPending({
     Key key,
+    @required this.list,
   }) : super(key: key);
 
   @override
@@ -13,9 +17,9 @@ class WorkshopsPending extends StatelessWidget {
     return Container(
       height: Get.height * 0.4,
       child: ListView.builder(
-        itemCount: 3,
+        itemCount: list.length,
         itemBuilder: (context, i) {
-          return WorkshopTile();
+          return WorkshopTile(workshop: list[i]);
         },
       ),
     );
