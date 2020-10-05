@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/profile_user_model.dart';
 
-class ProfileUserService {
+class ProfileUserService extends GetxService {
   CollectionReference usersRef = FirebaseFirestore.instance.collection("users");
 
   Future<ProfileUser> find(String uid) async {

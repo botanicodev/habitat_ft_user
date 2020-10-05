@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
-import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
+import 'package:habitat_ft_user/app/services/auth_service.dart';
 
-class UserTile extends GetView<AuthController> {
+class UserTile extends GetView<AuthService> {
   const UserTile({
     Key key,
   }) : super(key: key);

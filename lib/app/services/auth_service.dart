@@ -6,7 +6,7 @@ import 'package:habitat_ft_user/app/routes/app_pages.dart';
 import 'package:habitat_ft_user/app/services/profile_user_service.dart';
 import 'package:habitat_ft_user/app/modules/login/profile_user_model.dart';
 
-class AuthController extends GetxController {
+class AuthService extends GetxService {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   ProfileUserService _userService = Get.find<ProfileUserService>();

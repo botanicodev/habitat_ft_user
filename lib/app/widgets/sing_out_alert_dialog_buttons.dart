@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
-import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
+import 'package:habitat_ft_user/app/services/auth_service.dart';
 
 class SingOutAlertDialogButtons extends StatelessWidget {
   const SingOutAlertDialogButtons({
@@ -28,7 +28,7 @@ class SingOutAlertDialogButtons extends StatelessWidget {
             color: HColors.CONFIRMAR,
             // size: 35,
           ),
-          onPressed: Get.find<AuthController>().signOut,
+          onPressed: Get.find<AuthService>().signOut,
         ),
       ],
     );

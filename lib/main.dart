@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:habitat_ft_user/app/controllers/auth_controller.dart';
+import 'package:habitat_ft_user/app/services/auth_service.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/services/profile_user_service.dart';
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put<ProfileUserService>(ProfileUserService());
-    Get.put<AuthController>(AuthController());
+    Get.put<AuthService>(AuthService());
 
     return GetMaterialApp(
       title: "Habitat",
