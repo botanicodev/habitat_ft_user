@@ -35,6 +35,17 @@ class WorkshopService extends GetxService {
         .toList();
   }
 
+  Future<List<Workshop>> allCompleted() async {
+    validateRef();
+    QuerySnapshot result =
+        await _subscriptionsRef.where('status', isEqualTo: 'completed').get();
+    return result.docs
+        .map(
+          (doc) => Workshop.fromJson(doc.data()),
+        )
+        .toList();
+  }
+
   void validateRef() {
     if (_subscriptionsRef.isNull) {
       throw HabitatFirebaseReferenceCallInNull(

@@ -6,15 +6,25 @@ class HomeController extends GetxController {
   WorkshopService _workshopService = Get.find<WorkshopService>();
 
   RxList<Workshop> _pendingWorkshops = <Workshop>[].obs;
+  RxList<Workshop> _completedWorkshops = <Workshop>[].obs;
   RxBool _isLoadingPending = false.obs;
+  RxBool _isLoadingCompleted = false.obs;
 
   List<Workshop> get pendingWorkshops => _pendingWorkshops.value;
   bool get isLoadingPending => _isLoadingPending.value;
   void startLoadingPending() => _isLoadingPending.value = true;
   void endLoadingPending() => _isLoadingPending.value = false;
 
+  List<Workshop> get completedWorkshops => _completedWorkshops.value;
+  bool get isLoadingCompleted => _isLoadingCompleted.value;
+  void startLoadingCompleted() => _isLoadingCompleted.value = true;
+  void endLoadingCompleted() => _isLoadingCompleted.value = false;
+
   @override
-  void onInit() async => _pendingWorkshops.value = await _findAllPending();
+  void onInit() async {
+    _pendingWorkshops.value = await _findAllPending();
+    _completedWorkshops.value = await _findAllCompleted();
+  }
 
   @override
   void onReady() {}
@@ -31,6 +41,19 @@ class HomeController extends GetxController {
       catchError(e);
     } finally {
       endLoadingPending();
+    }
+    return list;
+  }
+
+  Future<List<Workshop>> _findAllCompleted() async {
+    List<Workshop> list;
+    try {
+      startLoadingCompleted();
+      list = await _workshopService.allCompleted();
+    } catch (e) {
+      catchError(e);
+    } finally {
+      endLoadingCompleted();
     }
     return list;
   }
