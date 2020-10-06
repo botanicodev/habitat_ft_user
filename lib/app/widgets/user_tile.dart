@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
-import 'package:habitat_ft_user/app/services/profile_user_service.dart';
+import 'package:habitat_ft_user/app/services/user_profile_service.dart';
 
-class UserTile extends GetView<ProfileUserService> {
+class UserTile extends GetView<UserProfileService> {
   const UserTile({
     Key key,
   }) : super(key: key);

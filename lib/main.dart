@@ -5,7 +5,7 @@ import 'package:habitat_ft_user/app/services/auth_service.dart';
 import 'package:habitat_ft_user/app/services/workshop_service.dart';
 
 import 'app/routes/app_pages.dart';
-import 'app/services/profile_user_service.dart';
+import 'app/services/user_profile_service.dart';
 
 void main() async {
   initServices();
@@ -14,7 +14,7 @@ void main() async {
 
 void initServices() {
   print('Initialize services =>');
-  Get.put<ProfileUserService>(ProfileUserService());
+  Get.put<UserProfileService>(UserProfileService());
   Get.put<AuthService>(AuthService());
   Get.put<WorkshopService>(WorkshopService());
   print('<= Initialize services');
