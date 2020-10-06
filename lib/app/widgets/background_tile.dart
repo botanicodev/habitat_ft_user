@@ -13,7 +13,6 @@ class BackgroundTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 12, right: 12, top: 12),
-      width: 350,
       height: 75,
       decoration: BoxDecoration(
         color: HColors.BLANCO,

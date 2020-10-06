@@ -9,28 +9,27 @@ class WorkshopsPending extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      if (controller.isLoadingPending) return CircularProgressIndicator();
-      return buildListView();
-    });
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 40),
+      child: Obx(() {
+        if (controller.isLoadingPending) return CircularProgressIndicator();
+        return buildListView();
+      }),
+    );
   }
 
   Widget buildListView() {
     return Obx(() {
       if (controller.pendingWorkshops.isNull)
-        return Text('Se rompio algo, trata en un rato');
+        return Center(child: Text('Se rompio algo, trata en un rato'));
 
       if (controller.pendingWorkshops.isEmpty)
-        return Text('No tenes talleres para hacer');
+        return Center(child: Text('No tenes talleres para hacer'));
 
-      return Container(
-        height: Get.height * 0.4,
-        child: ListView.builder(
-          itemCount: controller.pendingWorkshops.length,
-          itemBuilder: (context, i) {
-            return WorkshopTile(workshop: controller.pendingWorkshops[i]);
-          },
-        ),
+      return Column(
+        children: controller.pendingWorkshops
+            .map((workshop) => WorkshopTile(workshop: workshop))
+            .toList(),
       );
     });
   }
