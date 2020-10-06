@@ -7,17 +7,22 @@ import 'package:habitat_ft_user/app/services/workshop_service.dart';
 import 'app/routes/app_pages.dart';
 import 'app/services/profile_user_service.dart';
 
-void main() {
+void main() async {
+  initServices();
   runApp(MyApp());
+}
+
+void initServices() {
+  print('Initialize services =>');
+  Get.put<ProfileUserService>(ProfileUserService());
+  Get.put<AuthService>(AuthService());
+  Get.put<WorkshopService>(WorkshopService());
+  print('<= Initialize services');
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Get.put<ProfileUserService>(ProfileUserService());
-    Get.put<AuthService>(AuthService());
-    Get.put<WorkshopService>(WorkshopService());
-
     return GetMaterialApp(
       title: "Habitat",
       debugShowCheckedModeBanner: false,
