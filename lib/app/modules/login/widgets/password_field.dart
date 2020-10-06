@@ -10,13 +10,12 @@ class PasswordField extends GetView<LoginController> {
     return Obx(
       () => TextField(
         controller: controller.passwordController,
-        onChanged: (text) => controller.error.value = '',
+        onChanged: (text) => controller.error = '',
         obscureText: true,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           errorMaxLines: 4,
-          errorText:
-              controller.error.value == '' ? null : controller.error.value,
+          errorText: controller.error == '' ? null : controller.error,
           labelText: 'Contraseña',
         ),
       ),

@@ -11,7 +11,7 @@ class EnterButton extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => controller.loading.value
+      () => controller.loading
           ? CircularProgressIndicator()
           : ButtonTheme(
               buttonColor: HColors.CELESTE_HABITAT,
