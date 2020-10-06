@@ -5,12 +5,15 @@ import 'package:habitat_ft_user/app/services/workshop_service.dart';
 class HomeController extends GetxController {
   WorkshopService _workshopService = Get.find<WorkshopService>();
 
-  RxList<Workshop> pendingWorkshops = <Workshop>[].obs;
-  RxBool isLoadingPending = false.obs;
+  RxList<Workshop> _pendingWorkshops = <Workshop>[].obs;
+  RxBool _isLoadingPending = false.obs;
+
+  List<Workshop> get pendingWorkshops => _pendingWorkshops.value;
+  bool get isLoadingPending => _isLoadingPending.value;
 
   @override
   void onInit() async {
-    pendingWorkshops.value = await _findAllPending();
+    _pendingWorkshops.value = await _findAllPending();
   }
 
   @override
@@ -20,14 +23,17 @@ class HomeController extends GetxController {
   void onClose() {}
 
   Future<List<Workshop>> _findAllPending() async {
-    isLoadingPending.value = true;
+    _isLoadingPending.value = true;
     List<Workshop> list;
     try {
       list = await _workshopService.allPending();
     } catch (e) {
-      Get.snackbar('Error', e);
+      e.isNull
+          ? print('Habitat Error: HomeController._findAllPending - Message: -')
+          : print(
+              'Habitat Error: HomeController._findAllPending - Message: ${e.message}');
     } finally {
-      isLoadingPending.value = false;
+      _isLoadingPending.value = false;
     }
     return list;
   }

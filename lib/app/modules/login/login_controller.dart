@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/services/auth_service.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
-import 'package:habitat_ft_user/app/services/profile_user_service.dart';
+import 'package:habitat_ft_user/app/services/user_profile_service.dart';
 import 'package:habitat_ft_user/app/services/workshop_service.dart';
 
 class LoginController extends GetxController {
   AuthService _authService = Get.find<AuthService>();
-  ProfileUserService _profileUserService = Get.find<ProfileUserService>();
+  UserProfileService _profileUserService = Get.find<UserProfileService>();
   WorkshopService _workshopService = Get.find<WorkshopService>();
 
   TextEditingController _emailController;
@@ -46,22 +46,27 @@ class LoginController extends GetxController {
     try {
       _loading.value = true;
       await _authService.signInWithEmailAndPassword(email, password);
-      _profileUserService.initProfile(_authService.user.uid);
+      _profileUserService.initRef(_authService.user.uid);
       _workshopService.initRef(_authService.user.uid);
       Get.offAllNamed(Routes.HOME);
     } catch (e) {
-      _error.value = e.message;
+      if (e.isNull) {
+        _error.value = 'Se rompio algo, trata de entrar en un rato';
+      } else {
+        _error.value = e.message;
+      }
       _passwordController.value = TextEditingValue(text: '');
     } finally {
       _loading.value = false;
     }
   }
 
-  void signOut() async {
+  void signOut() {
     try {
       _authService.signOut();
     } catch (e) {
-      Get.snackbar('_Error sign out', e.message,
+      print('Habitat error: LoginController.signOut - ${e.message}');
+      Get.snackbar('Error sign out', e.message,
           snackPosition: SnackPosition.BOTTOM);
     }
   }
