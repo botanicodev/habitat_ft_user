@@ -14,6 +14,7 @@ class PasswordField extends GetView<LoginController> {
         obscureText: true,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
+          errorMaxLines: 4,
           errorText:
               controller.error.value == '' ? null : controller.error.value,
           labelText: 'Contraseña',

@@ -15,7 +15,6 @@ class EmailField extends GetView<LoginController> {
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: 'Email',
-          errorMaxLines: 4,
           errorText: controller.error.value == '' ? null : '',
         ),
       ),
