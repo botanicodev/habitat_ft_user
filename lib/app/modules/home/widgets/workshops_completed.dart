@@ -12,7 +12,8 @@ class WorkshopsCompleted extends GetView<HomeController> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Obx(() {
-        if (controller.isLoadingCompleted) return Center(child: CircularProgressIndicator());
+        if (controller.isLoadingCompleted)
+          return Center(child: CircularProgressIndicator());
         return buildListView();
       }),
     );
