@@ -5,9 +5,7 @@ import 'package:habitat_ft_user/app/config/styles.dart';
 import 'package:habitat_ft_user/app/services/user_profile_service.dart';
 
 class UserTile extends GetView<UserProfileService> {
-  const UserTile({
-    Key key,
-  }) : super(key: key);
+  const UserTile({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +25,12 @@ class UserTile extends GetView<UserProfileService> {
   }
 
   Widget buildTitle() {
-    return Obx(
-      () => Text(
-        '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
-        style: HStyles.SUB_TITULO_1_BLANCO,
-      ),
-    );
+    return Obx(() {
+      return Text(
+          controller.profile.isNull
+              ? 'Error :('
+              : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
+          style: HStyles.SUB_TITULO_1_BLANCO);
+    });
   }
 }

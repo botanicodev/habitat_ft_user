@@ -28,10 +28,11 @@ class HomeController extends GetxController {
     try {
       list = await _workshopService.allPending();
     } catch (e) {
-      e.isNull
-          ? print('Habitat Error: HomeController._findAllPending - Message: -')
-          : print(
-              'Habitat Error: HomeController._findAllPending - Message: ${e.message}');
+      if (e == null)
+        print('Habitat Error: HomeController._findAllPending - Message: -');
+      else
+        print(
+            'Habitat Error: HomeController._findAllPending - Message: ${e.message}');
     } finally {
       _isLoadingPending.value = false;
     }

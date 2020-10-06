@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/exceptions/exceptions.dart';
 import 'package:habitat_ft_user/app/models/workshop_model.dart';
 
 class WorkshopService extends GetxService {
@@ -25,7 +26,8 @@ class WorkshopService extends GetxService {
 
   Future<List<Workshop>> allPending() async {
     if (_subscriptionsRef.isNull)
-      throw 'Habitat error: WorkshopService.allPending: _subscriptionsRef is null. Se debe ejecutar el metodo initRef(userId).';
+      throw HabitatFirebaseReferenceCallInNull(
+          'Habitat error: WorkshopService.allPending: _subscriptionsRef is null. Se debe ejecutar el metodo initRef(userId).');
     QuerySnapshot result =
         await _subscriptionsRef.where('status', isEqualTo: 'pending').get();
     return result.docs
