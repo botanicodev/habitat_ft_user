@@ -21,12 +21,12 @@ class UserTile extends GetView<ProfileUserService> {
             color: HColors.COMPLEMENTO_1,
           ),
         ),
-        title: buildText(),
+        title: buildTitle(),
       ),
     );
   }
 
-  Widget buildText() {
+  Widget buildTitle() {
     return Obx(
       () => Text(
         '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',

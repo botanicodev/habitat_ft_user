@@ -8,7 +8,6 @@ class ProfileUserService extends GetxService {
   Rx<ProfileUser> _profileUser = Rx<ProfileUser>();
 
   ProfileUser get profile => _profileUser.value;
-  set profile(ProfileUser profileUser) => _profileUser.value = profileUser;
 
   @override
   void onInit() {}
@@ -19,13 +18,13 @@ class ProfileUserService extends GetxService {
   @override
   void onClose() {}
 
-  Future<ProfileUser> find(String uid) async {
-    DocumentSnapshot doc = await usersRef.doc(uid).get();
-    return ProfileUser.fromJson(doc.data());
-  }
-
   Future<void> initProfile(String uid) async {
     print('ProfileUserService => fetch profile - userid: $uid <=');
     _profileUser.value = await this.find(uid);
+  }
+
+  Future<ProfileUser> find(String uid) async {
+    DocumentSnapshot doc = await usersRef.doc(uid).get();
+    return ProfileUser.fromJson(doc.data());
   }
 }

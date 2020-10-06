@@ -8,6 +8,12 @@ class WorkshopService extends GetxService {
   @override
   void onInit() {}
 
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
+
   void initRef(String userId) {
     print(
         'WorkshopService => initialize collection reference: users/$userId/subscriptions <=');
@@ -16,12 +22,6 @@ class WorkshopService extends GetxService {
         .doc(userId)
         .collection('subscriptions');
   }
-
-  @override
-  void onReady() {}
-
-  @override
-  void onClose() {}
 
   Future<List<Workshop>> allPending() async {
     QuerySnapshot result =
