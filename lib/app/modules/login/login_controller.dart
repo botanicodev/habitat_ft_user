@@ -44,20 +44,15 @@ class LoginController extends GetxController {
 
   void login() async {
     try {
-      _loading.value = true;
-      await _authService.signInWithEmailAndPassword(email, password);
-      _profileUserService.initRef(_authService.user.uid);
-      _workshopService.initRef(_authService.user.uid);
+      startLoading();
+      final userCredential =
+          await _authService.signInWithEmailAndPassword(email, password);
+      _initRefServices(userCredential.user.uid);
       Get.offAllNamed(Routes.HOME);
     } catch (e) {
-      if (e.isNull) {
-        _error.value = 'Se rompio algo, trata de entrar en un rato';
-      } else {
-        _error.value = e.message;
-      }
-      _passwordController.value = TextEditingValue(text: '');
+      catchLoginError(e);
     } finally {
-      _loading.value = false;
+      endLoading();
     }
   }
 
@@ -65,21 +60,38 @@ class LoginController extends GetxController {
     try {
       _authService.signOut();
     } catch (e) {
-      print('Habitat error: LoginController.signOut - ${e.message}');
-      Get.snackbar('Error sign out', e.message,
-          snackPosition: SnackPosition.BOTTOM);
+      catchSignOutError(e);
     }
   }
+
+  void _initRefServices(String uid) {
+    _profileUserService.initRef(uid);
+    _workshopService.initRef(uid);
+  }
+
+  void startLoading() => _loading.value = true;
+  void endLoading() => _loading.value = false;
 
   void onChange(String text) {
     if (error != '') _error.value = '';
   }
 
-  String emailErrorText() {
-    return error == '' ? null : '';
+  String emailErrorText() => error == '' ? null : '';
+
+  String passwordErrorText() => error == '' ? null : error;
+
+  void catchLoginError(dynamic e) {
+    if (e == null) {
+      _error.value = 'Se rompio algo, trata de entrar en un rato';
+    } else {
+      _error.value = e.message;
+    }
+    _passwordController.value = TextEditingValue(text: '');
   }
 
-  String passwordErrorText() {
-    return error == '' ? null : error;
+  void catchSignOutError(dynamic e) {
+    print('Habitat error: LoginController.signOut - ${e.message}');
+    Get.snackbar('Error sign out', 'Se rompio algo, trata en un rato',
+        snackPosition: SnackPosition.BOTTOM);
   }
 }

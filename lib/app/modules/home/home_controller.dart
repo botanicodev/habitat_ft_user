@@ -10,11 +10,11 @@ class HomeController extends GetxController {
 
   List<Workshop> get pendingWorkshops => _pendingWorkshops.value;
   bool get isLoadingPending => _isLoadingPending.value;
+  void startLoadingPending() => _isLoadingPending.value = true;
+  void endLoadingPending() => _isLoadingPending.value = false;
 
   @override
-  void onInit() async {
-    _pendingWorkshops.value = await _findAllPending();
-  }
+  void onInit() async => _pendingWorkshops.value = await _findAllPending();
 
   @override
   void onReady() {}
@@ -23,19 +23,23 @@ class HomeController extends GetxController {
   void onClose() {}
 
   Future<List<Workshop>> _findAllPending() async {
-    _isLoadingPending.value = true;
     List<Workshop> list;
     try {
+      startLoadingPending();
       list = await _workshopService.allPending();
     } catch (e) {
-      if (e == null)
-        print('Habitat Error: HomeController._findAllPending - Message: -');
-      else
-        print(
-            'Habitat Error: HomeController._findAllPending - Message: ${e.message}');
+      catchError(e);
     } finally {
-      _isLoadingPending.value = false;
+      endLoadingPending();
     }
     return list;
+  }
+
+  void catchError(dynamic e) {
+    if (e == null)
+      print('Habitat Error: HomeController._findAllPending - Message: -');
+    else
+      print(
+          'Habitat Error: HomeController._findAllPending - Message: ${e.message}');
   }
 }

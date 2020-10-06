@@ -25,9 +25,7 @@ class WorkshopService extends GetxService {
   }
 
   Future<List<Workshop>> allPending() async {
-    if (_subscriptionsRef.isNull)
-      throw HabitatFirebaseReferenceCallInNull(
-          'Habitat error: WorkshopService.allPending: _subscriptionsRef is null. Se debe ejecutar el metodo initRef(userId).');
+    validateRef();
     QuerySnapshot result =
         await _subscriptionsRef.where('status', isEqualTo: 'pending').get();
     return result.docs
@@ -35,5 +33,12 @@ class WorkshopService extends GetxService {
           (doc) => Workshop.fromJson(doc.data()),
         )
         .toList();
+  }
+
+  void validateRef() {
+    if (_subscriptionsRef.isNull) {
+      throw HabitatFirebaseReferenceCallInNull(
+          'Habitat error: WorkshopService.allPending: _subscriptionsRef is null. Se debe ejecutar el metodo initRef(userId).');
+    }
   }
 }
