@@ -5,6 +5,7 @@ import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 import 'package:habitat_ft_user/app/widgets/hdrawer.dart';
 
+import 'widgets/workshop_separetor.dart';
 import 'widgets/workshops_pending.dart';
 import 'widgets/workshops_title.dart';
 
@@ -12,7 +13,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HColors.GRIS_01,
       appBar: buildAppBar(),
       drawer: HDrawer(),
       body: Column(
@@ -20,6 +20,7 @@ class HomeView extends GetView<HomeController> {
         children: [
           WorkshopsTitle(),
           WorkshopsPending(),
+          WorkshopSeparetor(),
         ],
       ),
     );

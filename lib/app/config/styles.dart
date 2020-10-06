@@ -100,6 +100,13 @@ class HStyles {
     // letterSpacing: -4,
   );
 
+  static final BOTONES_CELESTE = TextStyle(
+    color: HColors.CELESTE_HABITAT,
+    fontSize: BOTONES.fontSize,
+    fontWeight: BOTONES.fontWeight,
+    // letterSpacing: -4,
+  );
+
   static final LINK_BOTON = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
