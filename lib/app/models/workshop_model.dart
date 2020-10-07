@@ -1,6 +1,6 @@
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-class Workshop {
+class Workshop { // CAMBIAR MODELO (SUBSCRIPCIN)
   String id;
   String title;
   Status status;

@@ -6,8 +6,8 @@ import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 import 'package:habitat_ft_user/app/widgets/hdrawer.dart';
 
 import 'widgets/workshop_separetor.dart';
-import 'widgets/workshops_completed.dart';
-import 'widgets/workshops_pending.dart';
+import 'views/workshops_completed_view.dart';
+import 'views/workshops_pending_view.dart';
 import 'widgets/workshops_title.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -21,9 +21,9 @@ class HomeView extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WorkshopsTitle(),
-            WorkshopsPending(),
+            WorkshopsPendingView(),
             WorkshopSeparetor(),
-            WorkshopsCompleted(),
+            WorkshopsCompletedView(),
           ],
         ),
       ),

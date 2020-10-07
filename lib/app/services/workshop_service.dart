@@ -25,15 +25,9 @@ class WorkshopService extends GetxService {
         .collection('subscriptions');
   }
 
-  Future<List<Workshop>> all(Status status) async {
+  Stream<QuerySnapshot> allByStatus(Status status) {
     validateRef();
-    QuerySnapshot result =
-        await _subscriptionsRef.where('status', isEqualTo: status.index).get();
-    return result.docs
-        .map(
-          (doc) => Workshop.fromJson(doc.data()),
-        )
-        .toList();
+    return _subscriptionsRef.where('status',isEqualTo: status.index).snapshots();
   }
 
   void validateRef() {

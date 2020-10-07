@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 
-import 'workshop_tile.dart';
+import '../widgets/workshop_tile.dart';
+import '../controllers/workshops_completed_controller.dart';
 
-class WorkshopsCompleted extends GetView<HomeController> {
-  const WorkshopsCompleted({Key key}) : super(key: key);
+class WorkshopsCompletedView extends GetView<WorkshopsCompletedController> {
+  const WorkshopsCompletedView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Obx(() {
-        if (controller.isLoadingCompleted)
+        if (controller.isLoading)
           return Center(child: CircularProgressIndicator());
         return buildListView();
       }),
@@ -21,14 +21,11 @@ class WorkshopsCompleted extends GetView<HomeController> {
 
   Widget buildListView() {
     return Obx(() {
-      if (controller.completedWorkshops.isNull)
-        return Center(child: Text('Se rompio algo, trata en un rato'));
-
-      if (controller.completedWorkshops.isEmpty)
+      if (controller.workshops.isEmpty)
         return Center(child: Text('No completaste ningun taller'));
 
       return Column(
-        children: controller.completedWorkshops
+        children: controller.workshops
             .map((workshop) => WorkshopTile(workshop: workshop))
             .toList(),
       );
