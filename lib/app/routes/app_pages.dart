@@ -2,8 +2,6 @@ import 'package:habitat_ft_user/app/modules/root/root_view.dart';
 import 'package:habitat_ft_user/app/modules/root/root_binding.dart';
 import 'package:habitat_ft_user/app/modules/login/login_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_binding.dart';
-import 'package:habitat_ft_user/app/modules/splashs_screen/splashs_screen_view.dart';
-import 'package:habitat_ft_user/app/modules/splashs_screen/splashs_screen_binding.dart';
 import 'package:habitat_ft_user/app/modules/home/home_view.dart';
 import 'package:habitat_ft_user/app/modules/home/home_binding.dart';
 import 'package:get/get.dart';
@@ -14,9 +12,9 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: Routes.SPLASHS_SCREEN,
-      page: () => SplashsScreenView(),
-      binding: SplashsScreenBinding(),
+      name: Routes.ROOT, 
+      page:()=> RootView(), 
+      binding: RootBinding(),
     ),
     GetPage(
       name: Routes.HOME,
@@ -27,11 +25,6 @@ class AppPages {
       name: Routes.LOGIN, 
       page:()=> LoginView(), 
       binding: LoginBinding(),
-    ),
-    GetPage(
-      name: Routes.ROOT, 
-      page:()=> RootView(), 
-      binding: RootBinding(),
     ),
   ];
 }
