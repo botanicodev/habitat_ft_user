@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
 class SingOutAlertDialogButtons extends GetView<AuthService> {
   const SingOutAlertDialogButtons({

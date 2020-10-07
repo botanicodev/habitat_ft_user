@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
 class HDialog extends StatelessWidget {
   final Widget content;

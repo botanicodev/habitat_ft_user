@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
-import 'package:habitat_ft_user/app/config/styles.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class WorkshopSeparetor extends StatelessWidget {
   const WorkshopSeparetor({

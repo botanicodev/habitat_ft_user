@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/styles.dart';
+import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class WorkshopsTitle extends StatelessWidget {
   const WorkshopsTitle({

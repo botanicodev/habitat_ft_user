@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/assets.dart';
+import 'package:habitat_ft_user/app/utils/config/assets.dart';
 
 class Logo extends StatelessWidget {
   const Logo({

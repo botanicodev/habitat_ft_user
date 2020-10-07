@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/config/assets.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
+
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/hdrawer.dart';
+import 'package:habitat_ft_user/app/utils/config/assets.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
 import 'widgets/workshop_separetor.dart';
 import 'views/workshops_completed_view.dart';
