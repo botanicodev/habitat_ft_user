@@ -43,7 +43,6 @@ class LoginController extends GetxController {
     try {
       startLoading();
       await _authService.signInWithEmailAndPassword(email, password);
-      Get.offAllNamed(Routes.HOME);
     } catch (e) {
       catchLoginError(e);
     } finally {
