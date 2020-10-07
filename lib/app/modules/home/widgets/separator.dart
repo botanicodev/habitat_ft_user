@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
-class WorkshopSeparetor extends StatelessWidget {
-  const WorkshopSeparetor({
+class Separator extends StatelessWidget {
+  const Separator({
     Key key,
   }) : super(key: key);
 

@@ -7,7 +7,7 @@ import 'package:habitat_ft_user/app/modules/home/widgets/hdrawer.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-import 'widgets/workshop_separetor.dart';
+import 'widgets/separator.dart';
 import 'widgets/workshops_title.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
           children: [
             WorkshopsTitle(),
             WorkshopList.pending(),
-            WorkshopSeparetor(),
+            Separator(),
             WorkshopList.completed(),
           ],
         ),
