@@ -1,14 +1,16 @@
+import 'package:habitat_ft_user/app/utils/enums.dart';
+
 class Workshop {
   String id;
   String title;
-  String status;
+  Status status;
 
   Workshop({this.title});
 
   Workshop.fromJson(Map<String, dynamic> json) {
     id = json['workshop_id'];
     title = json['title'];
-    status = json['status'];
+    status = mapInttoStatus(json['status']);
   }
 
   Map<String, dynamic> toJson() {
@@ -17,5 +19,18 @@ class Workshop {
     data['title'] = this.title;
     data['status'] = this.status;
     return data;
+  }
+}
+
+Status mapInttoStatus(int value) {
+  switch (value) {
+    case 0:
+      return Status.pending;
+      break;
+    case 1:
+      return Status.completed;
+      break;
+    default:
+      return Status.pending;
   }
 }

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/workshop_model.dart';
 import 'package:habitat_ft_user/app/services/workshop_service.dart';
+import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class HomeController extends GetxController {
   WorkshopService _workshopService = Get.find<WorkshopService>();
@@ -36,7 +37,7 @@ class HomeController extends GetxController {
     List<Workshop> list;
     try {
       startLoadingPending();
-      list = await _workshopService.allPending();
+      list = await _workshopService.all(Status.pending);
     } catch (e) {
       catchError(e);
     } finally {
@@ -49,7 +50,7 @@ class HomeController extends GetxController {
     List<Workshop> list;
     try {
       startLoadingCompleted();
-      list = await _workshopService.allCompleted();
+      list = await _workshopService.all(Status.completed);
     } catch (e) {
       catchError(e);
     } finally {

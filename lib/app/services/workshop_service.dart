@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/exceptions/exceptions.dart';
 import 'package:habitat_ft_user/app/models/workshop_model.dart';
+import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class WorkshopService extends GetxService {
   CollectionReference _subscriptionsRef;
@@ -24,21 +25,10 @@ class WorkshopService extends GetxService {
         .collection('subscriptions');
   }
 
-  Future<List<Workshop>> allPending() async {
+  Future<List<Workshop>> all(Status status) async {
     validateRef();
     QuerySnapshot result =
-        await _subscriptionsRef.where('status', isEqualTo: 'pending').get();
-    return result.docs
-        .map(
-          (doc) => Workshop.fromJson(doc.data()),
-        )
-        .toList();
-  }
-
-  Future<List<Workshop>> allCompleted() async {
-    validateRef();
-    QuerySnapshot result =
-        await _subscriptionsRef.where('status', isEqualTo: 'completed').get();
+        await _subscriptionsRef.where('status', isEqualTo: status.index).get();
     return result.docs
         .map(
           (doc) => Workshop.fromJson(doc.data()),
