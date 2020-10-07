@@ -51,14 +51,6 @@ class LoginController extends GetxController {
     }
   }
 
-  void signOut() {
-    try {
-      _authService.signOut();
-    } catch (e) {
-      catchSignOutError(e);
-    }
-  }
-
   void startLoading() => _loading.value = true;
   void endLoading() => _loading.value = false;
 
@@ -77,11 +69,5 @@ class LoginController extends GetxController {
       _error.value = e.message;
     }
     _passwordController.value = TextEditingValue(text: '');
-  }
-
-  void catchSignOutError(dynamic e) {
-    print('Habitat error: LoginController.signOut - ${e.message}');
-    Get.snackbar('Error sign out', 'Se rompio algo, trata en un rato',
-        snackPosition: SnackPosition.BOTTOM);
   }
 }
