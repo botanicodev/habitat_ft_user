@@ -12,15 +12,7 @@ class AuthService extends GetxService {
   User get user => _user.value;
 
   @override
-  void onInit() {
-    _subscription = _auth.authStateChanges().listen((user) {
-      _user.value = user;
-      if (user == null)
-        Get.toNamed(Routes.LOGIN);
-      else
-        Get.toNamed(Routes.HOME);
-    });
-  }
+  void onInit() {}
 
   @override
   void onReady() {}
@@ -28,6 +20,17 @@ class AuthService extends GetxService {
   @override
   void onClose() {
     _subscription?.cancel();
+  }
+
+  void fetch() {
+    _subscription = _auth.authStateChanges().listen((user) {
+      _user.value = user;
+      if (user.isNull) {
+        Get.toNamed(Routes.LOGIN);
+      } else {
+        Get.toNamed(Routes.HOME);
+      }
+    });
   }
 
   Future<UserCredential> signInWithEmailAndPassword(
