@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/workshop_list.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/hdrawer.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
 import 'widgets/workshop_separetor.dart';
-import 'views/workshops_completed_view.dart';
-import 'views/workshops_pending_view.dart';
 import 'widgets/workshops_title.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -22,9 +21,9 @@ class HomeView extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WorkshopsTitle(),
-            WorkshopsPendingView(),
+            WorkshopList.pending(),
             WorkshopSeparetor(),
-            WorkshopsCompletedView(),
+            WorkshopList.completed(),
           ],
         ),
       ),
