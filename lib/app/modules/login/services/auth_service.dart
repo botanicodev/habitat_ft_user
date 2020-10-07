@@ -23,7 +23,8 @@ class AuthService extends GetxService {
   void onClose() {}
 
   Future<UserCredential> signInWithEmailAndPassword(
-      String email, String password) {
+      String email, String password) async{
+    await _auth.setPersistence(Persistence.SESSION);
     return _auth.signInWithEmailAndPassword(email: email, password: password);
   }
 

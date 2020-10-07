@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
+import 'package:habitat_ft_user/app/modules/login/widgets/sign_out_tile.dart';
 
-import 'sign_out_tile.dart';
-import 'user_tile.dart';
+import '../views/user_tile_view.dart';
 
 class HDrawer extends StatelessWidget {
   const HDrawer({Key key}) : super(key: key);
@@ -14,7 +14,7 @@ class HDrawer extends StatelessWidget {
         color: HColors.CELESTE_OSCURO,
         child: Column(
           children: [
-            UserTile(),
+            UserTileView(),
             Spacer(),
             SignOutTile(),
           ],

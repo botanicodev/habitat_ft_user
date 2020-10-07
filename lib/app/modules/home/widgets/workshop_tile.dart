@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
 import 'package:habitat_ft_user/app/models/workshop_model.dart';
-import 'package:habitat_ft_user/app/widgets/background_tile.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/background_tile.dart';
 
 class WorkshopTile extends StatelessWidget {
   final Workshop workshop;

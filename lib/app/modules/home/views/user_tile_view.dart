@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/config/colors.dart';
 import 'package:habitat_ft_user/app/config/styles.dart';
-import 'package:habitat_ft_user/app/services/user_profile_service.dart';
+import 'package:habitat_ft_user/app/modules/home/controllers/user_tile_controller.dart';
 
-class UserTile extends GetView<UserProfileService> {
-  const UserTile({Key key}) : super(key: key);
+class UserTileView extends GetView<UserTileController> {
+  const UserTileView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class UserTile extends GetView<UserProfileService> {
     return Obx(() {
       return Text(
           controller.profile.isNull
-              ? 'Error :('
+              ? 'Cargando...'
               : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
           style: HStyles.SUB_TITULO_1_BLANCO);
     });

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/workshop_model.dart';
-import 'package:habitat_ft_user/app/services/workshop_service.dart';
+import 'package:habitat_ft_user/app/modules/home/services/workshop_service.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class WorkshopsPendingController extends GetxController {
@@ -19,11 +19,11 @@ class WorkshopsPendingController extends GetxController {
   void startLoading() => _isLoading.value = true;
   void endLoading() => _isLoading.value = false;
 
-  StreamSubscription _workshopSubscription;
+  StreamSubscription _subscription;
 
   @override
   void onInit() {
-    _workshopSubscription =
+    _subscription =
         _workshopService.allByStatus(Status.pending).listen((event) {
       _workshops.value =
           event.docs.map((doc) => Workshop.fromJson(doc.data())).toList();
@@ -36,6 +36,6 @@ class WorkshopsPendingController extends GetxController {
 
   @override
   void onClose() {
-    _workshopSubscription?.cancel();
+    _subscription?.cancel();
   }
 }

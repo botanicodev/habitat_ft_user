@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/services/auth_service.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
-import 'package:habitat_ft_user/app/services/user_profile_service.dart';
-import 'package:habitat_ft_user/app/services/workshop_service.dart';
+
+import 'services/auth_service.dart';
 
 class LoginController extends GetxController {
   AuthService _authService = Get.find<AuthService>();
-  UserProfileService _profileUserService = Get.find<UserProfileService>();
-  WorkshopService _workshopService = Get.find<WorkshopService>();
 
   TextEditingController _emailController;
   TextEditingController _passwordController;
@@ -45,9 +42,7 @@ class LoginController extends GetxController {
   void login() async {
     try {
       startLoading();
-      final userCredential =
-          await _authService.signInWithEmailAndPassword(email, password);
-      _initRefServices(userCredential.user.uid);
+      await _authService.signInWithEmailAndPassword(email, password);
       Get.offAllNamed(Routes.HOME);
     } catch (e) {
       catchLoginError(e);
@@ -62,11 +57,6 @@ class LoginController extends GetxController {
     } catch (e) {
       catchSignOutError(e);
     }
-  }
-
-  void _initRefServices(String uid) {
-    _profileUserService.initRef(uid);
-    _workshopService.initRef(uid);
   }
 
   void startLoading() => _loading.value = true;
