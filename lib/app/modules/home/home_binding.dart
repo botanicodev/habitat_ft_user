@@ -14,7 +14,7 @@ class HomeBinding extends Bindings {
     Get.create<WorkshopListController>(
       () => WorkshopListController(),
     );
-    Get.create<UserTileController>(
+    Get.lazyPut<UserTileController>(
       () => UserTileController(),
     );
   }
