@@ -6,7 +6,7 @@ import 'services/auth_service.dart';
 
 class LoginController extends GetxController {
   AuthService _authService = Get.find<AuthService>();
-
+// TODO REFACTOR, LLEVAR LA LOGICA A CADA CAMPO, cada uno con su controller
   TextEditingController _emailController;
   TextEditingController _passwordController;
 
