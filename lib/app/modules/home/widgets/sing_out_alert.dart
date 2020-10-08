@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/hdialog.dart';
 
-import 'sign_out_alert_dialog_title.dart';
-import 'sing_out_alert_dialog_buttons.dart';
+import 'alert_title.dart';
+import 'sing_out_alert_buttons.dart';
 
-class SignOutAlertDialog extends StatelessWidget {
-  const SignOutAlertDialog({
+class SignOutAlert extends StatelessWidget {
+  const SignOutAlert({
     Key key,
   }) : super(key: key);
 
@@ -18,8 +18,8 @@ class SignOutAlertDialog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SignOutAlertDialogTitle(),
-            SingOutAlertDialogButtons(),
+            AlertTitle('¿Desea cerrar sesion?'),
+            SingOutAlertButtons(),
           ],
         ),
       ),

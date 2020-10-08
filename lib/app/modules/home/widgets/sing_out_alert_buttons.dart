@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class SingOutAlertDialogButtons extends GetView<LoginController> {
-  const SingOutAlertDialogButtons({
+class SingOutAlertButtons extends GetView<LoginController> {
+  const SingOutAlertButtons({
     Key key,
   }) : super(key: key);
 
