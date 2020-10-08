@@ -1,12 +1,11 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/profile_model.dart';
-import 'package:habitat_ft_user/app/modules/home/services/profile_service.dart';
+import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
 
-class ProfileController extends GetxController {
-  ProfileService _profileService = Get.find<ProfileService>();
-
+class ProfileController extends GetxService {
   Rx<Profile> _profile = Rx<Profile>();
   StreamSubscription _subscription;
 
@@ -14,9 +13,8 @@ class ProfileController extends GetxController {
 
   @override
   void onInit() {
-    _subscription = _profileService
-        .find()
-        .listen((doc) => _profile.value = Profile.fromJson(doc.data()));
+    _subscription =
+        find().listen((doc) => _profile.value = Profile.fromJson(doc.data()));
   }
 
   @override
@@ -25,5 +23,11 @@ class ProfileController extends GetxController {
   @override
   void onClose() {
     _subscription?.cancel();
+  }
+
+  Stream<DocumentSnapshot> find() {
+    String uid = Get.find<AuthService>().user.uid;
+    print('UID: ' + uid);
+    return FirebaseFirestore.instance.collection("users").doc(uid).snapshots();
   }
 }
