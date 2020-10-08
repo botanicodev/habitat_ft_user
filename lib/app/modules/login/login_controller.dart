@@ -1,17 +1,21 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
 
-import 'services/auth_service.dart';
+class LoginController extends GetxService {
+  FirebaseAuth _auth = FirebaseAuth.instance;
 
-class LoginController extends GetxController {
-  AuthService _authService = Get.find<AuthService>();
-// TODO REFACTOR, LLEVAR LA LOGICA A CADA CAMPO, cada uno con su controller
   TextEditingController _emailController;
   TextEditingController _passwordController;
 
   RxString _error = ''.obs;
   RxBool _loading = false.obs;
+  Rx<User> _user = Rx<User>();
+
+  StreamSubscription _subscription;
 
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
@@ -20,6 +24,7 @@ class LoginController extends GetxController {
 
   String get error => _error.value;
   bool get loading => _loading.value;
+  User get user => _user.value;
 
   @override
   void onInit() {
@@ -37,17 +42,33 @@ class LoginController extends GetxController {
   void onClose() {
     _emailController?.dispose();
     _passwordController?.dispose();
+    _subscription?.cancel();
+  }
+
+  void fetch() {
+    _subscription = _auth.authStateChanges().listen((user) {
+      _user.value = user;
+      if (user.isNull) {
+        Get.toNamed(Routes.LOGIN);
+      } else {
+        Get.toNamed(Routes.HOME);
+      }
+    });
   }
 
   void login() async {
     try {
       startLoading();
-      await _authService.signInWithEmailAndPassword(email, password);
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
       catchLoginError(e);
     } finally {
       endLoading();
     }
+  }
+
+  void signOut() {
+    _auth.signOut();
   }
 
   void startLoading() => _loading.value = true;

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/profile_model.dart';
-import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
+import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 
 class ProfileController extends GetxService {
   Rx<Profile> _profile = Rx<Profile>();
@@ -26,7 +26,7 @@ class ProfileController extends GetxService {
   }
 
   Stream<DocumentSnapshot> find() {
-    String uid = Get.find<AuthService>().user.uid;
+    String uid = Get.find<LoginController>().user.uid;
     print('UID: ' + uid);
     return FirebaseFirestore.instance.collection("users").doc(uid).snapshots();
   }

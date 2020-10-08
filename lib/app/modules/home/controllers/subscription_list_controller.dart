@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/subscription_model.dart';
-import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
+import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class SubscriptionListController extends GetxController {
-  final _authService = Get.find<AuthService>();
+  final _authService = Get.find<LoginController>();
 
   RxList<Subscription> _subscriptions = <Subscription>[].obs;
   RxBool _isLoading = true.obs;
@@ -19,8 +19,8 @@ class SubscriptionListController extends GetxController {
   void startLoading() => _isLoading.value = true;
   void endLoading() => _isLoading.value = false;
 
-  void fetchByPendingStatus() => fetch(Status.pending);
-  void fetchByCompletedStatus() => fetch(Status.completed);
+  void fetchByPendingStatus() => _fetch(Status.pending);
+  void fetchByCompletedStatus() => _fetch(Status.completed);
 
   @override
   void onInit() {}
@@ -33,15 +33,15 @@ class SubscriptionListController extends GetxController {
     _subscription?.cancel();
   }
 
-  void fetch(Status status) {
-    _subscription = allByStatus(status).listen((event) {
+  void _fetch(Status status) {
+    _subscription = _allByStatus(status).listen((event) {
       _subscriptions.value =
           event.docs.map((doc) => Subscription.fromJson(doc.data())).toList();
       endLoading();
     });
   }
 
-  Stream<QuerySnapshot> allByStatus(Status status) {
+  Stream<QuerySnapshot> _allByStatus(Status status) {
     String uid = _authService.user.uid;
     print('UID: ' + uid);
     return FirebaseFirestore.instance

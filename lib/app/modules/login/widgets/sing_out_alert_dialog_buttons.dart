@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class SingOutAlertDialogButtons extends GetView<AuthService> {
+import '../login_controller.dart';
+
+class SingOutAlertDialogButtons extends GetView<LoginController> {
   const SingOutAlertDialogButtons({
     Key key,
   }) : super(key: key);
