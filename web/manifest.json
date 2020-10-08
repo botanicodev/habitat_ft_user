@@ -1,11 +1,11 @@
 {
-    "name": "habitat_ft_user",
-    "short_name": "habitat_ft_user",
+    "name": "Habitat argentina",
+    "short_name": "Habitat",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "De botanico para habitat",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

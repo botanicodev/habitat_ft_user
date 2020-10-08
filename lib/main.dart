@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Habitat",
+      title: "Habitat Argentina",
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
       initialBinding: SplashScreenBinding(),
