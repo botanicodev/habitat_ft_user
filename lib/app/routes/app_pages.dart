@@ -1,5 +1,5 @@
-import 'package:habitat_ft_user/app/modules/root/root_view.dart';
-import 'package:habitat_ft_user/app/modules/root/root_binding.dart';
+import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_view.dart';
+import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_binding.dart';
 import 'package:habitat_ft_user/app/modules/login/login_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_binding.dart';
 import 'package:habitat_ft_user/app/modules/home/home_view.dart';
@@ -8,13 +8,13 @@ import 'package:get/get.dart';
 part 'app_routes.dart';
 
 class AppPages {
-  static const INITIAL = Routes.ROOT;
+  static const INITIAL = Routes.SPLASH_SCREEN;
 
   static final routes = [
     GetPage(
-      name: Routes.ROOT, 
-      page:()=> RootView(), 
-      binding: RootBinding(),
+      name: Routes.SPLASH_SCREEN,
+      page: () => SplashScreenView(),
+      binding: SplashScreenBinding(),
     ),
     GetPage(
       name: Routes.HOME,
@@ -22,8 +22,8 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: Routes.LOGIN, 
-      page:()=> LoginView(), 
+      name: Routes.LOGIN,
+      page: () => LoginView(),
       binding: LoginBinding(),
     ),
   ];

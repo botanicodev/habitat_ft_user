@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
-import 'package:habitat_ft_user/app/modules/root/root_controller.dart';
+import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 
-class RootView extends GetView<RootController> {
+class SplashScreenView extends GetView<SplashScreenController> {
   @override
   Widget build(BuildContext context) {
     Get.find<AuthService>();

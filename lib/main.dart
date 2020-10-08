@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:habitat_ft_user/app/modules/root/root_binding.dart';
+import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_binding.dart';
 
 import 'app/routes/app_pages.dart';
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: "Habitat",
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
-      initialBinding: RootBinding(),
+      initialBinding: SplashScreenBinding(),
       getPages: AppPages.routes,
       theme: ThemeData(
         textTheme: GoogleFonts.spartanTextTheme(

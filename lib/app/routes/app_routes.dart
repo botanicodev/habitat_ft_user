@@ -3,7 +3,7 @@ part of 'app_pages.dart';
 
 abstract class Routes{
 
-  static const ROOT = '/root';
+  static const SPLASH_SCREEN = '/splash-screen';
   static const HOME = '/home';
   static const LOGIN = '/login';
 }
