@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/models/subscription_model.dart';
+import 'package:habitat_ft_user/app/modules/home/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 

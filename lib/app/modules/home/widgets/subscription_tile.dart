@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
-import 'package:habitat_ft_user/app/models/subscription_model.dart';
+import 'package:habitat_ft_user/app/modules/home/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/background_tile.dart';
 
 class SubscriptionTile extends StatelessWidget {
