@@ -1,12 +1,13 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/models/subscription_model.dart';
-import 'package:habitat_ft_user/app/modules/home/services/subscription_service.dart';
+import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class SubscriptionListController extends GetxController {
-  SubscriptionService _subscriptionService = Get.find<SubscriptionService>();
+  final _authService = Get.find<AuthService>();
 
   RxList<Subscription> _subscriptions = <Subscription>[].obs;
   RxBool _isLoading = true.obs;
@@ -33,10 +34,21 @@ class SubscriptionListController extends GetxController {
   }
 
   void fetch(Status status) {
-    _subscription = _subscriptionService.allByStatus(status).listen((event) {
+    _subscription = allByStatus(status).listen((event) {
       _subscriptions.value =
           event.docs.map((doc) => Subscription.fromJson(doc.data())).toList();
       endLoading();
     });
+  }
+
+  Stream<QuerySnapshot> allByStatus(Status status) {
+    String uid = _authService.user.uid;
+    print('UID: ' + uid);
+    return FirebaseFirestore.instance
+        .collection("users")
+        .doc(uid)
+        .collection('subscriptions')
+        .where('status', isEqualTo: status.index)
+        .snapshots();
   }
 }
