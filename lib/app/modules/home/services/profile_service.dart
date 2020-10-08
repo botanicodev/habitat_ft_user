@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
 
-class UserProfileService extends GetxService {
+class ProfileService extends GetxService {
   CollectionReference _userRef = FirebaseFirestore.instance.collection("users");
   @override
   void onInit() {}
