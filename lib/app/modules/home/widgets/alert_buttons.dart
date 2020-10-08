@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class SingOutAlertButtons extends GetView<LoginController> {
-  const SingOutAlertButtons({
+class AlertButtons extends GetView<LoginController> {
+  const AlertButtons({
     Key key,
   }) : super(key: key);
 
@@ -19,7 +19,7 @@ class SingOutAlertButtons extends GetView<LoginController> {
             Icons.highlight_remove_rounded,
             color: HColors.CANCELAR,
           ),
-          onPressed: () => Get.back(),
+          onPressed: Get.back,
         ),
         IconButton(
           iconSize: 60,
