@@ -1,10 +1,10 @@
-class ProfileUser {
+class Profile {
   String name;
   String lastname;
 
-  ProfileUser({this.name, this.lastname});
+  Profile({this.name, this.lastname});
 
-  ProfileUser.fromJson(Map<String, dynamic> json) {
+  Profile.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     lastname = json['lastname'];
   }

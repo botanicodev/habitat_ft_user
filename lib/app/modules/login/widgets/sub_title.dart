@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/config/styles.dart';
+import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class SubTitle extends StatelessWidget {
   const SubTitle({Key key}) : super(key: key);

@@ -1,19 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/config/styles.dart';
+
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
-import 'package:habitat_ft_user/app/widgets/hdrawer.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/subscription_list.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/hdrawer.dart';
+import 'package:habitat_ft_user/app/utils/config/assets.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
+
+import 'widgets/separator.dart';
+import 'widgets/workshops_title.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Habitat(logo)'), // TODO poner logo de habitat
-        centerTitle: true,
-      ),
+      appBar: buildAppBar(),
       drawer: HDrawer(),
-      body: Center(child: Text('Talleres', style: HStyles.TITULO_1_CELESTE)),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            WorkshopsTitle(),
+            SubscriptionList.pending(),
+            Separator(),
+            SubscriptionList.completed(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      backgroundColor: HColors.CELESTE_HABITAT,
+      title: Image.asset(HAssets.WHITE_LOGO_MIN),
+      centerTitle: true,
     );
   }
 }

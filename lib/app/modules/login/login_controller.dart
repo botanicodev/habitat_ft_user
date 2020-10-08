@@ -1,24 +1,38 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/services/auth_service.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
 
-class LoginController extends GetxController {
-  AuthService _authController = Get.find<AuthService>();
+class LoginController extends GetxService {
+  FirebaseAuth _auth = FirebaseAuth.instance;
 
-  TextEditingController emailController;
-  TextEditingController passwordController;
+  TextEditingController _emailController;
+  TextEditingController _passwordController;
 
-  RxString error = ''.obs;
-  RxBool loading = false.obs;
+  RxString _error = ''.obs;
+  RxBool _loading = false.obs;
+  Rx<User> _user = Rx<User>();
+
+  StreamSubscription _subscription;
+
+  TextEditingController get emailController => _emailController;
+  TextEditingController get passwordController => _passwordController;
+  String get email => _emailController.text;
+  String get password => _passwordController.text;
+
+  String get error => _error.value;
+  bool get loading => _loading.value;
+  User get user => _user.value;
 
   @override
   void onInit() {
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
     //Borrar
-    // emailController.value = TextEditingValue(text: 'hola@hola.com');
-    // passwordController.value = TextEditingValue(text: '123456789');
+    _emailController.value = TextEditingValue(text: 'hola@hola.com');
+    _passwordController.value = TextEditingValue(text: '123456789');
   }
 
   @override
@@ -26,30 +40,54 @@ class LoginController extends GetxController {
 
   @override
   void onClose() {
-    emailController?.dispose();
-    passwordController?.dispose();
+    _emailController?.dispose();
+    _passwordController?.dispose();
+    _subscription?.cancel();
+  }
+
+  void fetch() {
+    _subscription = _auth.authStateChanges().listen((user) {
+      _user.value = user;
+      if (user.isNull) {
+        Get.toNamed(Routes.LOGIN);
+      } else {
+        Get.toNamed(Routes.HOME);
+      }
+    });
   }
 
   void login() async {
-    loading.value = true;
     try {
-      await _authController.signInWithEmailAndPassword(
-          emailController.text, passwordController.text);
-      Get.offAllNamed(Routes.HOME);
+      startLoading();
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      error.value = e.message;
-      passwordController.value = TextEditingValue(text: '');
+      catchLoginError(e);
     } finally {
-      loading.value = false;
+      endLoading();
     }
   }
 
-  void signOut() async {
-    try {
-      await _authController.signOut();
-    } catch (e) {
-      Get.snackbar('Error sign out', e.message,
-          snackPosition: SnackPosition.BOTTOM);
+  void signOut() {
+    _auth.signOut();
+  }
+
+  void startLoading() => _loading.value = true;
+  void endLoading() => _loading.value = false;
+
+  void onChange(String text) {
+    if (error != '') _error.value = '';
+  }
+
+  String emailErrorText() => error == '' ? null : '';
+
+  String passwordErrorText() => error == '' ? null : error;
+
+  void catchLoginError(dynamic e) {
+    if (e == null) {
+      _error.value = 'Se rompio algo, trata de entrar en un rato';
+    } else {
+      _error.value = e.message;
     }
+    _passwordController.value = TextEditingValue(text: '');
   }
 }

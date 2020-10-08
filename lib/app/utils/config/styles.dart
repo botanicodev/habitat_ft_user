@@ -29,6 +29,13 @@ class HStyles {
     // letterSpacing: -4,
   );
 
+  static final TITULO_2_CELESTE_OSCURO = TextStyle(
+    color: HColors.CELESTE_OSCURO,
+    fontSize: TITULO_2.fontSize,
+    fontWeight: TITULO_2.fontWeight,
+    // letterSpacing: -4,
+  );
+
   static final TITULO_3 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w600,
@@ -90,6 +97,13 @@ class HStyles {
   static final BOTONES = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
+    // letterSpacing: -4,
+  );
+
+  static final BOTONES_CELESTE = TextStyle(
+    color: HColors.CELESTE_HABITAT,
+    fontSize: BOTONES.fontSize,
+    fontWeight: BOTONES.fontWeight,
     // letterSpacing: -4,
   );
 

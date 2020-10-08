@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
-import 'package:habitat_ft_user/app/config/styles.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
-import 'sing_out_alert_dialog.dart';
+import 'alert.dart';
 
-class SignOutTile extends StatelessWidget {
-  const SignOutTile({
+class SignOut extends StatelessWidget {
+  const SignOut({
     Key key,
   }) : super(key: key);
 
@@ -28,7 +28,7 @@ class SignOutTile extends StatelessWidget {
               ),
               title: Text('Cerrar sesion', style: HStyles.TITULO_3_BLANCO),
               onTap: () {
-                Get.dialog(SignOutAlertDialog());
+                Get.dialog(Alert());
               },
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/config/colors.dart';
-import 'package:habitat_ft_user/app/services/auth_service.dart';
+import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
+import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class SingOutAlertDialogButtons extends StatelessWidget {
-  const SingOutAlertDialogButtons({
+class AlertButtons extends GetView<LoginController> {
+  const AlertButtons({
     Key key,
   }) : super(key: key);
 
@@ -19,7 +19,7 @@ class SingOutAlertDialogButtons extends StatelessWidget {
             Icons.highlight_remove_rounded,
             color: HColors.CANCELAR,
           ),
-          onPressed: () => Get.back(),
+          onPressed: Get.back,
         ),
         IconButton(
           iconSize: 60,
@@ -27,7 +27,7 @@ class SingOutAlertDialogButtons extends StatelessWidget {
             Icons.check_circle_outline_rounded,
             color: HColors.CONFIRMAR,
           ),
-          onPressed: Get.find<AuthService>().signOut,
+          onPressed: controller.signOut,
         ),
       ],
     );

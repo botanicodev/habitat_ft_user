@@ -11,12 +11,11 @@ class EmailField extends GetView<LoginController> {
     return Obx(
       () => TextField(
         controller: controller.emailController,
-        onChanged: (text) => controller.error.value = '',
+        onChanged: controller.onChange,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: 'Email',
-          errorMaxLines: 4,
-          errorText: controller.error.value == '' ? null : '',
+          errorText: controller.emailErrorText(),
         ),
       ),
     );
