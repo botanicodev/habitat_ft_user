@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 
 import 'controllers/user_tile_controller.dart';
-import 'controllers/workshop_list_controller.dart';
+import 'controllers/subscription_list_controller.dart';
 
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
     Get.put<HomeController>(HomeController());
-    Get.create<WorkshopListController>(
-      () => WorkshopListController(),
+    Get.create<SubscriptionListController>(
+      () => SubscriptionListController(),
     );
     Get.lazyPut<UserTileController>(
       () => UserTileController(),

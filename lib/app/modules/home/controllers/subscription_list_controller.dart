@@ -1,18 +1,18 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/models/workshop_model.dart';
-import 'package:habitat_ft_user/app/modules/home/services/workshop_service.dart';
+import 'package:habitat_ft_user/app/models/subscription_model.dart';
+import 'package:habitat_ft_user/app/modules/home/services/subscription_service.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-class WorkshopListController extends GetxController {
-  WorkshopService _workshopService = Get.find<WorkshopService>();
+class SubscriptionListController extends GetxController {
+  SubscriptionService _subscriptionService = Get.find<SubscriptionService>();
 
-  RxList<Workshop> _workshops = <Workshop>[].obs;
+  RxList<Subscription> _subscriptions = <Subscription>[].obs;
   RxBool _isLoading = true.obs;
   StreamSubscription _subscription;
 
-  List<Workshop> get workshops => _workshops;
+  List<Subscription> get subscriptions => _subscriptions;
   bool get isLoading => _isLoading.value;
 
   void startLoading() => _isLoading.value = true;
@@ -33,9 +33,9 @@ class WorkshopListController extends GetxController {
   }
 
   void fetch(Status status) {
-    _subscription = _workshopService.allByStatus(status).listen((event) {
-      _workshops.value =
-          event.docs.map((doc) => Workshop.fromJson(doc.data())).toList();
+    _subscription = _subscriptionService.allByStatus(status).listen((event) {
+      _subscriptions.value =
+          event.docs.map((doc) => Subscription.fromJson(doc.data())).toList();
       endLoading();
     });
   }

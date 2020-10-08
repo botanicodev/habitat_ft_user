@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/login/services/auth_service.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-class WorkshopService extends GetxService {
+class SubscriptionService extends GetxService {
   final _authService = Get.find<AuthService>();
   CollectionReference _usersRef =
       FirebaseFirestore.instance.collection("users");

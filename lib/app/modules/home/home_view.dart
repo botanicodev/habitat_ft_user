@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
-import 'package:habitat_ft_user/app/modules/home/widgets/workshop_list.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/subscription_list.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/hdrawer.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
@@ -21,9 +21,9 @@ class HomeView extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WorkshopsTitle(),
-            WorkshopList.pending(),
+            SubscriptionList.pending(),
             Separator(),
-            WorkshopList.completed(),
+            SubscriptionList.completed(),
           ],
         ),
       ),

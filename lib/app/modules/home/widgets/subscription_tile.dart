@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
-import 'package:habitat_ft_user/app/models/workshop_model.dart';
+import 'package:habitat_ft_user/app/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/background_tile.dart';
 
-class WorkshopTile extends StatelessWidget {
-  final Workshop workshop;
+class SubscriptionTile extends StatelessWidget {
+  final Subscription subscription;
 
-  const WorkshopTile({
+  const SubscriptionTile({
     Key key,
-    @required this.workshop,
+    @required this.subscription,
   }) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class WorkshopTile extends StatelessWidget {
 
   Widget buildTitle() {
     return Text(
-      workshop.title,
+      subscription.title,
       style: HStyles.TITULO_3_CELESTE,
     );
   }
