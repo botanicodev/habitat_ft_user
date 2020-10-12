@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/modules/home/controllers/subscription_list_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/modules/home/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/background_tile.dart';
 
-class SubscriptionTile extends StatelessWidget {
+class SubscriptionTile extends GetView<SubscriptionListController> {
   final Subscription subscription;
 
   const SubscriptionTile({
@@ -19,7 +21,7 @@ class SubscriptionTile extends StatelessWidget {
         title: buildTitle(),
         leading: buildLeading(),
         trailing: buildTrailing(),
-        onTap: () {},
+        onTap: () => controller.onTap(subscription),
       ),
     );
   }

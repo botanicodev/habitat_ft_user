@@ -5,8 +5,8 @@ import 'package:habitat_ft_user/app/modules/workshop_display/workshop_display_co
 class WorkshopDisplayBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<WorkshopDisplayController>(
-      () => WorkshopDisplayController(),
+    Get.put<WorkshopDisplayController>(
+      WorkshopDisplayController(),
     );
   }
 }
