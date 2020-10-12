@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/workshop_display/workshop_display_controller.dart';
+import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
 
-class WorkshopDisplayView extends GetView<WorkshopDisplayController> {
+class WorkshopView extends GetView<WorkshopController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class WorkshopDisplayController extends GetxController {
+class WorkshopController extends GetxController {
   @override
   void onInit() {
     String workshopId = Get.arguments['workshopId'];
