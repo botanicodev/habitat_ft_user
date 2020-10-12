@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/home/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
+import 'package:habitat_ft_user/app/routes/app_pages.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class SubscriptionListController extends GetxController {
@@ -21,12 +22,6 @@ class SubscriptionListController extends GetxController {
 
   void fetchByPendingStatus() => _fetch(Status.pending);
   void fetchByCompletedStatus() => _fetch(Status.completed);
-
-  @override
-  void onInit() {}
-
-  @override
-  void onReady() {}
 
   @override
   void onClose() {
@@ -50,5 +45,12 @@ class SubscriptionListController extends GetxController {
         .collection('subscriptions')
         .where('status', isEqualTo: status.index)
         .snapshots();
+  }
+
+  void onTap(Subscription subscription) {
+    Get.toNamed(
+      Routes.WORKSHOP_DISPLAY,
+      arguments: {"workshopId": subscription.workshopId},
+    );
   }
 }
