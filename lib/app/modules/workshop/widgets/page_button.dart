@@ -24,7 +24,7 @@ class PageButton extends StatelessWidget {
       child: Center(
         child: RaisedButton(
           elevation: 0,
-          onPressed: () {},
+          onPressed: onPressed,
           child: Center(child: Icon(icon, color: CustomerColors.BLANCO)),
         ),
       ),
