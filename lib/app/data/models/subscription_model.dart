@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 class Subscription {
   String workshopId;
   String title;
-  SubscriptionStatus status;
+  Status status;
 
   Subscription({this.title});
 
@@ -22,15 +22,15 @@ class Subscription {
   }
 }
 
-SubscriptionStatus mapInttoStatus(int value) {
+Status mapInttoStatus(int value) {
   switch (value) {
     case 0:
-      return SubscriptionStatus.pending;
+      return Status.pending;
       break;
     case 1:
-      return SubscriptionStatus.completed;
+      return Status.completed;
       break;
     default:
-      return SubscriptionStatus.pending;
+      return Status.pending;
   }
 }
