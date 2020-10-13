@@ -10,23 +10,23 @@ class WorkshopController extends GetxController {
   RxList<Component> _components = [
     Component(
       title: 'Componente video',
-      type: MediaType.video,
-      resourceUrl: '',
+      mediaType: MediaType.video,
+      url: '',
     ),
     Component(
       title: 'Componente imagen',
-      type: MediaType.image,
-      resourceUrl: '',
+      mediaType: MediaType.image,
+      url: '',
     ),
     Component(
       title: 'Componente audio',
-      type: MediaType.audio,
-      resourceUrl: '',
+      mediaType: MediaType.audio,
+      url: '',
     ),
     Component(
       title: 'Componente file',
-      type: MediaType.file,
-      resourceUrl: '',
+      mediaType: MediaType.file,
+      url: '',
     ),
   ].obs;
 

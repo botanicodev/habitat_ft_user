@@ -1,45 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
+import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 class Component {
   String title;
-  String resourceUrl;
-  MediaType type;
+  String url;
+  MediaType mediaType;
 
   Component({
     this.title,
-    this.resourceUrl,
-    this.type,
+    this.url,
+    this.mediaType,
   });
 
-  Color get color {
-    switch (type) {
-      case MediaType.video:
-        return CustomerColors.COMPLEMENTO_1;
-      case MediaType.image:
-        return CustomerColors.COMPLEMENTO_2;
-      case MediaType.file:
-        return CustomerColors.COMPLEMENTO_3;
-      case MediaType.audio:
-        return CustomerColors.COMPLEMENTO_4;
-      default:
-        return CustomerColors.CELESTE_HABITAT;
-    }
+  Component.fromJson(Map<String, dynamic> json) {
+    title = json['title'];
+    url = json['url'];
+    mediaType = Mapper.intToMediaType(json['media_type']);
   }
 
-  IconData get icon {
-    switch (type) {
-      case MediaType.video:
-        return Icons.videocam;
-      case MediaType.image:
-        return Icons.image;
-      case MediaType.file:
-        return Icons.file_present;
-      case MediaType.audio:
-        return Icons.volume_up;
-      default:
-        return Icons.error;
-    }
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['title'] = this.title;
+    data['media_type'] = this.mediaType.index;
+    return data;
   }
+
+  Color get color => Mapper.mediaTypeToColor(mediaType);
+
+  IconData get icon => Mapper.mediaTypeToIconData(mediaType);
 }
