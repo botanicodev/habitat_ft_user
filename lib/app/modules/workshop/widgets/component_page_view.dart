@@ -18,7 +18,7 @@ class ComponentPageView extends StatelessWidget {
     return Background(
       child: Column(
         children: [
-          Header(component: component),
+          Header(component),
           // VER DE METER UN CONTROLLER PARA CADA PAGE,
           Spacer(),
           NavigationButtons(),

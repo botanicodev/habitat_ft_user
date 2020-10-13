@@ -4,9 +4,9 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class Header extends StatelessWidget {
-  const Header({
+  const Header(
+    this.component, {
     Key key,
-    @required this.component,
   }) : super(key: key);
 
   final Component component;
