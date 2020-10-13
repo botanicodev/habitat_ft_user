@@ -16,15 +16,15 @@ class Component {
   Color get color {
     switch (type) {
       case ComponentType.video:
-        return HColors.COMPLEMENTO_1;
+        return CustomerColors.COMPLEMENTO_1;
       case ComponentType.image:
-        return HColors.COMPLEMENTO_2;
+        return CustomerColors.COMPLEMENTO_2;
       case ComponentType.file:
-        return HColors.COMPLEMENTO_3;
+        return CustomerColors.COMPLEMENTO_3;
       case ComponentType.audio:
-        return HColors.COMPLEMENTO_4;
+        return CustomerColors.COMPLEMENTO_4;
       default:
-        return HColors.CELESTE_HABITAT;
+        return CustomerColors.CELESTE_HABITAT;
     }
   }
 

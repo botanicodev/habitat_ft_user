@@ -15,7 +15,7 @@ class Background extends StatelessWidget {
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: HColors.BLANCO,
+        color: CustomerColors.BLANCO,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(

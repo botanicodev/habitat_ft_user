@@ -16,7 +16,7 @@ class SignOut extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 84),
       child: Container(
         height: 78,
-        color: HColors.CELESTE_HABITAT,
+        color: CustomerColors.CELESTE_HABITAT,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -24,9 +24,9 @@ class SignOut extends StatelessWidget {
               leading: Icon(
                 Icons.logout,
                 size: 35,
-                color: HColors.BLANCO,
+                color: CustomerColors.BLANCO,
               ),
-              title: Text('Cerrar sesion', style: HStyles.TITULO_3_BLANCO),
+              title: Text('Cerrar sesion', style: CustomerStyles.TITULO_3_BLANCO),
               onTap: () {
                 Get.dialog(Alert());
               },

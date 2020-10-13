@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HColors {
+class CustomerColors {
   static const CELESTE_HABITAT = Color(0xff00B4DF);
   static const CELESTE_OSCURO = Color(0xff009ABE);
   static const CELESTE_OSCURO_2 = Color(0xff008FB1);

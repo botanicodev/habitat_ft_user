@@ -8,7 +8,7 @@ class SubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Inicio de sesion',
-      style: HStyles.SUB_TITULO_2_GRIS_50,
+      style: CustomerStyles.SUB_TITULO_2_GRIS_50,
     );
   }
 }

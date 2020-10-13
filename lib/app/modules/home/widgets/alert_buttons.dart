@@ -17,7 +17,7 @@ class AlertButtons extends GetView<LoginController> {
           iconSize: 60,
           icon: Icon(
             Icons.highlight_remove_rounded,
-            color: HColors.CANCELAR,
+            color: CustomerColors.CANCELAR,
           ),
           onPressed: Get.back,
         ),
@@ -25,7 +25,7 @@ class AlertButtons extends GetView<LoginController> {
           iconSize: 60,
           icon: Icon(
             Icons.check_circle_outline_rounded,
-            color: HColors.CONFIRMAR,
+            color: CustomerColors.CONFIRMAR,
           ),
           onPressed: controller.signOut,
         ),

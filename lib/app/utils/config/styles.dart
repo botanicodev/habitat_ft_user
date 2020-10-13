@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-class HStyles {
+class CustomerStyles {
   static final TITULO_1 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w300,
@@ -10,14 +10,14 @@ class HStyles {
   );
 
   static final TITULO_1_CELESTE = TextStyle(
-    color: HColors.CELESTE_HABITAT,
+    color: CustomerColors.CELESTE_HABITAT,
     fontSize: TITULO_1.fontSize,
     fontWeight: TITULO_1.fontWeight,
     // letterSpacing: TITULO_1.letterSpacing,
   );
 
   static final TITULO_1_BLANCO = TextStyle(
-    color: HColors.BLANCO,
+    color: CustomerColors.BLANCO,
     fontSize: 16,
     fontWeight: TITULO_1.fontWeight,
     // letterSpacing: TITULO_1.letterSpacing,
@@ -30,7 +30,7 @@ class HStyles {
   );
 
   static final TITULO_2_CELESTE_OSCURO = TextStyle(
-    color: HColors.CELESTE_OSCURO,
+    color: CustomerColors.CELESTE_OSCURO,
     fontSize: TITULO_2.fontSize,
     fontWeight: TITULO_2.fontWeight,
     // letterSpacing: -4,
@@ -43,14 +43,14 @@ class HStyles {
   );
 
   static final TITULO_3_BLANCO = TextStyle(
-    color: HColors.BLANCO,
+    color: CustomerColors.BLANCO,
     fontSize: 20,
     fontWeight: TITULO_3.fontWeight,
     // letterSpacing: -4,
   );
 
   static final TITULO_3_CELESTE = TextStyle(
-    color: HColors.CELESTE_HABITAT,
+    color: CustomerColors.CELESTE_HABITAT,
     fontSize: 20,
     fontWeight: TITULO_3.fontWeight,
     // letterSpacing: -4,
@@ -63,7 +63,7 @@ class HStyles {
   );
 
   static final SUB_TITULO_1_BLANCO = TextStyle(
-    color: HColors.BLANCO,
+    color: CustomerColors.BLANCO,
     fontSize: 16,
     fontWeight: SUB_TITULO_1.fontWeight,
     // letterSpacing: -1.3,
@@ -76,7 +76,7 @@ class HStyles {
   );
 
   static final SUB_TITULO_2_GRIS_50 = TextStyle(
-    color: HColors.GRIS_50,
+    color: CustomerColors.GRIS_50,
     fontSize: SUB_TITULO_2.fontSize,
     fontWeight: SUB_TITULO_2.fontWeight,
     // // letterSpacing: SUB_TITULO_2.letterSpacing,
@@ -101,7 +101,7 @@ class HStyles {
   );
 
   static final BOTONES_CELESTE = TextStyle(
-    color: HColors.CELESTE_HABITAT,
+    color: CustomerColors.CELESTE_HABITAT,
     fontSize: BOTONES.fontSize,
     fontWeight: BOTONES.fontWeight,
     // letterSpacing: -4,

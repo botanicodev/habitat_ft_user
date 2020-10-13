@@ -31,7 +31,7 @@ class Header extends StatelessWidget {
       child: Icon(
         component.icon,
         size: 25,
-        color: HColors.BLANCO,
+        color: CustomerColors.BLANCO,
       ),
     );
     return ClipOval(
@@ -41,7 +41,7 @@ class Header extends StatelessWidget {
 
   Widget buildText() => Text(
         component.title,
-        style: HStyles.TITULO_3.copyWith(
+        style: CustomerStyles.TITULO_3.copyWith(
           color: component.color,
         ),
       );

@@ -12,7 +12,7 @@ class HDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: HColors.GRIS_01,
+      backgroundColor: CustomerColors.GRIS_01,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10.0))),
       content: content,

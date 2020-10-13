@@ -11,7 +11,7 @@ class WorkshopsTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 40, bottom: 10),
       child: Center(
-          child: Text('Talleres', style: HStyles.TITULO_2_CELESTE_OSCURO)),
+          child: Text('Talleres', style: CustomerStyles.TITULO_2_CELESTE_OSCURO)),
     );
   }
 }

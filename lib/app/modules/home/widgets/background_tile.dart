@@ -15,7 +15,7 @@ class BackgroundTile extends StatelessWidget {
       margin: EdgeInsets.only(left: 12, right: 12, top: 12),
       height: 75,
       decoration: BoxDecoration(
-        color: HColors.BLANCO,
+        color: CustomerColors.BLANCO,
         borderRadius: BorderRadius.all(Radius.circular(10)),
         boxShadow: [
           BoxShadow(

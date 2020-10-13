@@ -14,8 +14,8 @@ class PageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      buttonColor: HColors.CELESTE_HABITAT,
-      splashColor: HColors.CELESTE_OSCURO_2,
+      buttonColor: CustomerColors.CELESTE_HABITAT,
+      splashColor: CustomerColors.CELESTE_OSCURO_2,
       minWidth: 80,
       height: 40,
       shape: RoundedRectangleBorder(
@@ -25,7 +25,7 @@ class PageButton extends StatelessWidget {
         child: RaisedButton(
           elevation: 0,
           onPressed: () {},
-          child: Center(child: Icon(icon, color: HColors.BLANCO)),
+          child: Center(child: Icon(icon, color: CustomerColors.BLANCO)),
         ),
       ),
     );

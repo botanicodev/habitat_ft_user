@@ -12,7 +12,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
       children: [
         Container(
           child: Image.asset(
-            HAssets.SPLASH_SCREEN,
+            CustomerAssets.SPLASH_SCREEN,
             fit: BoxFit.cover,
             height: Get.height,
             width: Get.width,

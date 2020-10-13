@@ -14,16 +14,16 @@ class EnterButton extends GetView<LoginController> {
       () => controller.loading
           ? CircularProgressIndicator()
           : ButtonTheme(
-              buttonColor: HColors.CELESTE_HABITAT,
+              buttonColor: CustomerColors.CELESTE_HABITAT,
               minWidth: 306,
               height: 50,
-              splashColor: HColors.CELESTE_OSCURO_2,
+              splashColor: CustomerColors.CELESTE_OSCURO_2,
               child: RaisedButton(
                 elevation: 0,
                 onPressed: controller.login,
                 child: Text(
                   'Ingresar',
-                  style: HStyles.TITULO_1_BLANCO,
+                  style: CustomerStyles.TITULO_1_BLANCO,
                 ),
               ),
             ),

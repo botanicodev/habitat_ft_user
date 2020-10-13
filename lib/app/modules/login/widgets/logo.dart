@@ -8,6 +8,6 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(HAssets.LIGHT_BLUE_LOGO);
+    return Image.asset(CustomerAssets.LIGHT_BLUE_LOGO);
   }
 }

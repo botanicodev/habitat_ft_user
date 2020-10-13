@@ -14,7 +14,7 @@ class Profile extends GetWidget<ProfileController> {
           child: Container(
             height: 40,
             width: 40,
-            color: HColors.COMPLEMENTO_1,
+            color: CustomerColors.COMPLEMENTO_1,
           ),
         ),
         title: buildTitle(),
@@ -28,7 +28,7 @@ class Profile extends GetWidget<ProfileController> {
           controller.profile.isNull
               ? 'Cargando...'
               : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
-          style: HStyles.SUB_TITULO_1_BLANCO);
+          style: CustomerStyles.SUB_TITULO_1_BLANCO);
     });
   }
 }

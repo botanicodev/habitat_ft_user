@@ -29,7 +29,7 @@ class SubscriptionTile extends GetView<SubscriptionListController> {
   Widget buildTitle() {
     return Text(
       subscription.title,
-      style: HStyles.TITULO_3_CELESTE,
+      style: CustomerStyles.TITULO_3_CELESTE,
     );
   }
 
@@ -46,7 +46,7 @@ class SubscriptionTile extends GetView<SubscriptionListController> {
   Widget buildTrailing() {
     return Icon(
       Icons.play_circle_fill_rounded,
-      color: HColors.CELESTE_HABITAT,
+      color: CustomerColors.CELESTE_HABITAT,
       size: 40,
     );
   }
