@@ -38,18 +38,14 @@ class ComponentPageView extends StatelessWidget {
 
   Widget buildPreviusButton() {
     return PageButton(
-      onPressed: () {
-        workshopController.previusPage();
-      },
+      onPressed: workshopController.previusPage,
       icon: Icons.arrow_back_ios,
     );
   }
 
   Widget buildNextButton() {
     return PageButton(
-      onPressed: () {
-        workshopController.nextPage();
-      },
+      onPressed: workshopController.nextPage,
       icon: Icons.arrow_forward_ios,
     );
   }

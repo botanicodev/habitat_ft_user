@@ -44,11 +44,12 @@ class WorkshopController extends GetxController {
     pageController.dispose();
   }
 
-  void nextPage() {
-    // VER QUE NO FUNCA
-  }
+  void previusPage() => _moveToPage(pageController.page.round() - 1);
+  void nextPage() => _moveToPage(pageController.page.round() + 1);
 
-  void previusPage() {
-    // VER QUE NO FUNCA
-  }
+  void _moveToPage(int page) => pageController.animateToPage(
+        page,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeIn,
+      );
 }
