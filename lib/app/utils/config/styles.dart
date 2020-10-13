@@ -37,7 +37,7 @@ class HStyles {
   );
 
   static final TITULO_3 = TextStyle(
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: FontWeight.w600,
     // letterSpacing: -4,
   );
@@ -51,13 +51,6 @@ class HStyles {
 
   static final TITULO_3_CELESTE = TextStyle(
     color: HColors.CELESTE_HABITAT,
-    fontSize: 20,
-    fontWeight: TITULO_3.fontWeight,
-    // letterSpacing: -4,
-  );
-
-  static final TITULO_3_COMPLEMENTO_1 = TextStyle(
-    color: HColors.COMPLEMENTO_1,
     fontSize: 20,
     fontWeight: TITULO_3.fontWeight,
     // letterSpacing: -4,

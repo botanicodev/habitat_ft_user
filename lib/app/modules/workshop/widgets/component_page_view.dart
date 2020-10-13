@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/workshop/models/component_model.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
-import 'package:habitat_ft_user/app/utils/config/styles.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/page_button.dart';
 
+import '../workshop_controller.dart';
 import 'background.dart';
+import 'header.dart';
 
 class ComponentPageView extends StatelessWidget {
+  final WorkshopController workshopController = Get.find();
   final Component component;
 
-  const ComponentPageView(
+  ComponentPageView(
     this.component, {
     Key key,
   }) : super(key: key);
@@ -18,27 +21,37 @@ class ComponentPageView extends StatelessWidget {
     return Background(
       child: Column(
         children: [
+          Header(component: component),
+          // VER DE METER UN CONTROLLER PARA CADA PAGE,
+          Spacer(),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ClipOval(
-                child: Container(
-                  color: HColors.COMPLEMENTO_1,
-                  height: 35,
-                  width: 35,
-                  child: Icon(
-                    Icons.videocam,
-                    size: 25,
-                    color: HColors.BLANCO,
-                  ),
-                ),
-              ),
-              Spacer(),
-              Text(component.title, style: HStyles.TITULO_3_COMPLEMENTO_1),
-              Spacer(),
+              buildPreviusButton(),
+              buildNextButton(),
             ],
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildPreviusButton() {
+    return PageButton(
+      onPressed: () {
+        workshopController.nextPage();
+        
+      },
+      icon: Icons.arrow_back_ios,
+    );
+  }
+
+  Widget buildNextButton() {
+    return PageButton(
+      onPressed: () {
+        workshopController.nextPage();
+      },
+      icon: Icons.arrow_forward_ios,
     );
   }
 }
