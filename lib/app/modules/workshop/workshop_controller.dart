@@ -5,7 +5,8 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'models/component_model.dart';
 
 class WorkshopController extends GetxController {
-  PageController _pageController;
+  PageController pageController;
+
   RxList<Component> _components = [
     Component(
       title: 'Componente video',
@@ -29,18 +30,21 @@ class WorkshopController extends GetxController {
     ),
   ].obs;
 
-  PageController get pageController => _pageController;
   List<Component> get components => _components.value;
 
   @override
   void onInit() {
-    _pageController = PageController(initialPage: 0);
+    pageController = PageController(initialPage: 0);
     String workshopId = Get.arguments['workshopId'];
     print(workshopId);
   }
 
   @override
   void onClose() {
-    _pageController.dispose();
+    pageController.dispose();
+  }
+
+  void nextPage() {
+    pageController.jumpToPage(3);
   }
 }
