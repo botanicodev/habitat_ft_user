@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-import 'models/component_model.dart';
+import '../../data/models/component_model.dart';
 
 class WorkshopController extends GetxController {
   PageController pageController;
@@ -45,6 +45,10 @@ class WorkshopController extends GetxController {
   }
 
   void nextPage() {
-    pageController.jumpToPage(3);
+    // VER QUE NO FUNCA
+  }
+
+  void previusPage() {
+    // VER QUE NO FUNCA
   }
 }

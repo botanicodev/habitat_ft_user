@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/workshop/models/component_model.dart';
+import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/page_button.dart';
 
 import '../workshop_controller.dart';
@@ -39,8 +39,7 @@ class ComponentPageView extends StatelessWidget {
   Widget buildPreviusButton() {
     return PageButton(
       onPressed: () {
-        workshopController.nextPage();
-        
+        workshopController.previusPage();
       },
       icon: Icons.arrow_back_ios,
     );
