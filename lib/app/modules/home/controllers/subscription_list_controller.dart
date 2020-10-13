@@ -49,7 +49,7 @@ class SubscriptionListController extends GetxController {
 
   void onTap(Subscription subscription) {
     Get.toNamed(
-      Routes.WORKSHOP_DISPLAY,
+      Routes.WORKSHOP,
       arguments: {"workshopId": subscription.workshopId},
     );
   }
