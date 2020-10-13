@@ -12,6 +12,8 @@ class WorkshopView extends GetView<WorkshopController> {
       appBar: BuildWidget.appBar(),
       body: Obx(
         () {
+          if (controller.components.isEmpty)
+            return Center(child: CircularProgressIndicator());
           return PageView(
             controller: controller.pageController,
             children: controller.components

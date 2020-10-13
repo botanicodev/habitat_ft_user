@@ -1,47 +1,43 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/enums.dart';
 
 import '../../data/models/component_model.dart';
 
 class WorkshopController extends GetxController {
   PageController pageController;
 
-  RxList<Component> _components = [
-    Component(
-      title: 'Componente video',
-      mediaType: MediaType.video,
-      url: '',
-    ),
-    Component(
-      title: 'Componente imagen',
-      mediaType: MediaType.image,
-      url: '',
-    ),
-    Component(
-      title: 'Componente audio',
-      mediaType: MediaType.audio,
-      url: '',
-    ),
-    Component(
-      title: 'Componente file',
-      mediaType: MediaType.file,
-      url: '',
-    ),
-  ].obs;
+  RxList<Component> _components = <Component>[].obs;
 
-  List<Component> get components => _components.value;
+  List<Component> get components => _components;
 
   @override
   void onInit() {
     pageController = PageController(initialPage: 0);
-    String workshopId = Get.arguments['workshopId'];
-    print(workshopId);
+    fetch();
   }
 
   @override
   void onClose() {
     pageController.dispose();
+  }
+
+  void fetch() async {
+    String workshopId = Get.arguments['workshopId'];
+
+    var doc = await FirebaseFirestore.instance
+        .collection("workshops")
+        .doc(workshopId)
+        .collection("moments")
+        .get();
+
+    doc.docs.forEach((moment) {
+      List components = moment.data()['components'];
+      components.forEach((component) {
+        _components.add(Component.fromJson(component));
+      });
+    });
+    // FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
 
   void previusPage() => _moveToPage(pageController.page.round() - 1);
