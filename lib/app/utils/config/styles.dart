@@ -56,6 +56,13 @@ class HStyles {
     // letterSpacing: -4,
   );
 
+  static final TITULO_3_COMPLEMENTO_1 = TextStyle(
+    color: HColors.COMPLEMENTO_1,
+    fontSize: 20,
+    fontWeight: TITULO_3.fontWeight,
+    // letterSpacing: -4,
+  );
+
   static final SUB_TITULO_1 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
