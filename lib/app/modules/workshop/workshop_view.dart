@@ -9,7 +9,7 @@ class WorkshopView extends GetView<WorkshopController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildWidget.buildAppBar(),
+      appBar: BuildWidget.appBar(),
       body: Obx(
         () {
           return PageView(

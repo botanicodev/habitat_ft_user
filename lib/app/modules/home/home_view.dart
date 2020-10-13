@@ -13,7 +13,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildWidget.buildAppBar(),
+      appBar: BuildWidget.appBar(),
       drawer: HDrawer(),
       body: SingleChildScrollView(
         child: Column(
