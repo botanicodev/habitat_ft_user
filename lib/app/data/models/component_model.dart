@@ -5,7 +5,7 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 class Component {
   String title;
   String resourceUrl;
-  ComponentType type;
+  MediaType type;
 
   Component({
     this.title,
@@ -15,13 +15,13 @@ class Component {
 
   Color get color {
     switch (type) {
-      case ComponentType.video:
+      case MediaType.video:
         return CustomerColors.COMPLEMENTO_1;
-      case ComponentType.image:
+      case MediaType.image:
         return CustomerColors.COMPLEMENTO_2;
-      case ComponentType.file:
+      case MediaType.file:
         return CustomerColors.COMPLEMENTO_3;
-      case ComponentType.audio:
+      case MediaType.audio:
         return CustomerColors.COMPLEMENTO_4;
       default:
         return CustomerColors.CELESTE_HABITAT;
@@ -30,13 +30,13 @@ class Component {
 
   IconData get icon {
     switch (type) {
-      case ComponentType.video:
+      case MediaType.video:
         return Icons.videocam;
-      case ComponentType.image:
+      case MediaType.image:
         return Icons.image;
-      case ComponentType.file:
+      case MediaType.file:
         return Icons.file_present;
-      case ComponentType.audio:
+      case MediaType.audio:
         return Icons.volume_up;
       default:
         return Icons.error;

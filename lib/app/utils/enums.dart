@@ -1,2 +1,2 @@
 enum SubscriptionStatus { pending, completed }
-enum ComponentType { video, image, file, audio }
+enum MediaType { video, image, file, audio }
