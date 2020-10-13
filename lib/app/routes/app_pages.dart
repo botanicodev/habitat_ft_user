@@ -29,7 +29,7 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: Routes.WORKSHOP_DISPLAY,
+      name: Routes.WORKSHOP,
       page: () => WorkshopView(),
       binding: WorkshopBinding(),
     ),
