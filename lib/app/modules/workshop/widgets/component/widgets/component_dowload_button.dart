@@ -4,10 +4,10 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/utils/helper.dart';
 
-class DownloadButton extends StatelessWidget {
+class ComponentDownloadButton extends StatelessWidget {
   final Component component;
 
-  const DownloadButton(this.component, {Key key}) : super(key: key);
+  const ComponentDownloadButton(this.component, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

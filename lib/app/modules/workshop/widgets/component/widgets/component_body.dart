@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-import '../dowload_button.dart';
+import 'component_dowload_button.dart';
 
 class ComponentBody extends StatelessWidget {
   final Component component;
@@ -33,7 +33,7 @@ class ComponentBody extends StatelessWidget {
 
   Widget buildFileBody() => Padding(
         padding: EdgeInsets.symmetric(horizontal: 88),
-        child: DownloadButton(component),
+        child: ComponentDownloadButton(component),
       );
 
   Widget buildAudioBody() => Container();
