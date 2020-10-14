@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
 class Background extends StatelessWidget {
-  final Widget child;
+  final List<Widget> children;
 
   const Background({
     Key key,
-    @required this.child,
+    @required this.children,
   }) : super(key: key);
 
   @override
@@ -24,7 +24,10 @@ class Background extends StatelessWidget {
           ),
         ],
       ),
-      child: child,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: children,
+      ),
     );
   }
 }
