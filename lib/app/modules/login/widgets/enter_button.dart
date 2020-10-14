@@ -23,7 +23,7 @@ class EnterButton extends GetView<LoginController> {
                 onPressed: controller.login,
                 child: Text(
                   'Ingresar',
-                  style: CustomerStyles.TITULO_1_BLANCO,
+                  style: CustomerStyles.SUB_TITULO_1_BLANCO,
                 ),
               ),
             ),
