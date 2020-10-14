@@ -37,6 +37,7 @@ class WorkshopController extends GetxController {
         _components.add(Component.fromJson(component));
       });
     });
+    // Agregarle un indice al componente para buscarlo en la lista, para no pasar componente como parametro
     // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
 
