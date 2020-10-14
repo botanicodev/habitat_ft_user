@@ -7,10 +7,10 @@ import 'background.dart';
 import 'page_header.dart';
 import 'navigation_buttons.dart';
 
-class PageComponentView extends StatelessWidget {
+class PageComponent extends StatelessWidget {
   final Component component;
 
-  PageComponentView(
+  PageComponent(
     this.component, {
     Key key,
   }) : super(key: key);

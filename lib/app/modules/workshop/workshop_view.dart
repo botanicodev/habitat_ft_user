@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
 
-import 'widgets/page_component_view.dart';
+import 'widgets/page_component.dart';
 
 class WorkshopView extends GetView<WorkshopController> {
   @override
@@ -17,7 +17,7 @@ class WorkshopView extends GetView<WorkshopController> {
           return PageView(
             controller: controller.pageController,
             children: controller.components
-                .map((component) => PageComponentView(component))
+                .map((component) => PageComponent(component))
                 .toList(),
           );
         },
