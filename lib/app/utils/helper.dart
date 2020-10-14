@@ -8,4 +8,11 @@ abstract class Helper {
       throw 'Could not launch $url';
     }
   }
+
+  static String durationToMinutesAndSeconds(Duration duration) {
+    final list = duration.toString().split(':');
+    final minutes = list[1];
+    final seconds = list[2].split('.')[0];
+    return '$minutes:$seconds';
+  }
 }
