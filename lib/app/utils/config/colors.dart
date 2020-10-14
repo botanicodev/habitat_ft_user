@@ -10,10 +10,10 @@ class CustomerColors {
   static const COMPLEMENTO_2 = Color(0xffB080E1);
   static const COMPLEMENTO_3 = Color(0xff00D99D);
   static const COMPLEMENTO_4 = Color(0xffF67227);
-  static const GRIS_75 = Color(0xff616161);
-  static const GRIS_50 = Color(0xff979797);
-  static const GRIS_25 = Color(0xffC8C8C8);
-  static const GRIS_05 = Color(0xffC8C8C8);
   static const GRIS_01 = Color(0xffF8F8F8);
+  static const GRIS_05 = Color(0xffEFEFEF);
+  static const GRIS_25 = Color(0xffC8C8C8);
+  static const GRIS_50 = Color(0xff979797);
+  static const GRIS_75 = Color(0xff616161);
   static const BLANCO = Color(0xffFFFFFF);
 }
