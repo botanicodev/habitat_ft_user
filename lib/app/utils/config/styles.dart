@@ -93,4 +93,7 @@ class CustomerStyles {
 
   static final BOTONES_CELESTE =
       BOTONES.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final TAGS_CELESTE =
+      TAGS.copyWith(color: CustomerColors.CELESTE_HABITAT);
 }
