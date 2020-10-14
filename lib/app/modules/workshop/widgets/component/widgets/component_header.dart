@@ -4,12 +4,12 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class ComponentHeader extends StatelessWidget {
+  final Component component;
+
   const ComponentHeader(
     this.component, {
     Key key,
   }) : super(key: key);
-
-  final Component component;
 
   @override
   Widget build(BuildContext context) {

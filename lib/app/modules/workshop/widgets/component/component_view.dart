@@ -9,11 +9,7 @@ import 'widgets/component_navigation_buttons.dart';
 
 class ComponentView extends StatelessWidget {
   final Component component;
-
-  ComponentView(
-    this.component, {
-    Key key,
-  }) : super(key: key);
+  ComponentView(this.component, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
