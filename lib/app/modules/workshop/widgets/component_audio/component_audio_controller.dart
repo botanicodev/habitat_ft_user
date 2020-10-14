@@ -8,7 +8,7 @@ class ComponentAudioController extends GetxController {
 
   Rx<VideoPlayerController> _videoPlayerController;
   RxBool _isPlaying = false.obs;
-  RxString _duration = ''.obs;
+  RxString _duration = '00:00'.obs;
 
   Component get component => this._component.value;
   VideoPlayerController get videoPlayerController =>
