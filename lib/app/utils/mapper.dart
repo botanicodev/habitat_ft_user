@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:habitat_ft_user/app/data/models/component_model.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_image/component_image_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/component_file_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/component_audio_view.dart';
 
 import 'config/colors.dart';
 import 'enums.dart';
@@ -61,6 +66,23 @@ abstract class Mapper {
       default:
         print('No se encontro un indice para mapear un MediaType-IconData');
         return Icons.error;
+    }
+  }
+
+  static Widget componentToWidget(Component component) {
+    switch (component.mediaType) {
+      case MediaType.video:
+        return ComponentVideoView(component);
+      case MediaType.image:
+        return ComponentImageView(component);
+      case MediaType.file:
+        return ComponentFileView(component);
+      case MediaType.audio:
+        return ComponentAudioView(component);
+      default:
+        print('No se encontro un indice para mapear un Component-Widget');
+        return Center(
+            child: Text('Error. No se encontro componente relacionado...'));
     }
   }
 }

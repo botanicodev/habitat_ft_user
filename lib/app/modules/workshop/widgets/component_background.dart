@@ -25,7 +25,7 @@ class ComponentBackground extends StatelessWidget {
         ],
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: children,
       ),
     );

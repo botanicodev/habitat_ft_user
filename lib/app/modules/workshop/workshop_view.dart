@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
 
-import 'widgets/component/component_view.dart';
+import 'widgets/component_navigation_buttons.dart';
+import 'widgets/component_page_view.dart';
 
 class WorkshopView extends GetView<WorkshopController> {
   @override
@@ -11,17 +12,20 @@ class WorkshopView extends GetView<WorkshopController> {
     return Scaffold(
       appBar: BuildWidget.appBar(),
       body: Obx(
-        () {
-          if (controller.components.isEmpty)
-            return Center(child: CircularProgressIndicator());
-          return PageView(
-            controller: controller.pageController,
-            children: controller.components
-                .map((component) => ComponentView(component))
-                .toList(),
-          );
-        },
+        () => buildBodyWithLoading(
+          children: [
+            ComponentPageView(),
+            ComponentNavigationButtons(),
+          ],
+        ),
       ),
     );
+  }
+
+  Widget buildBodyWithLoading({List<Widget> children}) {
+    if (controller.components.isEmpty)
+      return Center(child: CircularProgressIndicator());
+    else
+      return Column(children: children);
   }
 }
