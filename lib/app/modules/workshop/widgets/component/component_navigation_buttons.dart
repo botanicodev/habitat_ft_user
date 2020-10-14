@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-import '../workshop_controller.dart';
+import '../../workshop_controller.dart';
 
-class PageNavigationButtons extends GetView<WorkshopController> {
-  const PageNavigationButtons({Key key}) : super(key: key);
+class ComponentNavigationButtons extends GetView<WorkshopController> {
+  const ComponentNavigationButtons({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +19,25 @@ class PageNavigationButtons extends GetView<WorkshopController> {
   }
 
   Widget buildPreviusButton() {
-    return PageButton(
+    return ComponentButton(
       onPressed: controller.previusPage,
       icon: Icons.arrow_back_ios,
     );
   }
 
   Widget buildNextButton() {
-    return PageButton(
+    return ComponentButton(
       onPressed: controller.nextPage,
       icon: Icons.arrow_forward_ios,
     );
   }
 }
 
-class PageButton extends StatelessWidget {
+class ComponentButton extends StatelessWidget {
   final void Function() onPressed;
   final IconData icon;
 
-  const PageButton({
+  const ComponentButton({
     Key key,
     @required this.onPressed,
     @required this.icon,

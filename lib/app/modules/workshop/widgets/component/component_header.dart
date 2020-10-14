@@ -3,8 +3,8 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
-class PageHeader extends StatelessWidget {
-  const PageHeader(
+class ComponentHeader extends StatelessWidget {
+  const ComponentHeader(
     this.component, {
     Key key,
   }) : super(key: key);

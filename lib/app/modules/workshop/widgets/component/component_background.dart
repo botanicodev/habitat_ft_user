@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class Background extends StatelessWidget {
+class ComponentBackground extends StatelessWidget {
   final List<Widget> children;
 
-  const Background({
+  const ComponentBackground({
     Key key,
     @required this.children,
   }) : super(key: key);

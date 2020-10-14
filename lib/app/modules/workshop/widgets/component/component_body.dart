@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-import 'dowload_button.dart';
+import '../dowload_button.dart';
 
-class Body extends StatelessWidget {
+class ComponentBody extends StatelessWidget {
   final Component component;
-  const Body(
+  const ComponentBody(
     this.component, {
     Key key,
   }) : super(key: key);
