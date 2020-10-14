@@ -5,7 +5,7 @@ import 'package:habitat_ft_user/app/modules/workshop/widgets/body.dart';
 
 import 'background.dart';
 import 'page_header.dart';
-import 'navigation_buttons.dart';
+import 'page_navigation_buttons.dart';
 
 class PageComponent extends StatelessWidget {
   final Component component;
@@ -21,7 +21,7 @@ class PageComponent extends StatelessWidget {
       children: [
         PageHeader(component),
         Body(component),
-        NavigationButtons(),
+        PageNavigationButtons(),
       ],
     );
   }
