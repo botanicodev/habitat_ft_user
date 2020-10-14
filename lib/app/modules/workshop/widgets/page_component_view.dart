@@ -4,7 +4,7 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/body.dart';
 
 import 'background.dart';
-import 'header.dart';
+import 'page_header.dart';
 import 'navigation_buttons.dart';
 
 class PageComponentView extends StatelessWidget {
@@ -19,7 +19,7 @@ class PageComponentView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Background(
       children: [
-        Header(component),
+        PageHeader(component),
         Body(component),
         NavigationButtons(),
       ],
