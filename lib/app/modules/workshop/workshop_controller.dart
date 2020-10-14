@@ -37,7 +37,7 @@ class WorkshopController extends GetxController {
         _components.add(Component.fromJson(component));
       });
     });
-    // FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
+    // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
 
   void previusPage() => _moveToPage(pageController.page.round() - 1);
