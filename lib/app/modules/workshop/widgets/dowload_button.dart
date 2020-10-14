@@ -23,8 +23,7 @@ class DownloadButton extends StatelessWidget {
           children: [
             Text(
               'Descargar',
-              style: CustomerStyles.SUB_TITULO_1
-                  .copyWith(color: CustomerColors.BLANCO),
+              style: CustomerStyles.SUB_TITULO_1_BLANCO,
             ),
             Icon(
               Icons.cloud_download,

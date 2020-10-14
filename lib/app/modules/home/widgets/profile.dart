@@ -25,10 +25,11 @@ class Profile extends GetWidget<ProfileController> {
   Widget buildTitle() {
     return Obx(() {
       return Text(
-          controller.profile.isNull
-              ? 'Cargando...'
-              : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
-          style: CustomerStyles.SUB_TITULO_1_BLANCO);
+        controller.profile.isNull
+            ? 'Cargando...'
+            : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
+        style: CustomerStyles.SUB_TITULO_1_BLANCO,
+      );
     });
   }
 }

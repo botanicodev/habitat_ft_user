@@ -9,30 +9,9 @@ class CustomerStyles {
     // letterSpacing: -2.3,
   );
 
-  static final TITULO_1_CELESTE = TextStyle(
-    color: CustomerColors.CELESTE_HABITAT,
-    fontSize: TITULO_1.fontSize,
-    fontWeight: TITULO_1.fontWeight,
-    // letterSpacing: TITULO_1.letterSpacing,
-  );
-
-  static final TITULO_1_BLANCO = TextStyle(
-    color: CustomerColors.BLANCO,
-    fontSize: 16,
-    fontWeight: TITULO_1.fontWeight,
-    // letterSpacing: TITULO_1.letterSpacing,
-  );
-
   static final TITULO_2 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w600,
-    // letterSpacing: -4,
-  );
-
-  static final TITULO_2_CELESTE_OSCURO = TextStyle(
-    color: CustomerColors.CELESTE_OSCURO,
-    fontSize: TITULO_2.fontSize,
-    fontWeight: TITULO_2.fontWeight,
     // letterSpacing: -4,
   );
 
@@ -42,30 +21,9 @@ class CustomerStyles {
     // letterSpacing: -4,
   );
 
-  static final TITULO_3_BLANCO = TextStyle(
-    color: CustomerColors.BLANCO,
-    fontSize: 20,
-    fontWeight: TITULO_3.fontWeight,
-    // letterSpacing: -4,
-  );
-
-  static final TITULO_3_CELESTE = TextStyle(
-    color: CustomerColors.CELESTE_HABITAT,
-    fontSize: 20,
-    fontWeight: TITULO_3.fontWeight,
-    // letterSpacing: -4,
-  );
-
   static final SUB_TITULO_1 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    // letterSpacing: -1.3,
-  );
-
-  static final SUB_TITULO_1_BLANCO = TextStyle(
-    color: CustomerColors.BLANCO,
-    fontSize: 16,
-    fontWeight: SUB_TITULO_1.fontWeight,
     // letterSpacing: -1.3,
   );
 
@@ -73,13 +31,6 @@ class CustomerStyles {
     fontSize: 14,
     fontWeight: FontWeight.w600,
     // letterSpacing: -5,
-  );
-
-  static final SUB_TITULO_2_GRIS_50 = TextStyle(
-    color: CustomerColors.GRIS_50,
-    fontSize: SUB_TITULO_2.fontSize,
-    fontWeight: SUB_TITULO_2.fontWeight,
-    // // letterSpacing: SUB_TITULO_2.letterSpacing,
   );
 
   static final LECTURA = TextStyle(
@@ -100,18 +51,11 @@ class CustomerStyles {
     // letterSpacing: -4,
   );
 
-  static final BOTONES_CELESTE = TextStyle(
-    color: CustomerColors.CELESTE_HABITAT,
-    fontSize: BOTONES.fontSize,
-    fontWeight: BOTONES.fontWeight,
-    // letterSpacing: -4,
-  );
-
   static final LINK_BOTON = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
-    // letterSpacing: -4,
     decoration: TextDecoration.underline,
+    // letterSpacing: -4,
   );
 
   static final INFORMACION = TextStyle(
@@ -125,4 +69,28 @@ class CustomerStyles {
     fontWeight: FontWeight.w500,
     // letterSpacing: -4,
   );
+
+  static final TITULO_1_CELESTE =
+      TITULO_1.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final TITULO_1_BLANCO =
+      TITULO_1.copyWith(color: CustomerColors.BLANCO);
+
+  static final TITULO_2_CELESTE_OSCURO =
+      TITULO_2.copyWith(color: CustomerColors.CELESTE_OSCURO);
+
+  static final TITULO_3_BLANCO =
+      TITULO_3.copyWith(color: CustomerColors.BLANCO);
+
+  static final TITULO_3_CELESTE =
+      TITULO_3.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final SUB_TITULO_1_BLANCO =
+      SUB_TITULO_1.copyWith(color: CustomerColors.BLANCO);
+
+  static final SUB_TITULO_2_GRIS_50 =
+      SUB_TITULO_2.copyWith(color: CustomerColors.GRIS_50);
+
+  static final BOTONES_CELESTE =
+      BOTONES.copyWith(color: CustomerColors.CELESTE_HABITAT);
 }
