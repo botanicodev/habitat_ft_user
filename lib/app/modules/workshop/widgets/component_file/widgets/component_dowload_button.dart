@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
-import 'package:habitat_ft_user/app/utils/helper.dart';
 
-class ComponentDownloadButton extends StatelessWidget {
+import '../component_file_controller.dart';
+
+class ComponentDownloadButton extends GetView<ComponentFileController> {
   final Component component;
 
   const ComponentDownloadButton(this.component, {Key key}) : super(key: key);
@@ -31,7 +33,7 @@ class ComponentDownloadButton extends StatelessWidget {
             ),
           ],
         ),
-        onPressed: () => Helper.launchURL(component.url),
+        onPressed: controller.download,
       ),
     );
   }

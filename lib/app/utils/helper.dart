@@ -5,7 +5,7 @@ abstract class Helper {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
-      throw 'Could not launch $url';
+      throw 'No se pudo abrir la url: $url';
     }
   }
 
