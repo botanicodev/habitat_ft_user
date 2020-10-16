@@ -14,40 +14,24 @@ class ComponentNavigationButtons extends GetView<WorkshopController> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          buildPreviusButton(),
-          buildNextButton(),
+          previusButton,
+          nextButton,
         ],
       ),
     );
   }
 
-  Widget buildPreviusButton() {
-    return ComponentButton(
-      onPressed: controller.previusPage,
-      icon: Icons.arrow_back_ios,
-    );
-  }
+  get previusButton => buildComponentButton(
+        onPressed: controller.previusPage,
+        icon: Icons.arrow_back_ios,
+      );
 
-  Widget buildNextButton() {
-    return ComponentButton(
-      onPressed: controller.nextPage,
-      icon: Icons.arrow_forward_ios,
-    );
-  }
-}
+  get nextButton => buildComponentButton(
+        onPressed: controller.nextPage,
+        icon: Icons.arrow_forward_ios,
+      );
 
-class ComponentButton extends StatelessWidget {
-  final void Function() onPressed;
-  final IconData icon;
-
-  const ComponentButton({
-    Key key,
-    @required this.onPressed,
-    @required this.icon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+  Widget buildComponentButton({void Function() onPressed, IconData icon}) {
     return ButtonTheme(
       buttonColor: CustomerColors.CELESTE_HABITAT,
       splashColor: CustomerColors.CELESTE_OSCURO_2,
