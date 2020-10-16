@@ -17,7 +17,6 @@ class ComponentFileController extends GetxController {
       Helper.launchURL(component.url);
     } catch (e) {
       CustomerSnackbar.error(
-        title: 'Error',
         message: 'En este momento no se puede descargar el archivo :(',
       );
     }

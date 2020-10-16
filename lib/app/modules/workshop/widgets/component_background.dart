@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
 class ComponentBackground extends StatelessWidget {
-  final List<Widget> children;
+  final Widget header;
+  final Widget body;
 
   const ComponentBackground({
     Key key,
-    @required this.children,
+    @required this.header,
+    @required this.body,
   }) : super(key: key);
 
   @override
@@ -25,8 +27,12 @@ class ComponentBackground extends StatelessWidget {
         ],
       ),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: children,
+        children: [
+          header,
+          Spacer(),
+          body,
+          Spacer(),
+        ],
       ),
     );
   }

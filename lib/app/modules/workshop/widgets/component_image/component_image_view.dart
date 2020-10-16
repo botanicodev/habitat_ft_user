@@ -14,12 +14,10 @@ class ComponentImageView extends GetWidget<ComponentImageController> {
   @override
   Widget build(BuildContext context) {
     return ComponentBackground(
-      children: [
-        ComponentHeader(controller.component),
-        Expanded(
-          child: Image.network(controller.component.url), // AGREGAR UN LOADING
-        ),
-      ],
+      header: ComponentHeader(controller.component),
+      body: Expanded(
+        child: Image.network(controller.component.url), // AGREGAR UN LOADING
+      ),
     );
   }
 }

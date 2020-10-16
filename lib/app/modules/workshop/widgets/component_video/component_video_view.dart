@@ -14,12 +14,10 @@ class ComponentVideoView extends GetWidget<ComponentVideoController> {
   @override
   Widget build(BuildContext context) {
     return ComponentBackground(
-      children: [
-        ComponentHeader(controller.component),
-        Expanded(
-          child: Container(),
-        ),
-      ],
+      header: ComponentHeader(controller.component),
+      body: Expanded(
+        child: Container(),
+      ),
     );
   }
 }
