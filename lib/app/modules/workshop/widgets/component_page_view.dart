@@ -14,11 +14,10 @@ class ComponentPageView extends GetView<WorkshopController> {
     return Expanded(
       child: PageView(
         controller: controller.pageController,
-        children: buildChildren,
+        children: children,
       ),
     );
   }
 
-  List<Widget> get buildChildren =>
-      controller.components.map(Mapper.componentToWidget).toList();
+  get children => controller.components.map(Mapper.componentToWidget).toList();
 }

@@ -15,7 +15,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: BuildWidget.appBar(),
       drawer: HDrawer(),
-      body: SingleChildScrollView(
+      body: SingleChildScrollView( // REFACTOR
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
