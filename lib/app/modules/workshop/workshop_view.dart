@@ -15,21 +15,15 @@ class WorkshopView extends GetView<WorkshopController> {
     );
   }
 
-  Widget body() {
-    return controller.components.isEmpty
-        ? buildCircularProgressIndicator()
-        : buildBody();
-  }
+  Widget body() =>
+      controller.components.isEmpty ? circularProgressIndicator : content;
 
-  Widget buildCircularProgressIndicator() =>
-      Center(child: CircularProgressIndicator());
+  get circularProgressIndicator => Center(child: CircularProgressIndicator());
 
-  Widget buildBody() {
-    return Column(
-      children: [
-        ComponentPageView(),
-        ComponentNavigationButtons(),
-      ],
-    );
-  }
+  get content => Column(
+        children: [
+          ComponentPageView(),
+          ComponentNavigationButtons(),
+        ],
+      );
 }
