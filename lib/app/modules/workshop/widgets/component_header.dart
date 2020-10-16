@@ -15,31 +15,28 @@ class ComponentHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        buildIcon(),
+        icon,
         Spacer(),
-        buildText(),
+        text,
         Spacer(),
       ],
     );
   }
 
-  Widget buildIcon() {
-    var container = Container(
-      color: component.color,
-      height: 35,
-      width: 35,
-      child: Icon(
-        component.icon,
-        size: 25,
-        color: CustomerColors.BLANCO,
-      ),
-    );
-    return ClipOval(
-      child: container,
-    );
-  }
+  get icon => ClipOval(
+        child: Container(
+          color: component.color,
+          height: 35,
+          width: 35,
+          child: Icon(
+            component.icon,
+            size: 25,
+            color: CustomerColors.BLANCO,
+          ),
+        ),
+      );
 
-  Widget buildText() => Text(
+  get text => Text(
         component.title,
         style: CustomerStyles.TITULO_3.copyWith(
           color: component.color,
