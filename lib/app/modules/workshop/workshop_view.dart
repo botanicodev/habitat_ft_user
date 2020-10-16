@@ -11,21 +11,25 @@ class WorkshopView extends GetView<WorkshopController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BuildWidget.appBar(),
-      body: Obx(
-        () => buildBodyWithLoading(
-          children: [
-            ComponentPageView(),
-            ComponentNavigationButtons(),
-          ],
-        ),
-      ),
+      body: Obx(body),
     );
   }
 
-  Widget buildBodyWithLoading({List<Widget> children}) {
-    if (controller.components.isEmpty)
-      return Center(child: CircularProgressIndicator());
-    else
-      return Column(children: children);
+  Widget body() {
+    return controller.components.isEmpty
+        ? buildCircularProgressIndicator()
+        : buildBody();
+  }
+
+  Widget buildCircularProgressIndicator() =>
+      Center(child: CircularProgressIndicator());
+
+  Widget buildBody() {
+    return Column(
+      children: [
+        ComponentPageView(),
+        ComponentNavigationButtons(),
+      ],
+    );
   }
 }
