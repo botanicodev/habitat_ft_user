@@ -14,27 +14,34 @@ class AudioPlayerBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Stack(
-        children: [
-          Container(
-            child: VideoPlayer(videoPlayerController),
-            height: 1,
-            width: 1,
+    return Stack(
+      children: [
+        buildVideoPlayer(),
+        Container(
+          height: 50,
+          decoration: BoxDecoration(
+            color: CustomerColors.GRIS_05,
+            borderRadius: BorderRadius.circular(100),
           ),
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-              color: CustomerColors.GRIS_05,
-              borderRadius: BorderRadius.circular(100),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: children,
-            ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: children,
           ),
-        ],
-      ),
+        ),
+      ],
+    );
+  }
+
+  /**
+   * Esto hay que ponerlo si o si, 
+   * esta puesto de esta manera para que 
+   * no rompa el layout
+   */
+  Widget buildVideoPlayer() {
+    return Container(
+      child: VideoPlayer(videoPlayerController),
+      height: 1,
+      width: 1,
     );
   }
 }

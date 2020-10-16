@@ -15,9 +15,7 @@ class ComponentVideoView extends GetWidget<ComponentVideoController> {
   Widget build(BuildContext context) {
     return ComponentBackground(
       header: ComponentHeader(controller.component),
-      body: Expanded(
-        child: Container(),
-      ),
+      body: Container(),
     );
   }
 }

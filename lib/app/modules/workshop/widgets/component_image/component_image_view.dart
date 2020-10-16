@@ -15,9 +15,7 @@ class ComponentImageView extends GetWidget<ComponentImageController> {
   Widget build(BuildContext context) {
     return ComponentBackground(
       header: ComponentHeader(controller.component),
-      body: Expanded(
-        child: Image.network(controller.component.url), // AGREGAR UN LOADING
-      ),
+      body: Image.network(controller.component.url),
     );
   }
 }

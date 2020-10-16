@@ -27,11 +27,17 @@ class ComponentBackground extends StatelessWidget {
         ],
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           header,
-          Spacer(),
-          body,
-          Spacer(),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                body,
+              ],
+            ),
+          ),
         ],
       ),
     );
