@@ -29,18 +29,23 @@ class AudioPlayerController extends GetxController {
           videoPlayerController.value.duration);
 
       videoPlayerController.setLooping(true);
-      _videoPlayerController.value.addListener(() {
-        // REFACTOR ACA POR FAVOR
-        _status.value = videoPlayerController.value.isPlaying
-            ? PlayerStatus.playing
-            : PlayerStatus.paused;
-      });
+      _videoPlayerController.value.addListener(listenVideoPlayerController);
     } catch (e) {
-      _status.value = PlayerStatus.error;
-      CustomerSnackbar.error(
-        message: 'En este momento no se puede reproducir el audio :(',
-      );
+      catchError(e);
     }
+  }
+
+  void listenVideoPlayerController() {
+    _status.value = videoPlayerController.value.isPlaying
+        ? PlayerStatus.playing
+        : PlayerStatus.paused;
+  }
+
+  void catchError(e) {
+    _status.value = PlayerStatus.error;
+    CustomerSnackbar.error(
+      message: 'En este momento no se puede reproducir el audio :(',
+    );
   }
 
   void play() => videoPlayerController.play();
