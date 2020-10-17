@@ -24,8 +24,6 @@ class AudioPlayerButton extends StatelessWidget {
         return buildPauseButton();
       case PlayerStatus.paused:
         return buildPlayButton();
-      case PlayerStatus.error:
-        return buildErrorIcon();
       default:
         return buildErrorIcon();
     }
