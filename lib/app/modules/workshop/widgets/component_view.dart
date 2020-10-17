@@ -3,6 +3,7 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
+import 'component_audio/component_audio.dart';
 import 'component_file/component_file.dart';
 import 'component_header.dart';
 import 'component_image/component_image.dart';
@@ -30,6 +31,7 @@ class ComponentView extends StatelessWidget {
       case MediaType.file:
         return ComponentFile(component);
       case MediaType.audio:
+        return ComponentAudio(component);
       default:
         return notImplementhedComponent;
     }

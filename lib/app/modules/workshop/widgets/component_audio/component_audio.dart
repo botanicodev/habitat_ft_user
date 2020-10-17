@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_layout.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 
 import 'widgets/audio_player/audio_player.dart';
 
@@ -11,12 +9,6 @@ class ComponentAudio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ComponentLayout(
-      header: header,
-      body: body,
-    );
+    return AudioPlayer(component.url);
   }
-
-  Widget get header => ComponentHeader(component);
-  Widget get body => AudioPlayer(component.url);
 }
