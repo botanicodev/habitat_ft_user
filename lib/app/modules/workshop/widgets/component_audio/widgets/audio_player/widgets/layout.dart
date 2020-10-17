@@ -26,7 +26,12 @@ class Layout extends StatelessWidget {
     );
   }
 
-  Widget get layout => container(
+  Widget get layout => Container(
+        height: 50,
+        decoration: BoxDecoration(
+          color: CustomerColors.GRIS_05,
+          borderRadius: BorderRadius.circular(100),
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -35,15 +40,6 @@ class Layout extends StatelessWidget {
             duration,
           ],
         ),
-      );
-
-  Widget container({Widget child}) => Container(
-        height: 50,
-        decoration: BoxDecoration(
-          color: CustomerColors.GRIS_05,
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: child,
       );
 
   /// Esto hay que ponerlo si o si.
