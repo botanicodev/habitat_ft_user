@@ -7,10 +7,9 @@ class AudioPlayerBackground extends StatelessWidget {
   final List<Widget> children;
 
   const AudioPlayerBackground({
-    Key key,
     @required this.videoPlayerController,
     @required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

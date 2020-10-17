@@ -5,7 +5,7 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import '../workshop_controller.dart';
 
 class ComponentNavigationButtons extends GetView<WorkshopController> {
-  const ComponentNavigationButtons({Key key}) : super(key: key);
+  const ComponentNavigationButtons();
 
   @override
   Widget build(BuildContext context) {

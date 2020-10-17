@@ -7,7 +7,7 @@ import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/wid
 class ComponentVideoView extends StatelessWidget {
   final Component component;
 
-  const ComponentVideoView(this.component, {Key key}) : super(key: key);
+  const ComponentVideoView(this.component);
 
   @override
   Widget build(BuildContext context) {

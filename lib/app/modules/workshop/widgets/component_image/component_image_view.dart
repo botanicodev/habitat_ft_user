@@ -8,7 +8,7 @@ import 'package:habitat_ft_user/app/utils/config/assets.dart';
 import 'component_image_controller.dart';
 
 class ComponentImageView extends GetWidget<ComponentImageController> {
-  ComponentImageView(Component component, {Key key}) : super(key: key) {
+  ComponentImageView(Component component) {
     controller.init(component: component);
   }
 

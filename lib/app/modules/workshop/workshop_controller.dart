@@ -18,9 +18,7 @@ class WorkshopController extends GetxController {
   }
 
   @override
-  void onClose() {
-    pageController.dispose();
-  }
+  void onClose() => pageController.dispose();
 
   void fetch() async {
     String workshopId = Get.arguments['workshopId'];

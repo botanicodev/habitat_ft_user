@@ -9,7 +9,7 @@ import '../component_file_controller.dart';
 class ComponentDownloadButton extends GetView<ComponentFileController> {
   final Component component;
 
-  const ComponentDownloadButton(this.component, {Key key}) : super(key: key);
+  const ComponentDownloadButton(this.component);
 
   @override
   Widget build(BuildContext context) {

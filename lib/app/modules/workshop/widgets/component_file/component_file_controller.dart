@@ -8,7 +8,7 @@ class ComponentFileController extends GetxController {
 
   get component => this._component.value;
 
-  void init({Component component}) {
+  void init(Component component) {
     _component.value = component;
   }
 
@@ -17,8 +17,7 @@ class ComponentFileController extends GetxController {
       Helper.launchURL(component.url);
     } catch (e) {
       CustomerSnackbar.error(
-        message: 'En este momento no se puede descargar el archivo :(',
-      );
+          message: 'En este momento no se puede descargar el archivo :(');
     }
   }
 }

@@ -8,10 +8,7 @@ import '../audio_player_controller.dart';
 class AudioPlayerButton extends StatelessWidget {
   final AudioPlayerController audioPlayerController;
 
-  const AudioPlayerButton(
-    this.audioPlayerController, {
-    Key key,
-  }) : super(key: key);
+  const AudioPlayerButton(this.audioPlayerController);
 
   @override
   Widget build(BuildContext context) {

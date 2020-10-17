@@ -6,10 +6,9 @@ class ComponentBackground extends StatelessWidget {
   final Widget body;
 
   const ComponentBackground({
-    Key key,
     @required this.header,
     @required this.body,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

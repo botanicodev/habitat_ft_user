@@ -8,8 +8,8 @@ import 'widgets/component_dowload_button.dart';
 import 'component_file_controller.dart';
 
 class ComponentFileView extends GetWidget<ComponentFileController> {
-  ComponentFileView(Component component, {Key key}) : super(key: key) {
-    controller.init(component: component);
+  ComponentFileView(Component component) {
+    controller.init(component);
   }
 
   @override

@@ -6,10 +6,7 @@ import 'package:habitat_ft_user/app/utils/config/styles.dart';
 class ComponentHeader extends StatelessWidget {
   final Component component;
 
-  const ComponentHeader(
-    this.component, {
-    Key key,
-  }) : super(key: key);
+  const ComponentHeader(this.component);
 
   @override
   Widget build(BuildContext context) {

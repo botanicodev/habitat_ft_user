@@ -16,11 +16,11 @@ class WorkshopView extends GetView<WorkshopController> {
   }
 
   Widget body() =>
-      controller.components.isEmpty ? circularProgressIndicator : content;
+      controller.components.isEmpty ? circularProgressIndicator : buildBody;
 
   get circularProgressIndicator => Center(child: CircularProgressIndicator());
 
-  get content => Column(
+  get buildBody => Column(
         children: [
           ComponentPageView(),
           ComponentNavigationButtons(),

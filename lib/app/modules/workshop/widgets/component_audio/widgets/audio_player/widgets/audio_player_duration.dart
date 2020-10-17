@@ -7,10 +7,7 @@ import '../audio_player_controller.dart';
 class AudioPlayerDuration extends StatelessWidget {
   final AudioPlayerController controller;
 
-  const AudioPlayerDuration(
-    this.controller, {
-    Key key,
-  }) : super(key: key);
+  const AudioPlayerDuration(this.controller);
 
   @override
   Widget build(BuildContext context) {
