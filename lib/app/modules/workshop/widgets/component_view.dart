@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 import 'component_header.dart';
@@ -22,6 +23,7 @@ class ComponentView extends StatelessWidget {
   get body {
     switch (component.mediaType) {
       case MediaType.video:
+        return ComponentVideo(component);
       case MediaType.image:
         return ComponentImage(component);
       case MediaType.file:
