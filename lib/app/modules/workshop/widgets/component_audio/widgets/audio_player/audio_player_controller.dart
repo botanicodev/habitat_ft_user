@@ -15,9 +15,7 @@ class AudioPlayerController extends GetxController {
   String get duration => this._duration.value;
 
   @override
-  void onClose() {
-    videoPlayerController.dispose();
-  }
+  void onClose() => videoPlayerController.dispose();
 
   void init(String url) async {
     try {
