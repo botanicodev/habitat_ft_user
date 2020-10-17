@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_image/component_image.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/component_file.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/component_audio.dart';
@@ -72,7 +72,7 @@ abstract class Mapper {
   static Widget componentToWidget(Component component) {
     switch (component.mediaType) {
       case MediaType.video:
-        return ComponentVideoView(component);
+        return ComponentVideo(component);
       case MediaType.image:
         return ComponentImage(component);
       case MediaType.file:

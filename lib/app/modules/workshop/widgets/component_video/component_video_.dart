@@ -4,10 +4,10 @@ import 'package:habitat_ft_user/app/modules/workshop/widgets/component_backgroun
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/widgets/video_player/video_player_view.dart';
 
-class ComponentVideoView extends StatelessWidget {
+class ComponentVideo extends StatelessWidget {
   final Component component;
 
-  const ComponentVideoView(this.component);
+  const ComponentVideo(this.component);
 
   @override
   Widget build(BuildContext context) {
