@@ -11,9 +11,12 @@ class DownloadButton extends GetWidget<DownloadButtonController> {
   @override
   Widget build(BuildContext context) {
     return ButtonWithIcon(
-      text: 'Descargar',
-      icon: Icons.cloud_download,
+      text: text,
+      icon: icon,
       onPressed: controller.download,
     );
   }
+
+  String get text => 'Descargar';
+  IconData get icon => Icons.cloud_download;
 }
