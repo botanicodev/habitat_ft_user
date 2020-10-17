@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
-class ButtonWithIcon extends StatelessWidget {
+class CustomerButtonWithIcon extends StatelessWidget {
   final double height;
   final double width;
   final String text;
@@ -11,7 +11,7 @@ class ButtonWithIcon extends StatelessWidget {
   final Color buttonColor;
   final Color iconColor;
 
-  const ButtonWithIcon({
+  const CustomerButtonWithIcon({
     @required this.text,
     @required this.icon,
     @required this.onPressed,

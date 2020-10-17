@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/widgets/customer_icon_button.dart';
 
 import '../workshop_controller.dart';
 
@@ -10,43 +10,33 @@ class ComponentNavigationButtons extends GetView<WorkshopController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-      child: Row(
+      padding: padding,
+      child: child,
+    );
+  }
+
+  get heightButtons => 40;
+  get widthButtons => 80;
+  get padding => const EdgeInsets.only(left: 20, right: 20, bottom: 20);
+  get child => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           previusButton,
           nextButton,
         ],
-      ),
-    );
-  }
+      );
 
-  get previusButton => buildComponentButton(
+  get previusButton => CustomerIconButton(
+        height: heightButtons,
+        width: widthButtons,
         onPressed: controller.previusPage,
         icon: Icons.arrow_back_ios,
       );
 
-  get nextButton => buildComponentButton(
+  get nextButton => CustomerIconButton(
+        height: heightButtons,
+        width: widthButtons,
         onPressed: controller.nextPage,
         icon: Icons.arrow_forward_ios,
       );
-
-  Widget buildComponentButton({void Function() onPressed, IconData icon}) {
-    return ButtonTheme(
-      buttonColor: CustomerColors.CELESTE_HABITAT,
-      splashColor: CustomerColors.CELESTE_OSCURO_2,
-      minWidth: 80,
-      height: 40,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
-      ),
-      child: Center(
-        child: RaisedButton(
-          elevation: 0,
-          onPressed: onPressed,
-          child: Center(child: Icon(icon, color: CustomerColors.BLANCO)),
-        ),
-      ),
-    );
-  }
 }

@@ -10,12 +10,15 @@ class WorkshopView extends GetView<WorkshopController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildWidget.appBar(),
-      body: Obx(body),
+      appBar: appBar,
+      body: body,
     );
   }
 
-  Widget body() =>
+  get appBar => BuildWidget.appBar();
+  get body => Obx(buildByObx);
+
+  Widget buildByObx() =>
       controller.components.isEmpty ? circularProgressIndicator : buildBody;
 
   get circularProgressIndicator => Center(child: CircularProgressIndicator());

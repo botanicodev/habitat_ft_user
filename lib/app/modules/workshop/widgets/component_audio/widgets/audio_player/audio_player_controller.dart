@@ -30,6 +30,7 @@ class AudioPlayerController extends GetxController {
 
       videoPlayerController.setLooping(true);
       _videoPlayerController.value.addListener(listenVideoPlayerController);
+      _status.value = PlayerStatus.paused;
     } catch (e) {
       catchError();
     }
