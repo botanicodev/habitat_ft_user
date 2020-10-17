@@ -38,6 +38,7 @@ class Layout extends StatelessWidget {
           ),
         ],
       );
+
   get _body => Expanded(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

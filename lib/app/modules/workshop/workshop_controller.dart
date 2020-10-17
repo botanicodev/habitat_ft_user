@@ -12,6 +12,8 @@ class WorkshopController extends GetxController {
 
   List<Component> get components => _components;
 
+  get children => components.map(mapComponentToView).toList();
+
   @override
   void onInit() {
     pageController = PageController(initialPage: 0);
@@ -39,8 +41,6 @@ class WorkshopController extends GetxController {
     // Agregarle un indice al componente para buscarlo en la lista, para no pasar componente como parametro
     // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
-
-  get children => components.map(mapComponentToView).toList();
 
   Widget mapComponentToView(Component component) =>
       Mapper.componentToWidget(component);
