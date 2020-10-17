@@ -1,3 +1,3 @@
 enum SubscriptionStatus { pending, completed }
 enum MediaType { video, image, file, audio }
-enum PlayerStatus { playing, paused, error }
+enum PlayerStatus { playing, paused, error, loading }
