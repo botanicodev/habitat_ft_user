@@ -7,8 +7,8 @@ import 'widgets/board/widgets/board.dart';
 import 'widgets/progress_bar/progress_bar.dart';
 import 'widgets/duration.dart';
 
-class AudioPlayerView extends GetWidget<AudioPlayerController> {
-  AudioPlayerView(String url) {
+class AudioPlayer extends GetWidget<AudioPlayerController> {
+  AudioPlayer(String url) {
     controller.init(url);
   }
 

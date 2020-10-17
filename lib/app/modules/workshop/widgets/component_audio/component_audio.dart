@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_background.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 
-import 'widgets/audio_player/audio_player_view.dart';
+import 'widgets/audio_player/audio_player.dart';
 
 class ComponentAudio extends StatelessWidget {
   final Component component;
@@ -18,5 +18,5 @@ class ComponentAudio extends StatelessWidget {
   }
 
   Widget get header => ComponentHeader(component);
-  Widget get body => AudioPlayerView(component.url);
+  Widget get body => AudioPlayer(component.url);
 }
