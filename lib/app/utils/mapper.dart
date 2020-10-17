@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_view.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_image/component_image_view.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/component_file_view.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/component_audio_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/component_audio.dart';
 
 import 'config/colors.dart';
 import 'enums.dart';
@@ -78,7 +78,7 @@ abstract class Mapper {
       case MediaType.file:
         return ComponentFileView(component);
       case MediaType.audio:
-        return ComponentAudioView(component);
+        return ComponentAudio(component);
       default:
         print('No se encontro un indice para mapear un Component-Widget');
         return Center(

@@ -5,9 +5,9 @@ import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.da
 
 import 'widgets/audio_player/audio_player_view.dart';
 
-class ComponentAudioView extends StatelessWidget {
+class ComponentAudio extends StatelessWidget {
   final Component component;
-  ComponentAudioView(this.component);
+  ComponentAudio(this.component);
 
   @override
   Widget build(BuildContext context) {
