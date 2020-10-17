@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_background.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_layout.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 
 import 'widgets/audio_player/audio_player.dart';
@@ -11,7 +11,7 @@ class ComponentAudio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ComponentBackground(
+    return ComponentLayout(
       header: header,
       body: body,
     );

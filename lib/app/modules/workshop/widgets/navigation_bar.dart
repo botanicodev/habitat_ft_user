@@ -4,8 +4,8 @@ import 'package:habitat_ft_user/app/utils/widgets/customer_icon_button.dart';
 
 import '../workshop_controller.dart';
 
-class ComponentNavigationButtons extends GetView<WorkshopController> {
-  const ComponentNavigationButtons();
+class NavigationBar extends GetView<WorkshopController> {
+  const NavigationBar();
 
   @override
   Widget build(BuildContext context) {

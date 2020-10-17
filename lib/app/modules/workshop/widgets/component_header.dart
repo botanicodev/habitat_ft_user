@@ -14,7 +14,7 @@ class ComponentHeader extends StatelessWidget {
       children: [
         icon,
         Spacer(),
-        text,
+        title,
         Spacer(),
       ],
     );
@@ -33,7 +33,7 @@ class ComponentHeader extends StatelessWidget {
         ),
       );
 
-  get text => Text(
+  get title => Text(
         component.title,
         style: CustomerStyles.TITULO_3.copyWith(
           color: component.color,
