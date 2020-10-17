@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/widgets/audio_player/audio_player_controller.dart';
 
 import 'widgets/layout.dart';
-import 'widgets/board/widgets/board.dart';
+import 'widgets/board/board.dart';
 import 'widgets/progress_bar/progress_bar.dart';
 import 'widgets/duration.dart';
 

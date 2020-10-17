@@ -18,8 +18,5 @@ class ComponentFile extends StatelessWidget {
   }
 
   Widget get header => ComponentHeader(component);
-  Widget get body => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 88),
-        child: DownloadButton(component.url),
-      );
+  Widget get body => DownloadButton(component.url);
 }

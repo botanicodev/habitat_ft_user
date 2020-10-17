@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-import '../../../audio_player_controller.dart';
-import '../button.dart';
+import '../../audio_player_controller.dart';
+import 'widgets/button.dart';
 
 class Board extends StatelessWidget {
   final AudioPlayerController audioPlayerController;

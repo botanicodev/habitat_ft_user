@@ -9,14 +9,17 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      padding: EdgeInsets.symmetric(horizontal: 8),
-      icon: Icon(
-        icon,
-        color: CustomerColors.CELESTE_HABITAT,
-        size: 40,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: IconButton(
+        padding: EdgeInsets.all(0),
+        icon: Icon(
+          icon,
+          color: CustomerColors.CELESTE_HABITAT,
+          size: 40,
+        ),
+        onPressed: onPressed,
       ),
-      onPressed: onPressed,
     );
   }
 }

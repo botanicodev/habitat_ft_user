@@ -17,7 +17,7 @@ class Duration extends StatelessWidget {
     );
   }
 
-  EdgeInsetsGeometry get padding => const EdgeInsets.only(left: 8.0, right: 15);
+  EdgeInsetsGeometry get padding => const EdgeInsets.symmetric(horizontal: 15);
   Widget get child => Obx(text);
 
   Widget text() => Text(
