@@ -16,12 +16,12 @@ class AudioPlayerDuration extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, right: 15),
-      child: Obx(
-        () => Text(
-          controller.duration,
-          style: CustomerStyles.TAGS_CELESTE,
-        ),
-      ),
+      child: Obx(text),
     );
   }
+
+  Widget text() => Text(
+        controller.duration,
+        style: CustomerStyles.TAGS_CELESTE,
+      );
 }

@@ -18,5 +18,5 @@ class ComponentAudioView extends StatelessWidget {
       header: ComponentHeader(component),
       body: AudioPlayerView(component.url),
     );
-  }// TODO CAMBIAR A TRES ESTADOS PARA DEFINIR EL BOTON (EVITAR DOBLE OBX)
+  }
 }
