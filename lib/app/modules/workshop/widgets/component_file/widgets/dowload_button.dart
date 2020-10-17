@@ -6,10 +6,10 @@ import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 import '../component_file_controller.dart';
 
-class ComponentDownloadButton extends GetView<ComponentFileController> {
+class DownloadButton extends GetView<ComponentFileController> {
   final Component component;
 
-  const ComponentDownloadButton(this.component);
+  const DownloadButton(this.component);
 
   @override
   Widget build(BuildContext context) {
