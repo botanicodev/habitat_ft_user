@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
-import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 import 'widgets/navigation_bar.dart';
 
@@ -34,14 +32,9 @@ class WorkshopView extends GetView<WorkshopController> {
   get pageView => Expanded(
         child: PageView(
           controller: controller.pageController,
-          children: children,
+          children: controller.children,
         ),
       );
-
-  get children => controller.components.map(mapComponentToView).toList();
-
-  Widget mapComponentToView(Component component) =>
-      Mapper.componentToWidget(component);
 
   get navigation => NavigationBar();
 }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 import '../../data/models/component_model.dart';
 
@@ -39,6 +40,12 @@ class WorkshopController extends GetxController {
     // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
 
+  get children => components.map(mapComponentToView).toList();
+
+  Widget mapComponentToView(Component component) =>
+      Mapper.componentToWidget(component);
+
+// VER DE REFACTOR
   void previusPage() => _moveToPage(pageController.page.round() - 1);
   void nextPage() => _moveToPage(pageController.page.round() + 1);
 
