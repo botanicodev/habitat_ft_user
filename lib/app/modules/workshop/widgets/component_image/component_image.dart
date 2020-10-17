@@ -4,9 +4,9 @@ import 'package:habitat_ft_user/app/modules/workshop/widgets/component_backgroun
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 
-class ComponentImageView extends StatelessWidget {
+class ComponentImage extends StatelessWidget {
   final Component component;
-  ComponentImageView(this.component);
+  ComponentImage(this.component);
 
   @override
   Widget build(BuildContext context) {

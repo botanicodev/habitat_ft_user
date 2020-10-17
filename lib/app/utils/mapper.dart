@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_view.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_image/component_image_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_image/component_image.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/component_file.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/component_audio.dart';
 
@@ -74,7 +74,7 @@ abstract class Mapper {
       case MediaType.video:
         return ComponentVideoView(component);
       case MediaType.image:
-        return ComponentImageView(component);
+        return ComponentImage(component);
       case MediaType.file:
         return ComponentFile(component);
       case MediaType.audio:
