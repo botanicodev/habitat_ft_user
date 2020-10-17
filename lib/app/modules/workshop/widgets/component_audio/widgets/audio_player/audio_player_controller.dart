@@ -1,18 +1,17 @@
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/customer_snackbar.dart';
+import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/helper.dart';
 import 'package:video_player/video_player.dart';
 
 class AudioPlayerController extends GetxController {
   Rx<VideoPlayerController> _videoPlayerController;
-  RxBool _isPlaying = false.obs;
-  RxBool _hasError = false.obs;
+  Rx<PlayerStatus> _status = PlayerStatus.paused.obs;
   RxString _duration = '00:00'.obs;
 
   VideoPlayerController get videoPlayerController =>
       this._videoPlayerController.value;
-  bool get isPlaying => this._isPlaying.value;
-  bool get hasError => this._hasError.value;
+  PlayerStatus get status => this._status.value;
   String get duration => this._duration.value;
 
   @override
@@ -31,10 +30,13 @@ class AudioPlayerController extends GetxController {
 
       videoPlayerController.setLooping(true);
       _videoPlayerController.value.addListener(() {
-        _isPlaying.value = videoPlayerController.value.isPlaying;
+        // REFACTOR ACA POR FAVOR
+        _status.value = videoPlayerController.value.isPlaying
+            ? PlayerStatus.playing
+            : PlayerStatus.paused;
       });
     } catch (e) {
-      _hasError.value = true;
+      _status.value = PlayerStatus.error;
       CustomerSnackbar.error(
         message: 'En este momento no se puede reproducir el audio :(',
       );

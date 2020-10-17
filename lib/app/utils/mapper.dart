@@ -9,15 +9,15 @@ import 'config/colors.dart';
 import 'enums.dart';
 
 abstract class Mapper {
-  static Status intToStatus(int value) {
+  static SubscriptionStatus intToStatus(int value) {
     switch (value) {
       case 0:
-        return Status.pending;
+        return SubscriptionStatus.pending;
       case 1:
-        return Status.completed;
+        return SubscriptionStatus.completed;
       default:
         print('No se encontro un indice para mapear un Status');
-        return Status.pending;
+        return SubscriptionStatus.pending;
     }
   }
 

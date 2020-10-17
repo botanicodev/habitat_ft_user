@@ -20,15 +20,15 @@ class SubscriptionListController extends GetxController {
   void startLoading() => _isLoading.value = true;
   void endLoading() => _isLoading.value = false;
 
-  void fetchByPendingStatus() => _fetch(Status.pending);
-  void fetchByCompletedStatus() => _fetch(Status.completed);
+  void fetchByPendingStatus() => _fetch(SubscriptionStatus.pending);
+  void fetchByCompletedStatus() => _fetch(SubscriptionStatus.completed);
 
   @override
   void onClose() {
     _subscription?.cancel();
   }
 
-  void _fetch(Status status) {
+  void _fetch(SubscriptionStatus status) {
     _subscription = _allByStatus(status).listen((event) {
       _subscriptions.value =
           event.docs.map((doc) => Subscription.fromJson(doc.data())).toList();
@@ -36,7 +36,7 @@ class SubscriptionListController extends GetxController {
     });
   }
 
-  Stream<QuerySnapshot> _allByStatus(Status status) {
+  Stream<QuerySnapshot> _allByStatus(SubscriptionStatus status) {
     String uid = _authService.user.uid;
     print('UID: ' + uid);
     return FirebaseFirestore.instance

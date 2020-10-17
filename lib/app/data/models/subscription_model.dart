@@ -4,7 +4,7 @@ import 'package:habitat_ft_user/app/utils/mapper.dart';
 class Subscription {
   String workshopId;
   String title;
-  Status status;
+  SubscriptionStatus status;
 
   Subscription({this.title, this.status, this.workshopId});
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/enums.dart';
 
 import '../audio_player_controller.dart';
 
@@ -17,9 +18,18 @@ class AudioPlayerButton extends StatelessWidget {
     return Obx(_build);
   }
 
-  Widget _build() => audioPlayerController.hasError
-      ? buildErrorIcon()
-      : Obx(buildPlayOrPauseButton);
+  Widget _build() {
+    switch (audioPlayerController.status) {
+      case PlayerStatus.playing:
+        return buildPauseButton();
+      case PlayerStatus.paused:
+        return buildPlayButton();
+      case PlayerStatus.error:
+        return buildErrorIcon();
+      default:
+        return buildErrorIcon();
+    }
+  }
 
   Widget buildErrorIcon() {
     return Padding(
@@ -31,9 +41,6 @@ class AudioPlayerButton extends StatelessWidget {
       ),
     );
   }
-
-  Widget buildPlayOrPauseButton() =>
-      audioPlayerController.isPlaying ? buildPauseButton() : buildPlayButton();
 
   Widget buildPlayButton() {
     return buildButton(
