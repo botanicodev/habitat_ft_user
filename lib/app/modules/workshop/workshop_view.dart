@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
+import 'package:habitat_ft_user/app/utils/mapper.dart';
 
-import 'widgets/component_view.dart';
 import 'widgets/navigation_bar.dart';
 
 class WorkshopView extends GetView<WorkshopController> {
@@ -40,7 +40,8 @@ class WorkshopView extends GetView<WorkshopController> {
 
   get children => controller.components.map(mapComponentToView).toList();
 
-  Widget mapComponentToView(Component component) => ComponentView(component);
+  Widget mapComponentToView(Component component) =>
+      Mapper.componentToWidget(component);
 
   get navigation => NavigationBar();
 }

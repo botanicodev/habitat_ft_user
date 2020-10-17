@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/widgets/audio_player/audio_player_controller.dart';
+import 'package:habitat_ft_user/app/utils/widgets/audio_player/audio_player_controller.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
-import 'widgets/layout.dart';
 import 'widgets/board/board.dart';
-import 'widgets/progress_bar/progress_bar.dart';
+import 'widgets/layout.dart';
 import 'widgets/duration.dart';
+import 'widgets/progress_bar/progress_bar.dart';
 
 class AudioPlayer extends GetWidget<AudioPlayerController> {
   AudioPlayer(String url) {

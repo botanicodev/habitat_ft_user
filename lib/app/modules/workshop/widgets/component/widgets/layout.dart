@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class ComponentLayout extends StatelessWidget {
+class Layout extends StatelessWidget {
   final Widget header;
   final Widget body;
 
-  const ComponentLayout({
+  const Layout({
     @required this.header,
     @required this.body,
   });

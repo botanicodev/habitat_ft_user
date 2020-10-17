@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 
-class ComponentImage extends StatelessWidget {
-  final Component component;
-  ComponentImage(this.component);
+class CustomerImage extends StatelessWidget {
+  final String url;
+
+  CustomerImage(this.url);
 
   @override
   Widget build(BuildContext context) {
     return FadeInImage.assetNetwork(
-      placeholder: placeholder,
-      image: component.url,
-      imageErrorBuilder: imageErrorBuilder,
-    );
+        placeholder: placeholder,
+        image: url,
+        imageErrorBuilder: imageErrorBuilder);
   }
 
   String get placeholder => CustomerAssets.LOADER;

@@ -3,10 +3,10 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
-class ComponentHeader extends StatelessWidget {
+class Header extends StatelessWidget {
   final Component component;
 
-  const ComponentHeader(this.component);
+  const Header(this.component);
 
   @override
   Widget build(BuildContext context) {
