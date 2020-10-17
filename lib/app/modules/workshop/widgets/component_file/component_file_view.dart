@@ -15,11 +15,14 @@ class ComponentFileView extends GetWidget<ComponentFileController> {
   @override
   Widget build(BuildContext context) {
     return ComponentBackground(
-      header: ComponentHeader(controller.component),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 88),
-        child: ComponentDownloadButton(controller.component),
-      ),
+      header: header,
+      body: body,
     );
   }
+
+  Widget get header => ComponentHeader(controller.component);
+  Widget get body => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 88),
+        child: ComponentDownloadButton(controller.component),
+      );
 }
