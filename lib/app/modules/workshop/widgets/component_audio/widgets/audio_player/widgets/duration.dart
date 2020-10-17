@@ -4,18 +4,21 @@ import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 import '../audio_player_controller.dart';
 
-class AudioPlayerDuration extends StatelessWidget {
+class Duration extends StatelessWidget {
   final AudioPlayerController controller;
 
-  const AudioPlayerDuration(this.controller);
+  const Duration(this.controller);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 15),
-      child: Obx(text),
+      padding: padding,
+      child: child,
     );
   }
+
+  EdgeInsetsGeometry get padding => const EdgeInsets.only(left: 8.0, right: 15);
+  Widget get child => Obx(text);
 
   Widget text() => Text(
         controller.duration,

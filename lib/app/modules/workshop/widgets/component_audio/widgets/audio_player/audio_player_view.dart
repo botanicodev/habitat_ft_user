@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/widgets/audio_player/audio_player_controller.dart';
 
-import 'widgets/audio_player_background.dart';
-import 'widgets/audio_player_button.dart';
-import 'widgets/audio_player_progress_bar.dart';
-import 'widgets/audio_player_duration.dart';
+import 'widgets/layout.dart';
+import 'widgets/board/widgets/board.dart';
+import 'widgets/progress_bar/progress_bar.dart';
+import 'widgets/duration.dart';
 
 class AudioPlayerView extends GetWidget<AudioPlayerController> {
-  final String url;
-
-  AudioPlayerView(this.url) {
+  AudioPlayerView(String url) {
     controller.init(url);
   }
 
   @override
   Widget build(BuildContext context) {
-    return AudioPlayerBackground(
+    return Layout(
       videoPlayerController: controller.videoPlayerController,
-      children: [
-        AudioPlayerButton(controller),
-        AudioPlayerProgressBar(controller),
-        AudioPlayerDuration(controller),
-      ],
+      buttonBoard: buttonBoard,
+      progressBar: progressBar,
+      duration: duration,
     );
   }
+
+  Widget get buttonBoard => Board(controller);
+  Widget get progressBar => ProgressBar(controller);
+  Widget get duration => Duration(controller);
 }

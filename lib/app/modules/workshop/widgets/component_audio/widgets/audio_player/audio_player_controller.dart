@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/customer_snackbar.dart';
+import 'package:habitat_ft_user/app/utils/snackbar.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/helper.dart';
 import 'package:video_player/video_player.dart';

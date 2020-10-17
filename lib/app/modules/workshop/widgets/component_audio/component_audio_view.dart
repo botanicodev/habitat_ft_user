@@ -12,8 +12,11 @@ class ComponentAudioView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ComponentBackground(
-      header: ComponentHeader(component),
-      body: AudioPlayerView(component.url),
+      header: header,
+      body: body,
     );
   }
+
+  Widget get header => ComponentHeader(component);
+  Widget get body => AudioPlayerView(component.url);
 }

@@ -9,8 +9,8 @@ abstract class CustomerSnackbar {
     String message = 'Ocurrio un error :(',
   }) =>
       Get.snackbar(
-        title, //'Error',
-        message, //'En este momento no se puede descargar el archivo :(',
+        title,
+        message,
         icon: Icon(Icons.error_outline, color: CustomerColors.CANCELAR),
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: CustomerColors.CELESTE_HABITAT,

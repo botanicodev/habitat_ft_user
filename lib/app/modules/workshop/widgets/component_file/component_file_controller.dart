@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/utils/customer_snackbar.dart';
+import 'package:habitat_ft_user/app/utils/snackbar.dart';
 import 'package:habitat_ft_user/app/utils/helper.dart';
 
 class ComponentFileController extends GetxController {
