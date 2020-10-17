@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_background.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 
 import 'widgets/dowload_button.dart';
-import 'component_file_controller.dart';
 
-class ComponentFileView extends GetWidget<ComponentFileController> {
-  ComponentFileView(Component component) {
-    controller.init(component);
-  }
+class ComponentFile extends StatelessWidget {
+  final Component component;
+  ComponentFile(this.component);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +17,9 @@ class ComponentFileView extends GetWidget<ComponentFileController> {
     );
   }
 
-  Widget get header => ComponentHeader(controller.component);
+  Widget get header => ComponentHeader(component);
   Widget get body => Padding(
         padding: EdgeInsets.symmetric(horizontal: 88),
-        child: DownloadButton(controller.component),
+        child: DownloadButton(component.url),
       );
 }

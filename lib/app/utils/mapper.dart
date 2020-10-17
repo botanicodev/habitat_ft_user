@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_video/component_video_view.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_image/component_image_view.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/component_file_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/component_file.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_audio/component_audio.dart';
 
 import 'config/colors.dart';
@@ -76,7 +76,7 @@ abstract class Mapper {
       case MediaType.image:
         return ComponentImageView(component);
       case MediaType.file:
-        return ComponentFileView(component);
+        return ComponentFile(component);
       case MediaType.audio:
         return ComponentAudio(component);
       default:
