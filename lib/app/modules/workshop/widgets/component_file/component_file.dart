@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_background.dart';
 import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 
-import 'widgets/download_button.dart';
+import 'widgets/download_button/download_button.dart';
 
 class ComponentFile extends StatelessWidget {
   final Component component;

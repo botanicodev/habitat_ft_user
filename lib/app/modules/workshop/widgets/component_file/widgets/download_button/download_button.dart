@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/widgets/download_button_controller.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/component_file/widgets/download_button/download_button_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
