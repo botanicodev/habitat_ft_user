@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_layout.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component_header.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 
 class ComponentImage extends StatelessWidget {
@@ -10,18 +8,12 @@ class ComponentImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ComponentLayout(
-      header: header,
-      body: body,
+    return FadeInImage.assetNetwork(
+      placeholder: placeholder,
+      image: component.url,
+      imageErrorBuilder: imageErrorBuilder,
     );
   }
-
-  Widget get header => ComponentHeader(component);
-  Widget get body => FadeInImage.assetNetwork(
-        placeholder: placeholder,
-        image: component.url,
-        imageErrorBuilder: imageErrorBuilder,
-      );
 
   String get placeholder => CustomerAssets.LOADER;
 

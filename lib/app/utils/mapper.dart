@@ -69,20 +69,20 @@ abstract class Mapper {
     }
   }
 
-  static Widget componentToWidget(Component component) {
-    switch (component.mediaType) {
-      case MediaType.video:
-        return ComponentVideo(component);
-      case MediaType.image:
-        return ComponentImage(component);
-      case MediaType.file:
-        return ComponentFile(component);
-      case MediaType.audio:
-        return ComponentAudio(component);
-      default:
-        print('No se encontro un indice para mapear un Component-Widget');
-        return Center(
-            child: Text('Error. No se encontro componente relacionado...'));
-    }
-  }
+  // static Widget componentToWidget(Component component) {
+  //   switch (component.mediaType) {
+  //     case MediaType.video:
+  //       return ComponentVideo(component);
+  //     case MediaType.image:
+  //       return ComponentImage(component);
+  //     case MediaType.file:
+  //       return ComponentFile(component);
+  //     case MediaType.audio:
+  //       return ComponentAudio(component);
+  //     default:
+  //       print('No se encontro un indice para mapear un Component-Widget');
+  //       return Center(
+  //           child: Text('Error. No se encontro componente relacionado...'));
+  //   }
+  // }
 }
