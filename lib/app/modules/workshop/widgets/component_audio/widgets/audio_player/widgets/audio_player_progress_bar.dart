@@ -6,10 +6,7 @@ import '../audio_player_controller.dart';
 class AudioPlayerProgressBar extends StatelessWidget {
   final AudioPlayerController controller;
 
-  const AudioPlayerProgressBar(
-    this.controller, {
-    Key key,
-  }) : super(key: key);
+  const AudioPlayerProgressBar(this.controller);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +16,7 @@ class AudioPlayerProgressBar extends StatelessWidget {
         child: Stack(
           alignment: AlignmentDirectional.centerStart,
           children: [
+            // PROBAR ACA CON EXPAnDEDS, moviendolo por los valores fix
             Container(
               height: 5,
               decoration: BoxDecoration(
