@@ -5,8 +5,8 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import 'video_player_controller.dart';
 
-class VideoPlayerView extends GetWidget<VideoPlayerController> {
-  VideoPlayerView(Component component) {
+class VideoPlayer extends GetWidget<VideoPlayerController> {
+  VideoPlayer(Component component) {
     controller.init(component.url);
   }
 
