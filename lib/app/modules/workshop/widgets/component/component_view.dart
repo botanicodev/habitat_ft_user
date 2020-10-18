@@ -37,9 +37,7 @@ class ComponentView extends GetWidget<ComponentController> {
     );
   }
 
-  get header => Header(component); // TODO REFACTOR
+  get header => Obx(() => Header(component));
 
-  get body => Obx(_body);
-
-  Widget _body() => controller.body;
+  get body => Obx(() => controller.body);
 }
