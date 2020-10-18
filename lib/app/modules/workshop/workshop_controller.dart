@@ -39,8 +39,9 @@ class WorkshopController extends GetxController {
   }
 
 // VER DE REFACTOR
-  void previusPage() => _moveToPage(pageController.page.round() - 1);
-  void nextPage() => _moveToPage(pageController.page.round() + 1);
+  void previusPage() => _moveToPage(currentPage - 1);
+  void nextPage() => _moveToPage(currentPage + 1);
+  int get currentPage => pageController.page.round();
 
   void _moveToPage(int page) => pageController.animateToPage(
         page,
