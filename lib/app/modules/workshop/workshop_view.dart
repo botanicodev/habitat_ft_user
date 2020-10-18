@@ -15,14 +15,12 @@ class WorkshopView extends GetView<WorkshopController> {
   }
 
   get appBar => BuildWidget.appBar();
-  get body => Obx(buildByObx);
-
-  Widget buildByObx() =>
-      controller.components.isEmpty ? circularProgressIndicator : _body;
+  get body =>
+      Obx(controller.components.isEmpty ? circularProgressIndicator : layout);
 
   get circularProgressIndicator => Center(child: CircularProgressIndicator());
 
-  get _body => Column(
+  get layout => Column(
         children: [
           pageView,
           navigation,
