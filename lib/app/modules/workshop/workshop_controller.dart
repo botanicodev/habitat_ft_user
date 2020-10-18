@@ -12,7 +12,8 @@ class WorkshopController extends GetxController {
 
   List<Component> get components => _components;
 
-  get children => components.map(mapComponentToView).toList();
+  get children => components.map(Mapper.componentToWidget).toList();
+  get workshopId => Get.arguments['workshopId'];
 
   @override
   void onInit() {
@@ -24,8 +25,6 @@ class WorkshopController extends GetxController {
   void onClose() => pageController.dispose();
 
   void fetch() async {
-    String workshopId = Get.arguments['workshopId'];
-
     var doc = await FirebaseFirestore.instance
         .collection("workshops")
         .doc(workshopId)
@@ -41,9 +40,6 @@ class WorkshopController extends GetxController {
     // Agregarle un indice al componente para buscarlo en la lista, para no pasar componente como parametro
     // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
-
-  Widget mapComponentToView(Component component) =>
-      Mapper.componentToWidget(component);
 
 // VER DE REFACTOR
   void previusPage() => _moveToPage(pageController.page.round() - 1);
