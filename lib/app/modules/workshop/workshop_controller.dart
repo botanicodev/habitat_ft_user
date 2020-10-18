@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 import '../../data/models/component_model.dart';
 
@@ -12,7 +11,6 @@ class WorkshopController extends GetxController {
 
   List<Component> get components => _components;
 
-  get children => components.map(Mapper.componentToWidget).toList();
   get workshopId => Get.arguments['workshopId'];
 
   @override
@@ -37,7 +35,6 @@ class WorkshopController extends GetxController {
         _components.add(Component.fromJson(component));
       });
     });
-    // Agregarle un indice al componente para buscarlo en la lista, para no pasar componente como parametro
     // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
   }
 

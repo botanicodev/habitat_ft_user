@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
 
+import 'widgets/component/component_view.dart';
 import 'widgets/navigation_bar.dart';
 
 class WorkshopView extends GetView<WorkshopController> {
@@ -15,8 +17,8 @@ class WorkshopView extends GetView<WorkshopController> {
   }
 
   get appBar => BuildWidget.appBar();
-  get body =>
-      Obx(controller.components.isEmpty ? circularProgressIndicator : layout);
+  get body => Obx(
+      () => controller.components.isEmpty ? circularProgressIndicator : layout);
 
   get circularProgressIndicator => Center(child: CircularProgressIndicator());
 
@@ -30,9 +32,13 @@ class WorkshopView extends GetView<WorkshopController> {
   get pageView => Expanded(
         child: PageView(
           controller: controller.pageController,
-          children: controller.children,
+          children: children,
         ),
       );
+
+  get children => controller.components.map(mapComponentToWidget).toList();
+
+  Widget mapComponentToWidget(Component component) => ComponentView(component);
 
   get navigation => NavigationBar();
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component/component_view.dart';
 
 import 'config/colors.dart';
 import 'enums.dart';
+import 'widgets/video_player/video_player.dart';
+import 'widgets/customer_image.dart';
+import 'widgets/audio_player/audio_player.dart';
+import 'widgets/download_button/download_button.dart';
 
 abstract class Mapper {
   static SubscriptionStatus intToStatus(int value) {
@@ -69,13 +72,13 @@ abstract class Mapper {
   static Widget componentToWidget(Component component) {
     switch (component.mediaType) {
       case MediaType.video:
-        return ComponentView.video(component);
+        return VideoPlayer(component.url);
       case MediaType.image:
-        return ComponentView.image(component);
+        return CustomerImage(component.url);
       case MediaType.file:
-        return ComponentView.file(component);
+        return DownloadButton(component.url);
       case MediaType.audio:
-        return ComponentView.audio(component);
+        return AudioPlayer(component.url);
       default:
         return Center(child: Text('Componente no implementado'));
     }
