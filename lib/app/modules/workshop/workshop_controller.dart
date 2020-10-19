@@ -1,47 +1,31 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../data/models/component_model.dart';
+import 'package:habitat_ft_user/app/data/models/component_model.dart';
+import 'package:habitat_ft_user/app/data/repositories/workshop_repository.dart';
 
 class WorkshopController extends GetxController {
-  PageController pageController;
-
+  final repository =
+      WorkshopRepository(); // TODO REFACTOR, inyenccion dependencia
+  PageController pageController = PageController(initialPage: 0);
   RxList<Component> _components = <Component>[].obs;
 
   List<Component> get components => _components;
+  String get workshopId => Get.arguments['workshopId'];
+  int get currentPage => pageController.page.round();
 
-  get workshopId => Get.arguments['workshopId'];
+  void _getComponents() =>
+      repository.getAllComponents(workshopId).then(_setComponents);
+
+  void _setComponents(List<Component> value) => _components.value = value;
 
   @override
-  void onInit() {
-    pageController = PageController(initialPage: 0);
-    fetch();
-  }
+  void onInit() => _getComponents();
 
   @override
   void onClose() => pageController.dispose();
 
-  void fetch() async {
-    var doc = await FirebaseFirestore.instance
-        .collection("workshops")
-        .doc(workshopId)
-        .collection("moments")
-        .get();
-
-    doc.docs.forEach((moment) {
-      List components = moment.data()['components'];
-      components.forEach((component) {
-        _components.add(Component.fromJson(component));
-      });
-    });
-    // TODO FUNCIONA PERO TRAE EN CUALQUIER ORDEN, ver como ordenarlos
-  }
-
-// VER DE REFACTOR
   void previusPage() => _moveToPage(currentPage - 1);
   void nextPage() => _moveToPage(currentPage + 1);
-  int get currentPage => pageController.page.round();
 
   void _moveToPage(int page) => pageController.animateToPage(
         page,
