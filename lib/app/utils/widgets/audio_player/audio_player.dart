@@ -20,9 +20,9 @@ class AudioPlayer extends GetWidget<AudioPlayerController> {
 
   Widget buildByOBx() {
     switch (controller.status) {
-      case PlayerStatus.loading:
+      case AudioPlayerStatus.loading:
         return loading;
-      case PlayerStatus.error:
+      case AudioPlayerStatus.error:
         return error;
       default:
         return layout;

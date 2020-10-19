@@ -5,13 +5,13 @@ import 'package:video_player/video_player.dart';
 
 class AudioPlayerController extends GetxController {
   Rx<VideoPlayerController> _videoPlayerController;
-  Rx<PlayerStatus> _status = PlayerStatus.loading.obs;
+  Rx<AudioPlayerStatus> _status = AudioPlayerStatus.loading.obs;
   RxString _duration = '00:00'.obs;
   RxString _message = ''.obs;
 
   VideoPlayerController get videoPlayerController =>
       this._videoPlayerController.value;
-  PlayerStatus get status => this._status.value;
+  AudioPlayerStatus get status => this._status.value;
   String get duration => this._duration.value;
   String get message => this._message.value;
 
@@ -30,7 +30,7 @@ class AudioPlayerController extends GetxController {
 
       videoPlayerController.setLooping(true);
       _videoPlayerController.value.addListener(listenVideoPlayerController);
-      _status.value = PlayerStatus.paused;
+      _status.value = AudioPlayerStatus.paused;
     } catch (e) {
       catchError();
     }
@@ -38,11 +38,11 @@ class AudioPlayerController extends GetxController {
 
   void listenVideoPlayerController() =>
       _status.value = videoPlayerController.value.isPlaying
-          ? PlayerStatus.playing
-          : PlayerStatus.paused;
+          ? AudioPlayerStatus.playing
+          : AudioPlayerStatus.paused;
 
   void catchError() {
-    _status.value = PlayerStatus.error;
+    _status.value = AudioPlayerStatus.error;
     _message.value = 'En este momento no se puede reproducir el audio :(';
   }
 

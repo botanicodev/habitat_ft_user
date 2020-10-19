@@ -18,9 +18,9 @@ class Board extends StatelessWidget {
 
   Widget buildByObx() {
     switch (audioPlayerController.status) {
-      case PlayerStatus.playing:
+      case AudioPlayerStatus.playing:
         return pauseButton;
-      case PlayerStatus.paused:
+      case AudioPlayerStatus.paused:
         return playButton;
       default:
         return errorIcon;
