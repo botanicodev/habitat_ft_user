@@ -80,6 +80,7 @@ abstract class Mapper {
       case MediaType.audio:
         return AudioPlayer(component.url);
       default:
+        print('No se encontro un indice para mapear un Component-Widget');
         return Center(child: Text('Componente no implementado'));
     }
   }

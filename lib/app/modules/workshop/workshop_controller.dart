@@ -4,8 +4,8 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/data/repositories/workshop_repository.dart';
 
 class WorkshopController extends GetxController {
-  final repository =
-      WorkshopRepository(); // TODO REFACTOR, inyenccion dependencia
+  final WorkshopRepository repository = Get.find();
+
   PageController pageController = PageController(initialPage: 0);
   RxList<Component> _components = <Component>[].obs;
 
