@@ -36,9 +36,8 @@ class WorkshopView extends GetView<WorkshopController> {
         ),
       );
 
+  get navigation => NavigationBar();
   get children => controller.components.map(mapComponentToWidget).toList();
 
   Widget mapComponentToWidget(Component component) => ComponentView(component);
-
-  get navigation => NavigationBar();
 }
