@@ -83,4 +83,6 @@ abstract class Mapper {
         return Center(child: Text('Componente no implementado'));
     }
   }
+
+  static Component jsonToComponent(json) => Component.fromJson(json);
 }
