@@ -13,19 +13,19 @@ class WorkshopController extends GetxController {
   String get workshopId => Get.arguments['workshopId'];
   int get currentPage => pageController.page.round();
 
-  void _getComponents() =>
-      repository.getAllComponents(workshopId).then(_setComponents);
-
-  void _setComponents(List<Component> value) => _components.value = value;
-
   @override
-  void onInit() => _getComponents();
+  void onInit() => fetchComponents();
 
   @override
   void onClose() => pageController.dispose();
 
   void previusPage() => _moveToPage(currentPage - 1);
   void nextPage() => _moveToPage(currentPage + 1);
+
+  void fetchComponents() =>
+      repository.getAllComponents(workshopId).then(_setComponents);
+
+  void _setComponents(List<Component> value) => _components.value = value;
 
   void _moveToPage(int page) => pageController.animateToPage(
         page,
