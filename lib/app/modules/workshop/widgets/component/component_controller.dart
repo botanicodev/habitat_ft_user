@@ -5,9 +5,9 @@ class ComponentController extends GetxController {
   Rx<Widget> _body;
   Rx<Widget> _header;
 
-  set body(Widget value) => this._body = value.obs;
   Widget get body => _body.value;
-
-  set header(Widget value) => this._header = value.obs;
   Widget get header => _header.value;
+
+  set body(Widget value) => this._body = value.obs;
+  set header(Widget value) => this._header = value.obs;
 }
