@@ -22,14 +22,14 @@ class WorkshopController extends GetxController {
   void previusPage() => _moveToPage(currentPage - 1);
   void nextPage() => _moveToPage(currentPage + 1);
 
-  void fetchComponents() =>
-      repository.getAllComponents(workshopId).then(_setComponents);
-
-  void _setComponents(List<Component> value) => _components.value = value;
-
   void _moveToPage(int page) => pageController.animateToPage(
         page,
         duration: Duration(milliseconds: 500),
         curve: Curves.easeIn,
       );
+
+  void fetchComponents() =>
+      repository.getAllComponents(workshopId).then(_setComponents);
+
+  void _setComponents(List<Component> value) => _components.value = value;
 }
