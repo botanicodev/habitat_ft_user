@@ -79,6 +79,9 @@ class CustomerStyles {
   static final TITULO_2_CELESTE_OSCURO =
       TITULO_2.copyWith(color: CustomerColors.CELESTE_OSCURO);
 
+  static final TITULO_2_BLANCO =
+      TITULO_2.copyWith(color: CustomerColors.BLANCO);
+
   static final TITULO_3_BLANCO =
       TITULO_3.copyWith(color: CustomerColors.BLANCO);
 
@@ -96,4 +99,7 @@ class CustomerStyles {
 
   static final TAGS_CELESTE =
       TAGS.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final LINK_BOTON_CANCELAR =
+      LINK_BOTON.copyWith(color: CustomerColors.CANCELAR);
 }
