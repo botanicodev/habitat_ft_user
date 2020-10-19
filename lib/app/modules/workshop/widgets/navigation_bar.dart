@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_icon_button.dart';
 
 import '../workshop_controller.dart';
@@ -22,6 +23,7 @@ class NavigationBar extends GetView<WorkshopController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           previusButton,
+          finishButton,
           nextButton,
         ],
       );
@@ -31,6 +33,11 @@ class NavigationBar extends GetView<WorkshopController> {
         width: widthButtons,
         onPressed: controller.previusPage,
         icon: Icons.arrow_back_ios,
+      );
+
+  get finishButton => FlatButton(
+        child: Text('Finalizar', style: CustomerStyles.LINK_BOTON_CANCELAR),
+        onPressed: controller.finish,
       );
 
   get nextButton => CustomerIconButton(
