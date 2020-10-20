@@ -3,16 +3,20 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
+import 'package:habitat_ft_user/app/data/repositories/subscription_repository.dart';
 import 'package:habitat_ft_user/app/data/repositories/workshop_repository.dart';
+import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 
 class WorkshopController extends GetxController {
-  final WorkshopRepository _repository = Get.find();
+  final WorkshopRepository _workshopRepository = Get.find();
+  final SubscriptionRepository _subscriptionRepository = Get.find();
 
   PageController pageController = PageController(initialPage: 0);
   RxList<Component> _components = <Component>[].obs;
   RxBool _isFinished = false.obs;
   RxBool _showFinishButton = false.obs;
 
+  String get uid => Get.find<LoginController>().user.uid;
   List<Component> get components => _components;
   String get workshopId => Get.arguments['workshopId'];
   int get currentPage => pageController.page.round();
@@ -46,13 +50,17 @@ class WorkshopController extends GetxController {
       );
 
   void fetchComponents() =>
-      _repository.getAllComponents(workshopId).then(_setComponents);
+      _workshopRepository.getAllComponents(workshopId).then(_setComponents);
 
   void _setComponents(List<Component> value) => _components.value = value;
 
   void finish() {
-    _isFinished.value = true;
-    // TODO CREAR REPOSITORY DE SUBSCRIPTION y hacer el complete aca!
+    try {
+      _subscriptionRepository.complete(uid, workshopId);
+      _isFinished.value = true;
+    } catch (e) {
+      print('Error al actualizar subscripcion');
+    }
     Timer(Duration(milliseconds: 1000), leave);
   }
 
