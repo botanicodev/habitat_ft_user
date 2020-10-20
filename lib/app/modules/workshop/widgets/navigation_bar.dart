@@ -35,10 +35,13 @@ class NavigationBar extends GetView<WorkshopController> {
         icon: Icons.arrow_back_ios,
       );
 
-  get finishButton => FlatButton(
-        child: Text('Finalizar', style: CustomerStyles.LINK_BOTON_CANCELAR),
-        onPressed: controller.finish,
-      );
+  //TODO REFACTOR
+  get finishButton => Obx(() => controller.showFinishButton
+      ? FlatButton(
+          child: Text('Finalizar', style: CustomerStyles.LINK_BOTON_CANCELAR),
+          onPressed: controller.finish,
+        )
+      : Container());
 
   get nextButton => CustomerIconButton(
         height: heightButtons,

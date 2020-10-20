@@ -6,13 +6,14 @@ import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/background_tile.dart';
 
-class SubscriptionTile extends GetView<SubscriptionListController> {
+class SubscriptionTile extends StatelessWidget {
   final Subscription subscription;
+  final void Function() onTap;
 
   const SubscriptionTile({
-    Key key,
     @required this.subscription,
-  }) : super(key: key);
+    @required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class SubscriptionTile extends GetView<SubscriptionListController> {
         title: buildTitle(),
         leading: buildLeading(),
         trailing: buildTrailing(),
-        onTap: () => controller.onTap(subscription),
+        onTap: onTap,
       ),
     );
   }

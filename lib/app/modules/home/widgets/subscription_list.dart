@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/home/controllers/subscription_list_controller.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/subscription_tile.dart';
 
+// TODO REFACTOr
 class SubscriptionList extends GetWidget<SubscriptionListController> {
   SubscriptionList.pending() {
     controller.fetchByPendingStatus();
@@ -17,7 +18,7 @@ class SubscriptionList extends GetWidget<SubscriptionListController> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 40),
       child: Obx(() {
-        if (controller.isLoading)
+        if (controller.subscriptions.isEmpty)
           return Center(child: CircularProgressIndicator());
         return buildListView();
       }),
@@ -31,7 +32,10 @@ class SubscriptionList extends GetWidget<SubscriptionListController> {
 
       return Column(
         children: controller.subscriptions
-            .map((subscription) => SubscriptionTile(subscription: subscription))
+            .map((subscription) => SubscriptionTile(
+                  subscription: subscription,
+                  onTap: () => controller.onTap(subscription),
+                ))
             .toList(),
       );
     });
