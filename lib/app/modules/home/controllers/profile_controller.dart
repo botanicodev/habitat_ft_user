@@ -28,6 +28,6 @@ class ProfileController extends GetxService {
   Stream<DocumentSnapshot> find() {
     String uid = Get.find<LoginController>().user.uid;
     print('UID: ' + uid);
-    return FirebaseFirestore.instance.collection("users").doc(uid).snapshots();
+    return FirebaseFirestore.instance.collection("profiles").doc(uid).snapshots();
   }
 }

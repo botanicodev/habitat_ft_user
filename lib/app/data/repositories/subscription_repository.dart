@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/data/models/profile_model.dart';
 import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 // TODO REFACTOR
 class SubscriptionRepository extends GetxService {
-  final users = FirebaseFirestore.instance.collection('users');
+  final users = FirebaseFirestore.instance.collection(Profile.collectionName);
 
   StreamSubscription _completedStreamSubscription;
   StreamSubscription _pendingStreamSubscription;
@@ -31,7 +32,7 @@ class SubscriptionRepository extends GetxService {
       SubscriptionStatus status, void Function(QuerySnapshot) onData) {
     return users
         .doc(uid)
-        .collection('subscriptions')
+        .collection(Subscription.collectionName)
         .where('status', isEqualTo: status.index)
         .snapshots()
         .listen(onData);
@@ -40,21 +41,17 @@ class SubscriptionRepository extends GetxService {
   void mapQuerySnapshotSubscriptionToList(
       QuerySnapshot querySnapshot, RxList<Subscription> list) {
     list.value = querySnapshot.docs
-        .map((doc) => Subscription.fromJson(doc.data()))
+        .map(
+          (doc) => Subscription.queryDocumentSnapshot(doc),
+        )
         .toList();
   }
 
   Future<void> complete(String uid, String workshopId) async {
-    var querySnapshot = await users
-        .doc(uid)
-        .collection('subscriptions')
-        .where('workshop_id', isEqualTo: workshopId)
-        .get();
-
     return users
         .doc(uid)
-        .collection('subscriptions')
-        .doc(querySnapshot.docs.first.id)
+        .collection(Subscription.collectionName)
+        .doc(workshopId)
         .update({'status': SubscriptionStatus.completed.index});
   }
 

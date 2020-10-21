@@ -1,22 +1,30 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 class Subscription {
-  String workshopId;
+  static const collectionName = 'subscriptions';
+  String id;
   String title;
   SubscriptionStatus status;
 
-  Subscription({this.title, this.status, this.workshopId});
+  Subscription({this.title, this.status, this.id});
+
+  Subscription.queryDocumentSnapshot(QueryDocumentSnapshot doc) {
+    Map<String, dynamic> json = doc.data();
+    id = doc.id;
+    title = json['title'];
+    status = Mapper.intToStatus(json['status']);
+  }
 
   Subscription.fromJson(Map<String, dynamic> json) {
-    workshopId = json['workshop_id'];
+    id = json['id'];
     title = json['title'];
     status = Mapper.intToStatus(json['status']);
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    data['workshop_id'] = this.workshopId;
     data['title'] = this.title;
     data['status'] = this.status;
     return data;

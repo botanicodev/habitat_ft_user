@@ -1,4 +1,5 @@
 class Profile {
+  static const collectionName = 'profiles';
   String name;
   String lastname;
 

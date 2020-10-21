@@ -23,5 +23,5 @@ class SubscriptionListController extends GetxController {
   }
 
   void onTap(Subscription subscription) => Get.toNamed(Routes.WORKSHOP,
-      arguments: {"workshopId": subscription.workshopId});
+      arguments: {"workshopId": subscription.id});
 }
