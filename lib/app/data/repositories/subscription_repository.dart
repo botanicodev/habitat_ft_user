@@ -8,7 +8,7 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 
 // TODO REFACTOR
 class SubscriptionRepository extends GetxService {
-  final users = FirebaseFirestore.instance.collection(Profile.collectionName);
+  final users = FirebaseFirestore.instance.collection(Profile.COLLECTION_NAME);
 
   StreamSubscription _completedStreamSubscription;
   StreamSubscription _pendingStreamSubscription;
@@ -32,7 +32,7 @@ class SubscriptionRepository extends GetxService {
       SubscriptionStatus status, void Function(QuerySnapshot) onData) {
     return users
         .doc(uid)
-        .collection(Subscription.collectionName)
+        .collection(Subscription.COLLECTION_NAME)
         .where('status', isEqualTo: status.index)
         .snapshots()
         .listen(onData);
@@ -50,7 +50,7 @@ class SubscriptionRepository extends GetxService {
   Future<void> complete(String uid, String workshopId) async {
     return users
         .doc(uid)
-        .collection(Subscription.collectionName)
+        .collection(Subscription.COLLECTION_NAME)
         .doc(workshopId)
         .update({'status': SubscriptionStatus.completed.index});
   }

@@ -1,5 +1,5 @@
 class Profile {
-  static const collectionName = 'profiles';
+  static const COLLECTION_NAME = 'profiles';
   String name;
   String lastname;
 

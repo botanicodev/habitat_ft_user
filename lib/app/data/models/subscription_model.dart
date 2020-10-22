@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 class Subscription {
-  static const collectionName = 'subscriptions';
+  static const COLLECTION_NAME = 'subscriptions';
   String id;
   String title;
   SubscriptionStatus status;

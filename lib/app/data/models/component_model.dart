@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 class Component {
-  // static const collectionName = 'components';
+  // static const COLLECTION_NAME = 'components';
   String title;
   String url;
   MediaType mediaType;

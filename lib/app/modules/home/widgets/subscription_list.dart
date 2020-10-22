@@ -17,18 +17,14 @@ class SubscriptionList extends GetWidget<SubscriptionListController> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 40),
-      child: Obx(() {
-        if (controller.subscriptions.isEmpty)
-          return Center(child: CircularProgressIndicator());
-        return buildListView();
-      }),
+      child: buildListView(),
     );
   }
 
   Widget buildListView() {
     return Obx(() {
       if (controller.subscriptions.isEmpty)
-        return Center(child: Text('No tenes talleres para hacer'));
+        return Center(child: Text('No se encontraron talleres'));
 
       return Column(
         children: controller.subscriptions

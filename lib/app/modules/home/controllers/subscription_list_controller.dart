@@ -22,6 +22,6 @@ class SubscriptionListController extends GetxController {
     _repository.fetchCompleted(uid);
   }
 
-  void onTap(Subscription subscription) => Get.toNamed(Routes.WORKSHOP,
-      arguments: {"workshopId": subscription.id});
+  void onTap(Subscription subscription) =>
+      Get.toNamed(Routes.WORKSHOP, arguments: {"workshopId": subscription.id});
 }
