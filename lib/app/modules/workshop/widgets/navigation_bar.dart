@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_icon_button.dart';
 
 import '../workshop_controller.dart';
 
 class NavigationBar extends GetView<WorkshopController> {
-  const NavigationBar();
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,9 +13,10 @@ class NavigationBar extends GetView<WorkshopController> {
     );
   }
 
+  get padding => const EdgeInsets.only(left: 20, right: 20, bottom: 20);
   get heightButtons => 40;
   get widthButtons => 80;
-  get padding => const EdgeInsets.only(left: 20, right: 20, bottom: 20);
+
   get child => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

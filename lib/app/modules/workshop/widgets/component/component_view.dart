@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/mapper.dart';
-
-import 'component_controller.dart';
 import 'widgets/header.dart';
 import 'widgets/layout.dart';
 
-class ComponentView extends GetWidget<ComponentController> {
-  ComponentView(Component component) {
-    controller.body = Mapper.componentToWidget(component);
-    controller.header = Header(component);
-  }
+class ComponentView extends StatelessWidget {
+  final Component component;
+
+  const ComponentView(this.component);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +17,7 @@ class ComponentView extends GetWidget<ComponentController> {
     );
   }
 
-  get header => Obx(() => controller.header);
+  get header => Header(component);
 
-  get body => Obx(() => controller.body);
+  get body => Mapper.componentToWidget(component);
 }
