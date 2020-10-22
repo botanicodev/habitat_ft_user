@@ -14,13 +14,13 @@ class Subscription {
     Map<String, dynamic> json = doc.data();
     id = doc.id;
     title = json['title'];
-    status = Mapper.intToStatus(json['status']);
+    status = Mapper.intToSubscriptionStatus(json['status']);
   }
 
   Subscription.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
-    status = Mapper.intToStatus(json['status']);
+    status = Mapper.intToSubscriptionStatus(json['status']);
   }
 
   Map<String, dynamic> toJson() {

@@ -10,7 +10,7 @@ import 'widgets/audio_player/audio_player.dart';
 import 'widgets/download_button/download_button.dart';
 
 abstract class Mapper {
-  static SubscriptionStatus intToStatus(int value) {
+  static SubscriptionStatus intToSubscriptionStatus(int value) {
     switch (value) {
       case 0:
         return SubscriptionStatus.pending;
@@ -87,7 +87,7 @@ abstract class Mapper {
   }
 
   static Component jsonToComponent(json) => Component.fromJson(json);
-  
+
   static Widget componentToView(Component component) =>
       ComponentView(component);
 }
