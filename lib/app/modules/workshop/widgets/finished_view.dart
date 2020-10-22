@@ -16,15 +16,19 @@ class FinishedView extends GetView<WorkshopController> {
 
   get body => Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Spacer(),
-            text,
-            icon,
-            Spacer(),
+            textAndIcon,
             button,
-            Spacer(),
           ],
         ),
+      );
+
+  get textAndIcon => Column(
+        children: [
+          text,
+          icon,
+        ],
       );
 
   get text => Text('Taller completado', style: CustomerStyles.TITULO_2_BLANCO);
@@ -33,10 +37,7 @@ class FinishedView extends GetView<WorkshopController> {
       Icon(Icons.check_circle_outline, color: CustomerColors.BLANCO, size: 150);
 
   get button => FlatButton(
-        child: Text(
-          'Salir',
-          style: CustomerStyles.TITULO_3_BLANCO,
-        ),
+        child: Text('Salir', style: CustomerStyles.TITULO_3_BLANCO),
         onPressed: controller.leave,
       );
 }
