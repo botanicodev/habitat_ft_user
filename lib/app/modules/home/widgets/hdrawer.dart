@@ -11,7 +11,7 @@ class HDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: HColors.CELESTE_OSCURO,
+        color: CustomerColors.CELESTE_OSCURO,
         child: Column(
           children: [
             Profile(),

@@ -49,9 +49,9 @@ class LoginController extends GetxService {
     _subscription = _auth.authStateChanges().listen((user) {
       _user.value = user;
       if (user.isNull) {
-        Get.toNamed(Routes.LOGIN);
+        Get.offAllNamed(Routes.LOGIN);
       } else {
-        Get.toNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME);
       }
     });
   }

@@ -9,14 +9,14 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: HColors.CELESTE_OSCURO,
+      color: CustomerColors.CELESTE_OSCURO,
       child: Center(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 18, vertical: 30),
           height: 483,
           width: 340,
           decoration: BoxDecoration(
-            color: HColors.GRIS_01,
+            color: CustomerColors.GRIS_01,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Column(

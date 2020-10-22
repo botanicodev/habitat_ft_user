@@ -8,7 +8,7 @@ class WelcomeTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '¡Bienvenido!',
-      style: HStyles.TITULO_1_CELESTE,
+      style: CustomerStyles.TITULO_1_CELESTE,
     );
   }
 }

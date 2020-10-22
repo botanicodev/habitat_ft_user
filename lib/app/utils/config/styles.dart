@@ -2,25 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-class HStyles {
+class CustomerStyles {
   static final TITULO_1 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w300,
     // letterSpacing: -2.3,
-  );
-
-  static final TITULO_1_CELESTE = TextStyle(
-    color: HColors.CELESTE_HABITAT,
-    fontSize: TITULO_1.fontSize,
-    fontWeight: TITULO_1.fontWeight,
-    // letterSpacing: TITULO_1.letterSpacing,
-  );
-
-  static final TITULO_1_BLANCO = TextStyle(
-    color: HColors.BLANCO,
-    fontSize: 16,
-    fontWeight: TITULO_1.fontWeight,
-    // letterSpacing: TITULO_1.letterSpacing,
   );
 
   static final TITULO_2 = TextStyle(
@@ -37,22 +23,8 @@ class HStyles {
   );
 
   static final TITULO_3 = TextStyle(
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: FontWeight.w600,
-    // letterSpacing: -4,
-  );
-
-  static final TITULO_3_BLANCO = TextStyle(
-    color: HColors.BLANCO,
-    fontSize: 20,
-    fontWeight: TITULO_3.fontWeight,
-    // letterSpacing: -4,
-  );
-
-  static final TITULO_3_CELESTE = TextStyle(
-    color: HColors.CELESTE_HABITAT,
-    fontSize: 20,
-    fontWeight: TITULO_3.fontWeight,
     // letterSpacing: -4,
   );
 
@@ -62,24 +34,10 @@ class HStyles {
     // letterSpacing: -1.3,
   );
 
-  static final SUB_TITULO_1_BLANCO = TextStyle(
-    color: HColors.BLANCO,
-    fontSize: 16,
-    fontWeight: SUB_TITULO_1.fontWeight,
-    // letterSpacing: -1.3,
-  );
-
   static final SUB_TITULO_2 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
     // letterSpacing: -5,
-  );
-
-  static final SUB_TITULO_2_GRIS_50 = TextStyle(
-    color: HColors.GRIS_50,
-    fontSize: SUB_TITULO_2.fontSize,
-    fontWeight: SUB_TITULO_2.fontWeight,
-    // // letterSpacing: SUB_TITULO_2.letterSpacing,
   );
 
   static final LECTURA = TextStyle(
@@ -110,8 +68,8 @@ class HStyles {
   static final LINK_BOTON = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
-    // letterSpacing: -4,
     decoration: TextDecoration.underline,
+    // letterSpacing: -4,
   );
 
   static final INFORMACION = TextStyle(
@@ -125,4 +83,37 @@ class HStyles {
     fontWeight: FontWeight.w500,
     // letterSpacing: -4,
   );
+
+  static final TITULO_1_CELESTE =
+      TITULO_1.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final TITULO_1_BLANCO =
+      TITULO_1.copyWith(color: CustomerColors.BLANCO);
+
+  static final TITULO_2_CELESTE_OSCURO =
+      TITULO_2.copyWith(color: CustomerColors.CELESTE_OSCURO);
+
+  static final TITULO_2_BLANCO =
+      TITULO_2.copyWith(color: CustomerColors.BLANCO);
+
+  static final TITULO_3_BLANCO =
+      TITULO_3.copyWith(color: CustomerColors.BLANCO);
+
+  static final TITULO_3_CELESTE =
+      TITULO_3.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final SUB_TITULO_1_BLANCO =
+      SUB_TITULO_1.copyWith(color: CustomerColors.BLANCO);
+
+  static final SUB_TITULO_2_GRIS_50 =
+      SUB_TITULO_2.copyWith(color: CustomerColors.GRIS_50);
+
+  static final BOTONES_CELESTE =
+      BOTONES.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final TAGS_CELESTE =
+      TAGS.copyWith(color: CustomerColors.CELESTE_HABITAT);
+
+  static final LINK_BOTON_CANCELAR =
+      LINK_BOTON.copyWith(color: CustomerColors.CANCELAR);
 }

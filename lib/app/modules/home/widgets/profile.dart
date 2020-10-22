@@ -14,7 +14,7 @@ class Profile extends GetWidget<ProfileController> {
           child: Container(
             height: 40,
             width: 40,
-            color: HColors.COMPLEMENTO_1,
+            color: CustomerColors.COMPLEMENTO_1,
           ),
         ),
         title: buildTitle(),
@@ -25,10 +25,11 @@ class Profile extends GetWidget<ProfileController> {
   Widget buildTitle() {
     return Obx(() {
       return Text(
-          controller.profile.isNull
-              ? 'Cargando...'
-              : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
-          style: HStyles.SUB_TITULO_1_BLANCO);
+        controller.profile.isNull
+            ? 'Cargando...'
+            : '${controller.profile.name.capitalizeFirst} ${controller.profile.lastname.capitalizeFirst}',
+        style: CustomerStyles.SUB_TITULO_1_BLANCO,
+      );
     });
   }
 }

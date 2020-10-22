@@ -16,20 +16,20 @@ class Separator extends StatelessWidget {
           Expanded(
             child: Container(
               height: 0.5,
-              color: HColors.CELESTE_HABITAT,
+              color: CustomerColors.CELESTE_HABITAT,
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
             child: Text(
               'Completados',
-              style: HStyles.BOTONES_CELESTE,
+              style: CustomerStyles.BOTONES_CELESTE,
             ),
           ),
           Expanded(
             child: Container(
               height: 0.5,
-              color: HColors.CELESTE_HABITAT,
+              color: CustomerColors.CELESTE_HABITAT,
             ),
           ),
         ],
