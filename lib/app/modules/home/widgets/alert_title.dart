@@ -13,7 +13,7 @@ class AlertTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: HStyles.TITULO_3_CELESTE,
+      style: CustomerStyles.TITULO_3_CELESTE,
     );
   }
 }

@@ -3,14 +3,14 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 class Subscription {
   String workshopId;
   String title;
-  Status status;
+  SubscriptionStatus status;
 
   Subscription({this.title});
 
   Subscription.fromJson(Map<String, dynamic> json) {
     workshopId = json['workshop_id'];
     title = json['title'];
-    status = mapInttoStatus(json['status']);
+    status = mapInttoSubscriptionStatus(json['status']);
   }
 
   Map<String, dynamic> toJson() {
@@ -22,15 +22,15 @@ class Subscription {
   }
 }
 
-Status mapInttoStatus(int value) {
+SubscriptionStatus mapInttoSubscriptionStatus(int value) {
   switch (value) {
     case 0:
-      return Status.pending;
+      return SubscriptionStatus.pending;
       break;
     case 1:
-      return Status.completed;
+      return SubscriptionStatus.completed;
       break;
     default:
-      return Status.pending;
+      return SubscriptionStatus.pending;
   }
 }
