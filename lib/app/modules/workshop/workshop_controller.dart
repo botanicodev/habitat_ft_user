@@ -42,17 +42,17 @@ class WorkshopController extends GetxController {
 
   void _setComponents(List<Component> value) => _components.value = value;
 
-  void finish() {
+  Future<void> finish() async {
     try {
-      _subscriptionRepository.complete(uid, workshopId);
+      await _subscriptionRepository.complete(uid, workshopId);
       _isFinished.value = true;
-      _activateTimer();
+      _activateDestructorTimer();
     } catch (e) {
       print('Error al actualizar subscripcion');
     }
   }
 
-  void _activateTimer() => Timer(Duration(milliseconds: 1000), leave);
+  void _activateDestructorTimer() => Timer(Duration(milliseconds: 1000), leave);
 
   void leave() {
     Get.delete<WorkshopController>();
