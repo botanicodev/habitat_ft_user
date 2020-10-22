@@ -30,19 +30,16 @@ class WorkshopController extends GetxController {
   @override
   void onClose() => pageController.dispose();
 
-  void previusPage() => navigatoTo(currentPage - 1);
-  void nextPage() => navigatoTo(currentPage + 1);
-  bool canNavigate(int page) => (page >= 0 && page < components.length);
+  void previusPage() => changePageTo(currentPage - 1);
+  void nextPage() => changePageTo(currentPage + 1);
   void refreshFinishButton() => _showFinishButton.value = isLastPage;
 
-  Future<void> navigatoTo(int page) async {
-    if (canNavigate(page)) {
-      await _navigateTo(page);
-      refreshFinishButton();
-    }
+  void changePageTo(int page) {
+    if (isLastPage) finish();
+    _changePageTo(page);
   }
 
-  Future<void> _navigateTo(int page) async =>
+  Future<void> _changePageTo(int page) async =>
       await pageController.animateToPage(
         page,
         duration: Duration(milliseconds: 500),

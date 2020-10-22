@@ -67,6 +67,7 @@ class WorkshopView extends GetView<WorkshopController> {
         child: PageView(
           controller: controller.pageController,
           children: children,
+          physics: NeverScrollableScrollPhysics(),
         ),
       );
 
