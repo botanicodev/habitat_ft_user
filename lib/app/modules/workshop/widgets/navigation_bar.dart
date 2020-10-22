@@ -23,7 +23,6 @@ class NavigationBar extends GetView<WorkshopController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           previusButton,
-          finishButton,
           nextButton,
         ],
       );
@@ -34,14 +33,6 @@ class NavigationBar extends GetView<WorkshopController> {
         onPressed: controller.previusPage,
         icon: Icons.arrow_back_ios,
       );
-
-  //TODO REFACTOR
-  get finishButton => Obx(() => controller.showFinishButton
-      ? FlatButton(
-          child: Text('Finalizar', style: CustomerStyles.LINK_BOTON_CANCELAR),
-          onPressed: controller.finish,
-        )
-      : Container());
 
   get nextButton => CustomerIconButton(
         height: heightButtons,

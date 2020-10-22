@@ -14,14 +14,12 @@ class WorkshopController extends GetxController {
   PageController pageController = PageController(initialPage: 0);
   RxList<Component> _components = <Component>[].obs;
   RxBool _isFinished = false.obs;
-  RxBool _showFinishButton = false.obs;
 
   String get uid => Get.find<LoginController>().user.uid;
   List<Component> get components => _components;
   String get workshopId => Get.arguments['workshopId'];
-  int get currentPage => pageController.page.round();
   bool get isFinished => _isFinished.value;
-  bool get showFinishButton => this._showFinishButton.value;
+  int get currentPage => pageController.page.round();
   bool get isLastPage => currentPage == (components.length - 1);
 
   @override
@@ -32,15 +30,8 @@ class WorkshopController extends GetxController {
 
   void previusPage() => changePageTo(currentPage - 1);
   void nextPage() => changePageTo(currentPage + 1);
-  void refreshFinishButton() => _showFinishButton.value = isLastPage;
-
-  void changePageTo(int page) {
-    if (isLastPage) finish();
-    _changePageTo(page);
-  }
-
-  Future<void> _changePageTo(int page) async =>
-      await pageController.animateToPage(
+  void changePageTo(int page) => isLastPage ? finish() : _changePageTo(page);
+  void _changePageTo(int page) => pageController.animateToPage(
         page,
         duration: Duration(milliseconds: 500),
         curve: Curves.easeIn,
@@ -55,11 +46,13 @@ class WorkshopController extends GetxController {
     try {
       _subscriptionRepository.complete(uid, workshopId);
       _isFinished.value = true;
+      _activateTimer();
     } catch (e) {
       print('Error al actualizar subscripcion');
     }
-    Timer(Duration(milliseconds: 1000), leave);
   }
+
+  void _activateTimer() => Timer(Duration(milliseconds: 1000), leave);
 
   void leave() {
     Get.delete<WorkshopController>();
