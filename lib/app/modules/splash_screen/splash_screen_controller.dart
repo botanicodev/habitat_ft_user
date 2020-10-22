@@ -5,15 +5,7 @@ import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 
 class SplashScreenController extends GetxController {
   @override
-  void onInit() {
-    Timer(Duration(seconds: 3), () {
-      Get.find<LoginController>().fetch();
-    });
-  }
+  void onInit() => Timer(Duration(seconds: 3), onTimerEnd);
 
-  @override
-  void onReady() {}
-
-  @override
-  void onClose() {}
+  void onTimerEnd() => Get.find<LoginController>().fetch();
 }
