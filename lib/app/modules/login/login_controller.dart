@@ -12,7 +12,7 @@ class LoginController extends GetxService {
   TextEditingController _passwordController;
 
   RxString _error = ''.obs;
-  RxBool _loading = false.obs;
+  RxBool _isLoading = false.obs;
   Rx<User> _user = Rx<User>();
 
   StreamSubscription _subscription;
@@ -23,7 +23,7 @@ class LoginController extends GetxService {
   String get password => _passwordController.text;
 
   String get error => _error.value;
-  bool get loading => _loading.value;
+  bool get isLoading => _isLoading.value;
   User get user => _user.value;
 
   @override
@@ -71,8 +71,8 @@ class LoginController extends GetxService {
     _auth.signOut();
   }
 
-  void startLoading() => _loading.value = true;
-  void endLoading() => _loading.value = false;
+  void startLoading() => _isLoading.value = true;
+  void endLoading() => _isLoading.value = false;
 
   void onChange(String text) {
     if (error != '') _error.value = '';
