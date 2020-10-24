@@ -6,6 +6,7 @@ class CustomerTextField extends StatelessWidget {
   final bool obscureText;
   final String labelText, errorText;
   final InputBorder border;
+  final int errorMaxLines;
 
   const CustomerTextField({
     @required this.controller,
@@ -14,6 +15,7 @@ class CustomerTextField extends StatelessWidget {
     this.obscureText = false,
     this.errorText,
     this.border = const OutlineInputBorder(),
+    this.errorMaxLines = 4,
   });
   @override
   Widget build(BuildContext context) => TextField(

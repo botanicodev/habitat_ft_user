@@ -6,10 +6,10 @@ abstract class CustomerTextFieldController extends GetxController {
 
   TextEditingController get textFieldController => _textFieldController;
 
-  get errorTextValue;
-  set errorTextValue(String value);
+  String get errorTextValue;
+  String get text => textFieldController.text;
 
-  get text => textFieldController.text;
+  set errorTextValue(String value);
   set text(String value) => textFieldController.text = value;
 
   String errorText() => errorTextValue == null ? null : errorTextValue;

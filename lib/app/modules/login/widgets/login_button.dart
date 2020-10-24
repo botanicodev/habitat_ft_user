@@ -4,7 +4,7 @@ import 'package:habitat_ft_user/app/utils/widgets/customer_button.dart';
 
 import '../login_controller.dart';
 
-class SignInButton extends GetView<LoginController> {
+class LoginButton extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) =>
       Obx(() => controller.isLoading ? loading : button);

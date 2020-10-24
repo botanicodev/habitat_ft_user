@@ -3,46 +3,50 @@ import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 import 'package:habitat_ft_user/app/modules/login/widgets/email_text_field/email_text_field_controller.dart';
 import 'package:habitat_ft_user/app/modules/login/widgets/password_text_field/password_text_field_controller.dart';
 
-// TODO REFATOR
 class LoginController extends GetxController {
   RxString _errorText = ''.obs;
   RxBool _isLoading = false.obs;
 
-  get email => Get.find<EmailTextFieldController>().text;
-  get password => Get.find<PasswordTextFieldController>().text;
+  AuthRepository get _authRepo => Get.find<AuthRepository>();
 
-  get _authRepo => Get.find<AuthRepository>();
-  get errorText => _errorText.value;
-  set errorText(String value) => _errorText.value = value;
+  EmailTextFieldController get _emailController =>
+      Get.find<EmailTextFieldController>();
+  PasswordTextFieldController get _passwordController =>
+      Get.find<PasswordTextFieldController>();
+
+  bool get errorTextIsEmpty => errorText == '';
   bool get isLoading => _isLoading.value;
+  String get email => _emailController.text;
+  String get password => _passwordController.text;
+  String get errorText => _errorText.value;
+  String get emailErrorText => errorTextIsEmpty ? null : '';
+  String get passwordErrorText => errorTextIsEmpty ? null : errorText;
+
+  set errorText(String value) => _errorText.value = value;
+  set isLoading(bool to) => _isLoading.value = to;
+
+  void turnOnLoading() => isLoading = true;
+  void turnOffLoading() => isLoading = false;
 
   void login() async {
     try {
-      startLoading();
-      await _authRepo.signInWithEmailAndPassword(email, password);
+      turnOnLoading();
+      await signIn();
     } catch (e) {
       catchLoginError(e);
     } finally {
-      endLoading();
+      turnOffLoading();
     }
   }
 
-  void startLoading() => _isLoading.value = true;
-  void endLoading() => _isLoading.value = false;
+  Future<void> signIn() async =>
+      await _authRepo.signInWithEmailAndPassword(email, password);
 
-  void onChange() {
-    if (errorText != '') _errorText.value = '';
-  }
-
-  String emailErrorText() => errorText == '' ? null : '';
-
-  String passwordErrorText() => errorText == '' ? null : errorText;
-
-  void catchLoginError(dynamic e) {
+  void catchLoginError(e) {
     if (e == null) {
-      _errorText.value = 'Se rompio algo, trata de entrar en un rato';
+      errorText = 'Se rompio algo, trata de entrar en un rato';
     } else {
-      _errorText.value = e.message;
+      errorText = e.message;
     }
   }
 }
