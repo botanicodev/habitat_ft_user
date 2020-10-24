@@ -5,10 +5,12 @@ import 'package:habitat_ft_user/app/utils/widgets/customer_text_field/customer_t
 import 'password_text_field_controller.dart';
 
 class PasswordTextField extends GetView<PasswordTextFieldController> {
+  const PasswordTextField();
+
   @override
   Widget build(BuildContext context) => Obx(() => textField);
 
-  get textField => CustomerTextField(
+  Widget get textField => CustomerTextField(
         labelText: labelText,
         obscureText: true,
         controller: controller.textFieldController,
@@ -16,5 +18,5 @@ class PasswordTextField extends GetView<PasswordTextFieldController> {
         onChanged: controller.onChange,
       );
 
-  get labelText => 'Contraseña';
+  String get labelText => 'Contraseña';
 }

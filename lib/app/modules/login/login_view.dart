@@ -25,10 +25,10 @@ class LoginView extends GetView<LoginController> {
     );
   }
 
-  get logo => Logo();
-  get title => WelcomeTitle();
-  get subtitle => Subtitle();
-  get email => EmailTextField();
-  get password => PasswordTextField();
-  get button => LoginButton();
+  Widget get logo => const Logo();
+  Widget get title => const WelcomeTitle();
+  Widget get subtitle => const Subtitle();
+  Widget get email => const EmailTextField();
+  Widget get password => const PasswordTextField();
+  Widget get button => const LoginButton();
 }

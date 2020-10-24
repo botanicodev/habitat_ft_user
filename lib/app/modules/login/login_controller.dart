@@ -34,8 +34,6 @@ class LoginController extends GetxController {
       await signIn();
     } catch (e) {
       catchLoginError(e);
-    } finally {
-      turnOffLoading();
     }
   }
 
@@ -43,6 +41,7 @@ class LoginController extends GetxController {
       await _authRepo.signInWithEmailAndPassword(email, password);
 
   void catchLoginError(e) {
+    turnOffLoading();
     if (e == null) {
       errorText = 'Se rompio algo, trata de entrar en un rato';
     } else {
