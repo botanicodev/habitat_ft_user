@@ -29,15 +29,15 @@ class CustomerButton extends StatelessWidget {
         minWidth: minWidth,
         height: height,
         splashColor: splashColor,
-        child: child,
+        child: button,
       );
 
-  get child => RaisedButton(
+  Widget get button => RaisedButton(
         elevation: elevation,
         onPressed: onPressed,
         child: Text(text, style: defaultstyle),
       );
 
-  get defaultstyle =>
+  TextStyle get defaultstyle =>
       style != null ? style : CustomerStyles.SUB_TITULO_1_BLANCO;
 }

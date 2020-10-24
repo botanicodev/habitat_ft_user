@@ -22,31 +22,31 @@ abstract class Mapper {
     }
   }
 
-  static MediaType intToMediaType(int value) {
+  static ComponentMediaType intToMediaType(int value) {
     switch (value) {
       case 0:
-        return MediaType.video;
+        return ComponentMediaType.video;
       case 1:
-        return MediaType.image;
+        return ComponentMediaType.image;
       case 2:
-        return MediaType.file;
+        return ComponentMediaType.file;
       case 3:
-        return MediaType.audio;
+        return ComponentMediaType.audio;
       default:
         print('No se encontro un indice para mapear un MediaType');
-        return MediaType.audio;
+        return ComponentMediaType.audio;
     }
   }
 
-  static Color mediaTypeToColor(MediaType mediaType) {
+  static Color mediaTypeToColor(ComponentMediaType mediaType) {
     switch (mediaType) {
-      case MediaType.video:
+      case ComponentMediaType.video:
         return CustomerColors.COMPLEMENTO_1;
-      case MediaType.image:
+      case ComponentMediaType.image:
         return CustomerColors.COMPLEMENTO_2;
-      case MediaType.file:
+      case ComponentMediaType.file:
         return CustomerColors.COMPLEMENTO_3;
-      case MediaType.audio:
+      case ComponentMediaType.audio:
         return CustomerColors.COMPLEMENTO_4;
       default:
         print('No se encontro un indice para mapear un MediaType-Color');
@@ -54,15 +54,15 @@ abstract class Mapper {
     }
   }
 
-  static IconData mediaTypeToIconData(MediaType mediaType) {
+  static IconData mediaTypeToIconData(ComponentMediaType mediaType) {
     switch (mediaType) {
-      case MediaType.video:
+      case ComponentMediaType.video:
         return Icons.videocam;
-      case MediaType.image:
+      case ComponentMediaType.image:
         return Icons.image;
-      case MediaType.file:
+      case ComponentMediaType.file:
         return Icons.file_present;
-      case MediaType.audio:
+      case ComponentMediaType.audio:
         return Icons.volume_up;
       default:
         print('No se encontro un indice para mapear un MediaType-IconData');
@@ -72,13 +72,13 @@ abstract class Mapper {
 
   static Widget componentToWidget(Component component) {
     switch (component.mediaType) {
-      case MediaType.video:
+      case ComponentMediaType.video:
         return VideoPlayer(component.url);
-      case MediaType.image:
+      case ComponentMediaType.image:
         return CustomerImage(component.url);
-      case MediaType.file:
+      case ComponentMediaType.file:
         return DownloadButton(component.url);
-      case MediaType.audio:
+      case ComponentMediaType.audio:
         return AudioPlayer(component.url);
       default:
         print('No se encontro un indice para mapear un Component-Widget');

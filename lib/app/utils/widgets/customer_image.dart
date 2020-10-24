@@ -4,7 +4,7 @@ import 'package:habitat_ft_user/app/utils/config/assets.dart';
 class CustomerImage extends StatelessWidget {
   final String url;
 
-  CustomerImage(this.url);
+  const CustomerImage(this.url);
 
   @override
   Widget build(BuildContext context) {

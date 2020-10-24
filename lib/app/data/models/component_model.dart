@@ -6,7 +6,7 @@ class Component {
   // static const COLLECTION_NAME = 'components';
   String title;
   String url;
-  MediaType mediaType;
+  ComponentMediaType mediaType;
 
   Component({
     this.title,

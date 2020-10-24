@@ -15,20 +15,13 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Layout(
       children: [
-        logo,
-        title,
-        subtitle,
-        email,
-        password,
-        button,
+        const Logo(),
+        const WelcomeTitle(),
+        const Subtitle(),
+        const EmailTextField(),
+        const PasswordTextField(),
+        const LoginButton(),
       ],
     );
   }
-
-  Widget get logo => const Logo();
-  Widget get title => const WelcomeTitle();
-  Widget get subtitle => const Subtitle();
-  Widget get email => const EmailTextField();
-  Widget get password => const PasswordTextField();
-  Widget get button => const LoginButton();
 }

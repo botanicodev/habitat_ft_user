@@ -3,13 +3,13 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class CustomerButtonWithIcon extends StatelessWidget {
-  final double height;
-  final double width;
+  final double height, width;
   final String text;
   final IconData icon;
   final void Function() onPressed;
-  final Color buttonColor;
-  final Color iconColor;
+  final Color buttonColor, iconColor;
+  final MainAxisAlignment mainAxisAlignment;
+  final ShapeBorder shape;
 
   const CustomerButtonWithIcon({
     @required this.text,
@@ -19,6 +19,10 @@ class CustomerButtonWithIcon extends StatelessWidget {
     this.width = 155,
     this.buttonColor = CustomerColors.CELESTE_HABITAT,
     this.iconColor = CustomerColors.BLANCO,
+    this.mainAxisAlignment = MainAxisAlignment.spaceEvenly,
+    this.shape = const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+    ),
   });
 
   @override
@@ -28,26 +32,23 @@ class CustomerButtonWithIcon extends StatelessWidget {
       width: width,
       child: ButtonTheme(
         buttonColor: buttonColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
-        ),
+        shape: shape,
         child: RaisedButton(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                text,
-                style: CustomerStyles.SUB_TITULO_1_BLANCO,
-              ),
-              Icon(
-                icon,
-                color: iconColor,
-              ),
-            ],
+            mainAxisAlignment: mainAxisAlignment,
+            children: [_text, _icon],
           ),
           onPressed: onPressed,
         ),
       ),
     );
   }
+
+  Widget get _text => Text(text, style: textStyle);
+  Widget get _icon => Icon(
+        icon,
+        color: iconColor,
+      );
+
+  TextStyle get textStyle => CustomerStyles.SUB_TITULO_1_BLANCO;
 }
