@@ -6,8 +6,8 @@ import 'widgets/layout/layout.dart';
 import 'widgets/logo.dart';
 import 'widgets/welcome_title.dart';
 import 'widgets/subtitle.dart';
-import 'widgets/email_text_field.dart';
-import 'widgets/password_text_field.dart';
+import 'widgets/email_text_field/email_text_field.dart';
+import 'widgets/password_text_field/password_text_field.dart';
 import 'widgets/sign_in_button.dart';
 
 class LoginView extends GetView<LoginController> {

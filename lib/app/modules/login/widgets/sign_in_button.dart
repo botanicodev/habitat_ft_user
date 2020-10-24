@@ -10,5 +10,8 @@ class SignInButton extends GetView<LoginController> {
       Obx(() => controller.isLoading ? loading : button);
 
   get loading => CircularProgressIndicator();
-  get button => CustomerButton(text: 'Ingresar', onPressed: controller.login);
+  get button => CustomerButton(text: text, onPressed: onPressed);
+
+  get text => 'Ingresar';
+  get onPressed => controller.login;
 }

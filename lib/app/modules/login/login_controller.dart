@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
-import 'package:habitat_ft_user/app/modules/login/widgets/email_text_field_controller.dart';
-import 'package:habitat_ft_user/app/modules/login/widgets/password_text_field_controller.dart';
+import 'package:habitat_ft_user/app/modules/login/widgets/email_text_field/email_text_field_controller.dart';
+import 'package:habitat_ft_user/app/modules/login/widgets/password_text_field/password_text_field_controller.dart';
 
+// TODO REFATOR
 class LoginController extends GetxController {
   RxString _errorText = ''.obs;
   RxBool _isLoading = false.obs;
