@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
+import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 import 'package:habitat_ft_user/app/data/repositories/subscription_repository.dart';
-import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';
 
 class SubscriptionListController extends GetxController {
@@ -10,7 +10,7 @@ class SubscriptionListController extends GetxController {
   RxList<Subscription> _subscriptions = <Subscription>[].obs;
 
   List<Subscription> get subscriptions => _subscriptions;
-  get uid => Get.find<LoginController>().user.uid;
+  get uid => Get.find<AuthRepository>().user.uid;
 
   void fetchByPendingStatus() {
     _subscriptions.bindStream(_repository.pending.stream);

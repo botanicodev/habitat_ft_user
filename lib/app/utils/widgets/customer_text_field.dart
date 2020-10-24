@@ -9,8 +9,8 @@ class CustomerTextField extends StatelessWidget {
 
   const CustomerTextField({
     @required this.controller,
-    @required this.onChanged,
     @required this.labelText,
+    this.onChanged,
     this.obscureText = false,
     this.errorText,
     this.border = const OutlineInputBorder(),

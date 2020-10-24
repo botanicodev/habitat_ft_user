@@ -1,7 +1,6 @@
 import 'package:habitat_ft_user/app/modules/workshop/workshop_view.dart';
 import 'package:habitat_ft_user/app/modules/workshop/workshop_binding.dart';
 import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_view.dart';
-import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_binding.dart';
 import 'package:habitat_ft_user/app/modules/login/login_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_binding.dart';
 import 'package:habitat_ft_user/app/modules/home/home_view.dart';
@@ -16,7 +15,6 @@ class AppPages {
     GetPage(
       name: Routes.SPLASH_SCREEN,
       page: () => SplashScreenView(),
-      binding: SplashScreenBinding(),
     ),
     GetPage(
       name: Routes.HOME,

@@ -11,11 +11,7 @@ class HomeBinding extends Bindings {
   void dependencies() {
     Get.put<SubscriptionRepository>(SubscriptionRepository());
     Get.put<HomeController>(HomeController());
-    Get.create<SubscriptionListController>(
-      () => SubscriptionListController(),
-    );
-    Get.lazyPut<ProfileController>(
-      () => ProfileController(),
-    );
+    Get.create<SubscriptionListController>(() => SubscriptionListController());
+    Get.lazyPut<ProfileController>(() => ProfileController());
   }
 }

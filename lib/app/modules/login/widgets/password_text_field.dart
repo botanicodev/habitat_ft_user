@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_text_field.dart';
 
-class PasswordField extends GetView<LoginController> {
+import 'password_text_field_controller.dart';
+
+class PasswordTextField extends GetView<PasswordTextFieldController> {
   @override
   Widget build(BuildContext context) => Obx(() => textField);
 
   get textField => CustomerTextField(
         labelText: labelText,
-        controller: controller.passwordController,
-        onChanged: controller.onChange,
         obscureText: true,
-        errorText: controller.emailErrorText(),
+        controller: controller.textFieldController,
+        errorText: controller.errorTextAndClean(),
+        onChanged: controller.onChange,
       );
 
   get labelText => 'Contraseña';

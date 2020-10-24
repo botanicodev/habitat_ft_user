@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-class AlertButtons extends GetView<LoginController> {
+class AlertButtons extends GetView<AuthRepository> {
   const AlertButtons({
     Key key,
   }) : super(key: key);
