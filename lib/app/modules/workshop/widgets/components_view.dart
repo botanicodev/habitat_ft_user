@@ -17,7 +17,7 @@ class ComponentsView extends GetView<WorkshopController> {
     );
   }
 
-  get appBar => BuildWidget.appBar();
+  get appBar => BuildWidget.appBar;
   get body => Obx(
         () => controller.components.isEmpty ? circularProgressIndicator : _body,
       );
