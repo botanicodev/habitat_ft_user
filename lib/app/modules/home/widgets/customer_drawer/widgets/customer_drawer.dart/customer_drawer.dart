@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/customer_drawer/widgets/customer_drawer.dart/profile_tile/profile_tile.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
-import 'widgets/profile_tile/profile_tile.dart';
-import 'widgets/sign_out_tile/sign_out_tile.dart';
+import 'sign_out_tile/sign_out_tile.dart';
 
 class CustomerDrawer extends StatelessWidget {
   final Color color;

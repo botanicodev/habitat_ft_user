@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
-import 'package:habitat_ft_user/app/modules/home/widgets/customer_drawer/widgets/profile_tile/profile_tile_controller.dart';
+
+import 'profile_tile_controller.dart';
 
 class ProfileTile extends GetView<ProfileTileController> {
   final Color circleAvatarbackgroundColor;

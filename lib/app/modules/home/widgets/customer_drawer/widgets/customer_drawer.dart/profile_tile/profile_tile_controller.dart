@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/profile_model.dart';
 import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
