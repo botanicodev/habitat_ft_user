@@ -5,8 +5,8 @@ class SignOutTitle extends StatelessWidget {
   const SignOutTitle();
 
   String get title => '¿Desea cerrar sesion?';
+  TextStyle get style => CustomerStyles.TITULO_3_CELESTE;
 
   @override
-  Widget build(BuildContext context) =>
-      Text(title, style: CustomerStyles.TITULO_3_CELESTE);
+  Widget build(BuildContext context) => Text(title, style: style);
 }
