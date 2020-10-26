@@ -17,6 +17,8 @@ class AuthRepository extends GetxService {
   @override
   void onInit() => fetch();
 
+  Future<void> signOut() => _auth.signOut();
+
   void fetch() =>
       _subscription = _auth.authStateChanges().listen(onStateChange);
 
@@ -34,8 +36,6 @@ class AuthRepository extends GetxService {
         break;
     }
   }
-
-  Future<void> signOut() => _auth.signOut();
 
   Future<UserCredential> signInWithEmailAndPassword(
           String email, String password) =>

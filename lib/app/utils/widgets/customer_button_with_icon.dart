@@ -8,7 +8,7 @@ class CustomerButtonWithIcon extends StatelessWidget {
   final IconData icon;
   final void Function() onPressed;
   final Color buttonColor, iconColor;
-  final MainAxisAlignment mainAxisAlignment;
+  final MainAxisAlignment rowWainAxisAlignment;
   final ShapeBorder shape;
 
   const CustomerButtonWithIcon({
@@ -19,11 +19,15 @@ class CustomerButtonWithIcon extends StatelessWidget {
     this.width = 155,
     this.buttonColor = CustomerColors.CELESTE_HABITAT,
     this.iconColor = CustomerColors.BLANCO,
-    this.mainAxisAlignment = MainAxisAlignment.spaceEvenly,
+    this.rowWainAxisAlignment = MainAxisAlignment.spaceEvenly,
     this.shape = const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(5.0)),
     ),
   });
+
+  TextStyle get textStyle => CustomerStyles.SUB_TITULO_1_BLANCO;
+  Text get _text => Text(text, style: textStyle);
+  Icon get _icon => Icon(icon, color: iconColor);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,7 @@ class CustomerButtonWithIcon extends StatelessWidget {
         shape: shape,
         child: RaisedButton(
           child: Row(
-            mainAxisAlignment: mainAxisAlignment,
+            mainAxisAlignment: rowWainAxisAlignment,
             children: [_text, _icon],
           ),
           onPressed: onPressed,
@@ -43,12 +47,4 @@ class CustomerButtonWithIcon extends StatelessWidget {
       ),
     );
   }
-
-  Widget get _text => Text(text, style: textStyle);
-  Widget get _icon => Icon(
-        icon,
-        color: iconColor,
-      );
-
-  TextStyle get textStyle => CustomerStyles.SUB_TITULO_1_BLANCO;
 }

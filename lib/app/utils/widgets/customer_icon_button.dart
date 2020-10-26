@@ -4,8 +4,9 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 class CustomerIconButton extends StatelessWidget {
   final double width, height, elevation;
   final IconData icon;
-  final Color buttonColor, splashColor;
+  final Color buttonColor, splashColor, iconColor;
   final void Function() onPressed;
+  final ShapeBorder shape;
 
   const CustomerIconButton({
     @required this.onPressed,
@@ -15,6 +16,10 @@ class CustomerIconButton extends StatelessWidget {
     this.elevation = 0,
     this.buttonColor = CustomerColors.CELESTE_HABITAT,
     this.splashColor = CustomerColors.CELESTE_OSCURO_2,
+    this.iconColor = CustomerColors.BLANCO,
+    this.shape = const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(18.0)),
+    ),
   });
 
   @override
@@ -25,17 +30,12 @@ class CustomerIconButton extends StatelessWidget {
       child: ButtonTheme(
         buttonColor: buttonColor,
         splashColor: splashColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-        ),
+        shape: shape,
         child: RaisedButton(
           elevation: elevation,
           onPressed: onPressed,
           child: Center(
-            child: Icon(
-              icon,
-              color: CustomerColors.BLANCO,
-            ),
+            child: Icon(icon, color: iconColor),
           ),
         ),
       ),

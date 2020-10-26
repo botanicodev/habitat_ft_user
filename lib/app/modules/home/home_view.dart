@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/modules/home/home_controller.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/layout.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/subscription_list.dart';
-import 'package:habitat_ft_user/app/modules/home/widgets/customer_drawer.dart';
+import 'package:habitat_ft_user/app/modules/home/widgets/customer_drawer/customer_drawer.dart';
 import 'package:habitat_ft_user/app/utils/build_widget.dart';
 
 import 'widgets/separator.dart';
