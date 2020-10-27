@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/profile_model.dart';
-import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 import 'package:habitat_ft_user/app/data/repositories/profile_repository.dart';
 
 class ProfileTileController extends GetxController {
@@ -8,7 +7,6 @@ class ProfileTileController extends GetxController {
 
   ProfileRepository get _profileRepository => Get.find<ProfileRepository>();
 
-  String get _uid => Get.find<AuthRepository>().user.uid;
   Profile get profile => _profile.value;
   String get completeName => profile.isNull
       ? 'Cargando...'
@@ -19,5 +17,5 @@ class ProfileTileController extends GetxController {
   @override
   void onInit() => fetch();
 
-  void fetch() => _profileRepository.getProfile(_uid).then(_setProfile);
+  void fetch() => _profileRepository.get.then(_setProfile);
 }

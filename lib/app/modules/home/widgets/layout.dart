@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-import 'separator.dart';
+import '../../../utils/widgets/separator.dart';
 
 class Layout extends StatelessWidget {
   final PreferredSizeWidget appBar;
+  final CrossAxisAlignment columnCrossAxisAlignment;
   final Widget drawer,
       title,
       separator,
       pendingSubscriptions,
       completedSubscriptions;
 
-  CrossAxisAlignment get crossAxisAlignment => CrossAxisAlignment.center;
-
   const Layout({
     this.appBar,
+    this.columnCrossAxisAlignment = CrossAxisAlignment.center,
     this.drawer,
     this.title,
     this.pendingSubscriptions,
     this.completedSubscriptions,
-    this.separator = const Separator(),
+    this.separator = const Separator('Completados'),
   });
 
   @override
@@ -28,7 +28,7 @@ class Layout extends StatelessWidget {
       drawer: drawer,
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: crossAxisAlignment,
+          crossAxisAlignment: columnCrossAxisAlignment,
           children: [
             title,
             pendingSubscriptions,

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 import 'package:habitat_ft_user/app/data/repositories/subscription_repository.dart';
 import 'package:habitat_ft_user/app/data/repositories/workshop_repository.dart';
 
@@ -15,12 +14,13 @@ class WorkshopController extends GetxController {
   RxList<Component> _components = <Component>[].obs;
   RxBool _isFinished = false.obs;
 
-  String get uid => Get.find<AuthRepository>().user.uid;
   List<Component> get components => _components;
   String get workshopId => Get.arguments['workshopId'];
   bool get isFinished => _isFinished.value;
   int get currentPage => pageController.page.round();
   bool get isLastPage => currentPage == (components.length - 1);
+
+  set isFinished(bool value) => _isFinished.value = value;
 
   @override
   void onInit() => fetchComponents();
@@ -44,8 +44,8 @@ class WorkshopController extends GetxController {
 
   Future<void> finish() async {
     try {
-      await _subscriptionRepository.complete(uid, workshopId);
-      _isFinished.value = true;
+      await _subscriptionRepository.complete(workshopId);
+      isFinished = true;
       _activateDestructorTimer();
     } catch (e) {
       print('Error al actualizar subscripcion');

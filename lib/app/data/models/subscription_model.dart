@@ -29,4 +29,7 @@ class Subscription {
     data['status'] = this.status;
     return data;
   }
+
+  static Subscription onQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
+      Subscription.queryDocumentSnapshot(doc);
 }

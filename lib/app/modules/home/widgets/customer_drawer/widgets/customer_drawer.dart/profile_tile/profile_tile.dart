@@ -14,19 +14,18 @@ class ProfileTile extends GetView<ProfileTileController> {
     this.radius = 40,
   });
 
-  @override
-  Widget build(BuildContext context) =>
-      ListTile(leading: leading, title: title);
-
-  Widget get leading => CircleAvatar(
-        backgroundColor: circleAvatarbackgroundColor,
-        radius: radius,
-      );
+  TextStyle get style => CustomerStyles.SUB_TITULO_1_BLANCO;
 
   Widget get title => Obx(
-        () => Text(
-          controller.completeName,
-          style: CustomerStyles.SUB_TITULO_1_BLANCO,
+        () => Text(controller.completeName, style: style),
+      );
+
+  @override
+  Widget build(BuildContext context) => ListTile(
+        title: title,
+        leading: CircleAvatar(
+          backgroundColor: circleAvatarbackgroundColor,
+          radius: radius,
         ),
       );
 }
