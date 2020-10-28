@@ -44,7 +44,7 @@ class CustomerListTile extends StatelessWidget {
         child: ListTile(
           title: title,
           leading: leading,
-          trailing: leading,
+          trailing: trailing,
           onTap: onTap,
         ),
       ),
