@@ -5,6 +5,9 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/data/repositories/subscription_repository.dart';
 import 'package:habitat_ft_user/app/data/repositories/workshop_repository.dart';
+import 'package:habitat_ft_user/app/utils/widgets/audio_player/audio_player_controller.dart';
+import 'package:habitat_ft_user/app/utils/widgets/download_button/download_button_controller.dart';
+import 'package:habitat_ft_user/app/utils/widgets/video_player/video_player_controller.dart';
 
 class WorkshopController extends GetxController {
   final WorkshopRepository _workshopRepository = Get.find();
@@ -56,6 +59,9 @@ class WorkshopController extends GetxController {
 
   void leave() {
     Get.delete<WorkshopController>();
+    Get.delete<AudioPlayerController>();
+    Get.delete<VideoPlayerController>();
+    Get.delete<DownloadButtonController>();
     Get.back();
   }
 }
