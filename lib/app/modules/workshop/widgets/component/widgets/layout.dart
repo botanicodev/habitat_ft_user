@@ -20,14 +20,17 @@ class Layout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           header,
+          SizedBox(height: 10),
           _body,
         ],
       ),
     );
   }
 
+// TODO REFACTOR
   get padding => const EdgeInsets.all(20);
   get margin => const EdgeInsets.all(20);
+
   get decoration => BoxDecoration(
         color: CustomerColors.BLANCO,
         borderRadius: BorderRadius.circular(10),

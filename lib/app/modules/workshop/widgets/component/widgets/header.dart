@@ -20,23 +20,26 @@ class Header extends StatelessWidget {
     );
   }
 
-  get icon => ClipOval(
-        child: Container(
-          color: component.color,
-          height: 35,
-          width: 35,
-          child: Icon(
-            component.icon,
-            size: 25,
-            color: CustomerColors.BLANCO,
-          ),
+  get icon => CircleAvatar(
+        backgroundColor: component.color,
+        radius: 20,
+        child: Icon(
+          component.icon,
+          size: 25,
+          color: CustomerColors.BLANCO,
         ),
       );
 
-  get title => Text(
-        component.title,
-        style: CustomerStyles.TITULO_3.copyWith(
-          color: component.color,
+  get title => Container(
+        alignment: Alignment.center,
+        width: 333,
+        child: Text(
+          component.title,
+          style: CustomerStyles.TITULO_3.copyWith(
+            color: component.color,
+          ),
+          maxLines: 3,
+          overflow: TextOverflow.ellipsis,
         ),
       );
 }

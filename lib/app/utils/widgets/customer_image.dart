@@ -14,10 +14,13 @@ class CustomerImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInImage.assetNetwork(
-      placeholder: placeholder,
-      image: url,
-      imageErrorBuilder: (c, o, s) => imageErrorBuilderWidget,
+    return Expanded(
+      child: FadeInImage.assetNetwork(
+        placeholder: placeholder,
+        image: url,
+        fit: BoxFit.contain,
+        imageErrorBuilder: (c, o, s) => imageErrorBuilderWidget,
+      ),
     );
   }
 }
