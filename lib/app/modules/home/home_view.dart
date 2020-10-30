@@ -10,14 +10,28 @@ import 'package:habitat_ft_user/app/utils/build_widget.dart';
 import 'widgets/workshops_title.dart';
 
 class HomeView extends GetView<HomeController> {
+  const HomeView();
+
+  Widget get pendingSubcriptionsObx => Obx(
+        () => SubscriptionList(
+          controller.pending,
+          onTap: controller.onTap,
+        ),
+      );
+
+  Widget get completedSubcriptionsObx => Obx(
+        () => SubscriptionList(
+          controller.completed,
+          onTap: controller.onTap,
+        ),
+      );
+
   @override
-  Widget build(BuildContext context) {
-    return Layout(
-      appBar: BuildWidget.appBar,
-      drawer: const CustomerDrawer(),
-      title: const WorkshopsTitle(),
-      pendingSubscriptions: SubscriptionList.pending(),
-      completedSubscriptions: SubscriptionList.completed(),
-    );
-  }
+  Widget build(BuildContext context) => Layout(
+        appBar: BuildWidget.appBar,
+        drawer: const CustomerDrawer(),
+        title: const WorkshopsTitle(),
+        pendingSubscriptions: pendingSubcriptionsObx,
+        completedSubscriptions: completedSubcriptionsObx,
+      );
 }

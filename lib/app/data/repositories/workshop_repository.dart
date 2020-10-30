@@ -13,7 +13,7 @@ class WorkshopRepository extends GetxController {
     var momentsQuerySnapshot = await workshops
         .doc(workshopId)
         .collection("moments")
-        .orderBy("sequence")
+        // .orderBy("sequence") TODO DESCOMENTAR, SE COMENTA PORQuE SI NO FALLA. NO ESTA IMOPLEMENTADO DESDE EL ADMIN
         .get();
 
     momentsQuerySnapshot.docs.forEach(
