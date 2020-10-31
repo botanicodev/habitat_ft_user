@@ -8,9 +8,15 @@ class Subscription {
   String title;
   SubscriptionStatus status;
 
-  Subscription({this.title, this.status, this.id});
+  Subscription({this.id, this.title, this.status});
 
-  Subscription.queryDocumentSnapshot(QueryDocumentSnapshot doc) {
+  static Subscription byQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
+      Subscription.fromQueryDocumentSnapshot(doc);
+
+  static Subscription byJson(Map<String, dynamic> json) =>
+      Subscription.fromJson(json);
+
+  Subscription.fromQueryDocumentSnapshot(QueryDocumentSnapshot doc) {
     Map<String, dynamic> json = doc.data();
     id = doc.id;
     title = json['title'];
@@ -24,12 +30,14 @@ class Subscription {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final data = Map<String, dynamic>();
     data['title'] = this.title;
-    data['status'] = this.status;
+    data['status'] = this.status.index;
     return data;
   }
+}
 
-  static Subscription onQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
-      Subscription.queryDocumentSnapshot(doc);
+abstract class SubscriptionList {
+  static List<Subscription> byQuerySnapshot(QuerySnapshot querySnapshot) =>
+      querySnapshot.docs.map(Subscription.byQueryDocumentSnapshot).toList();
 }

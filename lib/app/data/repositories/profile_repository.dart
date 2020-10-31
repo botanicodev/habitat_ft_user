@@ -6,15 +6,16 @@ import 'package:habitat_ft_user/app/data/models/profile_model.dart';
 import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 
 class ProfileRepository extends GetxService {
-  String get _uid => Get.find<AuthRepository>().user.uid;
-
-  CollectionReference get collection =>
+  final _collection =
       FirebaseFirestore.instance.collection(Profile.COLLECTION_NAME);
 
-  DocumentReference get document => collection.doc(_uid);
+  final _uid = Get.find<AuthRepository>().user.uid;
 
-  Future<DocumentSnapshot> get documentSnapShot => document.get();
+  Future<Profile> get() async =>
+      Profile.fromDocumentSnapshot(await documentReference.get());
 
-  Future<Profile> get get async =>
-      Profile.fromDocumentSnapshot(await documentSnapShot);
+  StreamSubscription listen(void Function(DocumentSnapshot) onData) =>
+      documentReference.snapshots().listen(onData);
+
+  DocumentReference get documentReference => _collection.doc(_uid);
 }

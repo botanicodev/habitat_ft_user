@@ -8,7 +8,7 @@ import 'widgets/customer_drawer/widgets/customer_drawer.dart/profile_tile/profil
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(SubscriptionRepository());
+    Get.lazyPut(() => SubscriptionRepository());
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => ProfileTileController());
   }

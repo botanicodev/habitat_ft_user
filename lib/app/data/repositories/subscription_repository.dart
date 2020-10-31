@@ -7,29 +7,24 @@ import 'package:habitat_ft_user/app/data/repositories/profile_repository.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 class SubscriptionRepository extends GetxService {
-  DocumentReference get _profileDocument =>
-      Get.find<ProfileRepository>().document;
+  final _collection = Get.find<ProfileRepository>()
+      .documentReference
+      .collection(Subscription.COLLECTION_NAME);
 
-  CollectionReference get collection =>
-      _profileDocument.collection(Subscription.COLLECTION_NAME);
-
-  StreamSubscription all(
+  StreamSubscription listen({
     SubscriptionStatus status,
-    void Function(List<Subscription> subscriptions) onSubscriptions,
-  ) =>
-      collection
-          .where(
-            'status',
-            isEqualTo: status.index,
-          )
-          .snapshots()
-          .listen((querySnapshot) => onSubscriptions(_toList(querySnapshot)));
+    void Function(List<Subscription> subscriptions) whenHasData,
+  }) {
+    void whenListen(QuerySnapshot querySnapshot) =>
+        whenHasData(SubscriptionList.byQuerySnapshot(querySnapshot));
 
-  Future<void> complete(String workshopId) => _document(workshopId)
-      .update({'status': SubscriptionStatus.completed.index});
+    return _query(status: status).snapshots().listen(whenListen);
+  }
 
-  DocumentReference _document(String workshopId) => collection.doc(workshopId);
+  Query _query({SubscriptionStatus status}) => status.isNull
+      ? _collection
+      : _collection.where('status', isEqualTo: status.index);
 
-  List<Subscription> _toList(QuerySnapshot querySnapshot) =>
-      querySnapshot.docs.map(Subscription.onQueryDocumentSnapshot).toList();
+  Future<void> update(Subscription subscription) =>
+      _collection.doc(subscription.id).update(subscription.toJson());
 }

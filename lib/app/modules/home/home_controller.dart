@@ -17,34 +17,37 @@ class HomeController extends GetxController {
   List<Subscription> get pending => _pending.value;
   List<Subscription> get completed => _completed.value;
 
-  void _setPending(List<Subscription> value) => _pending.value = value;
-
-  void _setCompleted(List<Subscription> value) => _completed.value = value;
-
-  void fetchPending() => _pendingStreamSubscription =
-      _repo.all(SubscriptionStatus.pending, _setPending);
-
-  void fetchCompleted() => _completedStreamSubscription =
-      _repo.all(SubscriptionStatus.completed, _setCompleted);
-
-  void fetch() {
-    fetchPending();
-    fetchCompleted();
-  }
-
-  void onTap(Subscription subscription) => _navigateToWorkshop(subscription.id);
-
-  void _navigateToWorkshop(String subscriptionId) =>
-      Get.toNamed(Routes.WORKSHOP, arguments: {"workshopId": subscriptionId});
-
-  void _cancelStreamSubscriptions() {
-    _pendingStreamSubscription.cancel();
-    _completedStreamSubscription.cancel();
-  }
-
   @override
   void onInit() => fetch();
 
   @override
   void onClose() => _cancelStreamSubscriptions();
+
+  void fetch() {
+    _cancelStreamSubscriptions();
+    _pendingStreamSubscription = _fetchPending();
+    _completedStreamSubscription = _fetchCompleted();
+  }
+
+  void _cancelStreamSubscriptions() {
+    _pendingStreamSubscription?.cancel();
+    _completedStreamSubscription?.cancel();
+  }
+
+  StreamSubscription _fetchPending() => _repo.listen(
+        status: SubscriptionStatus.pending,
+        whenHasData: _setPending,
+      );
+
+  StreamSubscription _fetchCompleted() => _repo.listen(
+        status: SubscriptionStatus.completed,
+        whenHasData: _setCompleted,
+      );
+
+  void _setPending(List<Subscription> value) => _pending.value = value;
+
+  void _setCompleted(List<Subscription> value) => _completed.value = value;
+
+  void onTap(Subscription subscription) =>
+      Get.toNamed(Routes.WORKSHOP, arguments: {"subscription": subscription});
 }

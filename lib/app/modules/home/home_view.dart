@@ -12,18 +12,14 @@ import 'widgets/workshops_title.dart';
 class HomeView extends GetView<HomeController> {
   const HomeView();
 
-  Widget get pendingSubcriptionsObx => Obx(
-        () => SubscriptionList(
-          controller.pending,
-          onTap: controller.onTap,
-        ),
+  Widget get pendingSubcriptions => SubscriptionList(
+        controller.pending,
+        onTap: controller.onTap,
       );
 
-  Widget get completedSubcriptionsObx => Obx(
-        () => SubscriptionList(
-          controller.completed,
-          onTap: controller.onTap,
-        ),
+  Widget get completedSubcriptions => SubscriptionList(
+        controller.completed,
+        onTap: controller.onTap,
       );
 
   @override
@@ -31,7 +27,7 @@ class HomeView extends GetView<HomeController> {
         appBar: BuildWidget.appBar,
         drawer: const CustomerDrawer(),
         title: const WorkshopsTitle(),
-        pendingSubscriptions: pendingSubcriptionsObx,
-        completedSubscriptions: completedSubcriptionsObx,
+        pendingSubscriptions: Obx(() => pendingSubcriptions),
+        completedSubscriptions: Obx(() => completedSubcriptions),
       );
 }

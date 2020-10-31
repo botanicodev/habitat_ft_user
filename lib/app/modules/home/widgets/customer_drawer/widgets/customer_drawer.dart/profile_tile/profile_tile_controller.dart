@@ -17,5 +17,5 @@ class ProfileTileController extends GetxController {
   @override
   void onInit() => fetch();
 
-  void fetch() => _profileRepository.get.then(_setProfile);
+  void fetch() => _profileRepository.get().then(_setProfile);
 }
