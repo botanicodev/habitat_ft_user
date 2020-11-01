@@ -6,6 +6,7 @@ import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/data/repositories/profile_repository.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
+// TODO PROVIDER
 class SubscriptionRepository extends GetxService {
   final _collection = Get.find<ProfileRepository>()
       .documentReference
