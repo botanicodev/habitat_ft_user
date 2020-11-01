@@ -17,6 +17,9 @@ class HomeController extends GetxController {
   List<Subscription> get pending => _pending.value;
   List<Subscription> get completed => _completed.value;
 
+  void _setPending(List<Subscription> value) => _pending.value = value;
+  void _setCompleted(List<Subscription> value) => _completed.value = value;
+
   @override
   void onInit() => fetch();
 
@@ -43,10 +46,6 @@ class HomeController extends GetxController {
         status: SubscriptionStatus.completed,
         whenHasData: _setCompleted,
       );
-
-  void _setPending(List<Subscription> value) => _pending.value = value;
-
-  void _setCompleted(List<Subscription> value) => _completed.value = value;
 
   void onTap(Subscription subscription) =>
       Get.toNamed(Routes.WORKSHOP, arguments: {"subscription": subscription});

@@ -16,13 +16,11 @@ class ProfileTile extends GetView<ProfileTileController> {
 
   TextStyle get style => CustomerStyles.SUB_TITULO_1_BLANCO;
 
-  Widget get title => Obx(
-        () => Text(controller.completeName, style: style),
-      );
-
   @override
-  Widget build(BuildContext context) => ListTile(
-        title: title,
+  Widget build(_) => ListTile(
+        title: Obx(
+          () => Text(controller.completeName, style: style),
+        ),
         leading: CircleAvatar(
           backgroundColor: circleAvatarbackgroundColor,
           radius: radius,

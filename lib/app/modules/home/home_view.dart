@@ -12,18 +12,18 @@ import 'widgets/workshops_title.dart';
 class HomeView extends GetView<HomeController> {
   const HomeView();
 
-  Widget get pendingSubcriptions => SubscriptionList(
+  SubscriptionList get pendingSubcriptions => SubscriptionList(
         controller.pending,
         onTap: controller.onTap,
       );
 
-  Widget get completedSubcriptions => SubscriptionList(
+  SubscriptionList get completedSubcriptions => SubscriptionList(
         controller.completed,
         onTap: controller.onTap,
       );
 
   @override
-  Widget build(BuildContext context) => Layout(
+  Widget build(_) => Layout(
         appBar: BuildWidget.appBar,
         drawer: const CustomerDrawer(),
         title: const WorkshopsTitle(),

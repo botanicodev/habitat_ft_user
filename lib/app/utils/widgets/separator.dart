@@ -10,7 +10,7 @@ class Separator extends StatelessWidget {
 
   const Separator(
     this.value, {
-    this.margin = const EdgeInsets.symmetric(horizontal: 12, vertical: 40),
+    this.margin = const EdgeInsets.symmetric(horizontal: 12),
     this.lineColor = CustomerColors.CELESTE_HABITAT,
     this.lineHeight = 0.5,
   });

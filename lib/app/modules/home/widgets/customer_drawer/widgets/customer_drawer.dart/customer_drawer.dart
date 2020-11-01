@@ -14,7 +14,7 @@ class CustomerDrawer extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(_) {
     return Drawer(
       child: Container(
         padding: padding,

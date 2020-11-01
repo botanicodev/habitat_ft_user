@@ -5,7 +5,7 @@ import 'package:habitat_ft_user/app/data/repositories/profile_repository.dart';
 class ProfileTileController extends GetxController {
   Rx<Profile> _profile = Rx<Profile>();
 
-  ProfileRepository get _profileRepository => Get.find<ProfileRepository>();
+  ProfileRepository get _profileRepo => Get.find<ProfileRepository>();
 
   Profile get profile => _profile.value;
   String get completeName => profile.isNull
@@ -17,5 +17,5 @@ class ProfileTileController extends GetxController {
   @override
   void onInit() => fetch();
 
-  void fetch() => _profileRepository.get().then(_setProfile);
+  void fetch() => _profileRepo.get().then(_setProfile);
 }

@@ -27,14 +27,17 @@ class Layout extends StatelessWidget {
       appBar: appBar,
       drawer: drawer,
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: columnCrossAxisAlignment,
-          children: [
-            title,
-            pendingSubscriptions,
-            separator,
-            completedSubscriptions
-          ],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 40.0),
+          child: Column(
+            crossAxisAlignment: columnCrossAxisAlignment,
+            children: [
+              title,
+              pendingSubscriptions,
+              separator,
+              completedSubscriptions
+            ],
+          ),
         ),
       ),
     );
