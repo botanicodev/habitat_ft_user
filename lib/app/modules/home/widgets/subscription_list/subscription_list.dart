@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/modules/home/widgets/subscription_list/widgets/subscription_tile.dart';
+import 'package:habitat_ft_user/app/utils/widgets/customer_loading.dart';
 
-import 'widgets/workshops_loading.dart';
 import 'widgets/workshops_not_found.dart';
 
 class SubscriptionList extends StatelessWidget {
@@ -16,7 +16,7 @@ class SubscriptionList extends StatelessWidget {
     this.padding = const EdgeInsets.symmetric(vertical: 35),
   });
 
-  get loading => WorkshopsLoading();
+  get loading => CustomerLoading();
 
   List<Widget> get subscriptionListView => subscriptions.map(toTile).toList();
 

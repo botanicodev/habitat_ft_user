@@ -24,7 +24,7 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(_) => Layout(
-        appBar: BuildWidget.appBar,
+        appBar: BuildWidget.appBar(),
         drawer: const CustomerDrawer(),
         title: const WorkshopsTitle(),
         pendingSubscriptions: Obx(() => pendingSubcriptions),

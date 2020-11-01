@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/component/component_view.dart';
+import 'package:habitat_ft_user/app/modules/workshop/widgets/components_view/widgets/components_page_view/navigation_bar/widgets/component/component_view.dart';
 
 import 'config/colors.dart';
 import 'enums.dart';
@@ -88,6 +88,6 @@ abstract class Mapper {
 
   static Component jsonToComponent(json) => Component.fromJson(json);
 
-  static Widget componentToView(Component component) =>
+  static ComponentView componentToView(Component component) =>
       ComponentView(component);
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
+// TODO REFACTOR
 class CustomerStyles {
   static final TITULO_1 = TextStyle(
     fontSize: 30,

@@ -3,6 +3,7 @@ import 'package:habitat_ft_user/app/data/models/component_model.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
+// TODO REFACTOR
 class Header extends StatelessWidget {
   final Component component;
 

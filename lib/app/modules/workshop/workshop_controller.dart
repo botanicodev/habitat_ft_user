@@ -37,6 +37,10 @@ class WorkshopController extends GetxController {
 
   void previusPage() => changePageTo(currentPage - 1);
   void nextPage() => changePageTo(currentPage + 1);
+
+  void navigateToPage(NavigateDirection direction) =>
+      direction == NavigateDirection.previus ? previusPage() : nextPage();
+
   void changePageTo(int page) => isLastPage ? finish() : _changePageTo(page);
   void _changePageTo(int page) => pageController.animateToPage(
         page,

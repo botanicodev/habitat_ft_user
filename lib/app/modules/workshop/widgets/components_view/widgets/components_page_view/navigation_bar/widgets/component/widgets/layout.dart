@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
+// TODO REFACTOR
 class Layout extends StatelessWidget {
   final Widget header;
   final Widget body;
@@ -27,7 +28,6 @@ class Layout extends StatelessWidget {
     );
   }
 
-// TODO REFACTOR
   get padding => const EdgeInsets.all(20);
   get margin => const EdgeInsets.all(20);
 

@@ -10,14 +10,8 @@ class ComponentView extends StatelessWidget {
   const ComponentView(this.component);
 
   @override
-  Widget build(BuildContext context) {
-    return Layout(
-      header: header,
-      body: body,
-    );
-  }
-
-  get header => Header(component);
-
-  get body => Mapper.componentToWidget(component);
+  Widget build(_) => Layout(
+        header: Header(component),
+        body: Mapper.componentToWidget(component),
+      );
 }
