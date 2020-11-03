@@ -12,9 +12,11 @@ class ComponentsPageView extends GetView<WorkshopController> {
   });
 
   @override
-  Widget build(_) => PageView(
-        controller: controller.pageController,
-        children: controller.components.map(ComponentView.byModel).toList(),
-        physics: physics,
+  Widget build(_) => Expanded(
+        child: PageView(
+          controller: controller.pageController,
+          children: controller.components.map(ComponentView.byModel).toList(),
+          physics: physics,
+        ),
       );
 }
