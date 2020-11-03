@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/widgets/separator.dart';
+import '../../../utils/widgets/separator/separator.dart';
 
 class Layout extends StatelessWidget {
   final PreferredSizeWidget appBar;

@@ -23,7 +23,7 @@ class CustomerConfirmAlertButton extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Row(
+  Widget build(_) => Row(
         mainAxisAlignment: rowMainAxisAlignment,
         children: [confirm, cancel],
       );

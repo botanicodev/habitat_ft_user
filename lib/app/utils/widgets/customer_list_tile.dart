@@ -25,29 +25,27 @@ class CustomerListTile extends StatelessWidget {
   Color get shadowColor => Colors.black.withOpacity(0.1);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: margin,
-      height: height,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: borderRaidus,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: shadowBlurRadius,
-            spreadRadius: shadowSpreadRadius,
-            color: shadowColor,
-          )
-        ],
-      ),
-      child: Center(
-        child: ListTile(
-          title: title,
-          leading: leading,
-          trailing: trailing,
-          onTap: onTap,
+  Widget build(_) => Container(
+        margin: margin,
+        height: height,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: borderRaidus,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: shadowBlurRadius,
+              spreadRadius: shadowSpreadRadius,
+              color: shadowColor,
+            )
+          ],
         ),
-      ),
-    );
-  }
+        child: Center(
+          child: ListTile(
+            title: title,
+            leading: leading,
+            trailing: trailing,
+            onTap: onTap,
+          ),
+        ),
+      );
 }

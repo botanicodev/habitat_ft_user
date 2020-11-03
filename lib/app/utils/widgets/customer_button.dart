@@ -24,7 +24,7 @@ class CustomerButton extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => ButtonTheme(
+  Widget build(_) => ButtonTheme(
         buttonColor: buttonColor,
         minWidth: minWidth,
         height: height,

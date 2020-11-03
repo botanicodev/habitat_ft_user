@@ -20,18 +20,16 @@ class CustomerAlertDialog extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      backgroundColor: backgroundColor,
-      shape: shape,
-      content: Container(
-        height: height,
-        width: width,
-        child: Column(
-          mainAxisAlignment: columnMainAxisAlignment,
-          children: children,
+  Widget build(_) => AlertDialog(
+        backgroundColor: backgroundColor,
+        shape: shape,
+        content: Container(
+          height: height,
+          width: width,
+          child: Column(
+            mainAxisAlignment: columnMainAxisAlignment,
+            children: children,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

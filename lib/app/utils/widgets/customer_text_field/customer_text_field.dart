@@ -18,7 +18,7 @@ class CustomerTextField extends StatelessWidget {
     this.errorMaxLines = 4,
   });
   @override
-  Widget build(BuildContext context) => TextField(
+  Widget build(_) => TextField(
         controller: controller,
         onChanged: onChanged,
         obscureText: obscureText,

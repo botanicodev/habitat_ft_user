@@ -23,22 +23,20 @@ class CustomerIconButton extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      child: ButtonTheme(
-        buttonColor: buttonColor,
-        splashColor: splashColor,
-        shape: shape,
-        child: RaisedButton(
-          elevation: elevation,
-          onPressed: onPressed,
-          child: Center(
-            child: Icon(icon, color: iconColor),
+  Widget build(_) => Container(
+        height: height,
+        width: width,
+        child: ButtonTheme(
+          buttonColor: buttonColor,
+          splashColor: splashColor,
+          shape: shape,
+          child: RaisedButton(
+            elevation: elevation,
+            onPressed: onPressed,
+            child: Center(
+              child: Icon(icon, color: iconColor),
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

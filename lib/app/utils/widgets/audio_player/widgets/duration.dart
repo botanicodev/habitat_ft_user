@@ -10,12 +10,10 @@ class Duration extends StatelessWidget {
   const Duration(this.controller);
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: padding,
-      child: child,
-    );
-  }
+  Widget build(_) => Padding(
+        padding: padding,
+        child: child,
+      );
 
   EdgeInsetsGeometry get padding => const EdgeInsets.symmetric(horizontal: 15);
   Widget get child => Obx(text);
