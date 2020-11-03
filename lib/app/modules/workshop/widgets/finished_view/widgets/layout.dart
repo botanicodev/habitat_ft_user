@@ -21,10 +21,7 @@ class Layout extends StatelessWidget {
           child: Column(
             mainAxisAlignment: columnMainAxisAlignment,
             children: [
-              Column(children: [
-                text,
-                icon,
-              ]),
+              Column(children: [text, icon]),
               button,
             ],
           ),

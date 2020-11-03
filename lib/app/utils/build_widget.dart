@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:habitat_ft_user/app/data/models/component_model.dart';
+import 'package:habitat_ft_user/app/utils/widgets/audio_player/audio_player.dart';
+import 'package:habitat_ft_user/app/utils/widgets/video_player/video_player.dart';
 
 import 'config/assets.dart';
 import 'config/colors.dart';
+import 'enums.dart';
+import 'widgets/customer_image.dart';
+import 'widgets/download_button/download_button.dart';
 
 abstract class BuildWidget {
   static Widget componentsAppBar({

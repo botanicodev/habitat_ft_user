@@ -4,7 +4,7 @@ import 'package:habitat_ft_user/app/utils/build_widget.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_loading.dart';
 
 import '../../workshop_controller.dart';
-import 'widgets/components_page_view/components_page_view.dart';
+import 'widgets/workshop_player/workshop_player.dart';
 
 class ComponentsView extends GetView<WorkshopController> {
   const ComponentsView();
@@ -15,7 +15,7 @@ class ComponentsView extends GetView<WorkshopController> {
         body: Obx(
           () => controller.components.isEmpty
               ? const CustomerLoading()
-              : const ComponentsPageView(),
+              : const WorkshopPlayer(),
         ),
       );
 }

@@ -25,26 +25,25 @@ class CustomerButtonWithIcon extends StatelessWidget {
     ),
   });
 
-  TextStyle get textStyle => CustomerStyles.SUB_TITULO_1_BLANCO;
-  Text get _text => Text(text, style: textStyle);
-  Icon get _icon => Icon(icon, color: iconColor);
+  TextStyle get style => CustomerStyles.SUB_TITULO_1_BLANCO;
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      child: ButtonTheme(
-        buttonColor: buttonColor,
-        shape: shape,
-        child: RaisedButton(
-          child: Row(
-            mainAxisAlignment: rowWainAxisAlignment,
-            children: [_text, _icon],
+  Widget build(_) => Container(
+        height: height,
+        width: width,
+        child: ButtonTheme(
+          buttonColor: buttonColor,
+          shape: shape,
+          child: RaisedButton(
+            onPressed: onPressed,
+            child: Row(
+              mainAxisAlignment: rowWainAxisAlignment,
+              children: [
+                Text(text, style: style),
+                Icon(icon, color: iconColor)
+              ],
+            ),
           ),
-          onPressed: onPressed,
         ),
-      ),
-    );
-  }
+      );
 }

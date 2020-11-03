@@ -10,6 +10,6 @@ class VideoPlayer extends GetWidget<VideoPlayerController> {
   }
 
   @override
-  Widget build(BuildContext context) =>
+  Widget build(_) =>
       YoutubePlayerIFrame(controller: controller.youtubePlayerController);
 }

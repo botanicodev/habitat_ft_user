@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/utils/mapper.dart';
-import 'widgets/header/header.dart';
+
+import 'widgets/component_body.dart';
+import 'widgets/component_header/component_header.dart';
 import 'widgets/layout.dart';
 
 class ComponentView extends StatelessWidget {
@@ -11,7 +12,9 @@ class ComponentView extends StatelessWidget {
 
   @override
   Widget build(_) => Layout(
-        header: Header(component),
-        body: Mapper.componentToWidget(component),
+        header: ComponentHeader(component),
+        body: ComponentBody(component),
       );
+
+  static ComponentView byModel(Component component) => ComponentView(component);
 }

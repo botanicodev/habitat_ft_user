@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/modules/workshop/widgets/components_view/widgets/components_page_view/navigation_bar/widgets/component/component_view.dart';
 
 import 'config/colors.dart';
 import 'enums.dart';
-import 'widgets/video_player/video_player.dart';
-import 'widgets/customer_image.dart';
-import 'widgets/audio_player/audio_player.dart';
-import 'widgets/download_button/download_button.dart';
 
 abstract class Mapper {
   static SubscriptionStatus intToSubscriptionStatus(int value) {
@@ -70,24 +65,5 @@ abstract class Mapper {
     }
   }
 
-  static Widget componentToWidget(Component component) {
-    switch (component.mediaType) {
-      case ComponentMediaType.video:
-        return VideoPlayer(component.url);
-      case ComponentMediaType.image:
-        return CustomerImage(component.url);
-      case ComponentMediaType.file:
-        return DownloadButton(component.url);
-      case ComponentMediaType.audio:
-        return AudioPlayer(component.url);
-      default:
-        print('No se encontro un indice para mapear un Component-Widget');
-        return Center(child: Text('Componente no implementado'));
-    }
-  }
-
   static Component jsonToComponent(json) => Component.fromJson(json);
-
-  static ComponentView componentToView(Component component) =>
-      ComponentView(component);
 }

@@ -6,6 +6,7 @@ import 'package:habitat_ft_user/app/utils/widgets/video_player/video_player_cont
 
 import 'workshop_controller.dart';
 
+// TODO REFACTOR
 class WorkshopBinding extends Bindings {
   @override
   void dependencies() {
