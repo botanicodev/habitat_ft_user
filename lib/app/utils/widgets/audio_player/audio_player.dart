@@ -9,7 +9,7 @@ import 'widgets/layout.dart';
 import 'widgets/duration.dart';
 import 'widgets/progress_bar/progress_bar.dart';
 
-class AudioPlayer extends GetWidget<AudioPlayerController> {
+class AudioPlayer extends GetView<AudioPlayerController> {
   AudioPlayer(String url) {
     controller.init(url);
   }

@@ -10,7 +10,7 @@ class WorkshopView extends GetView<WorkshopController> {
 
   @override
   Widget build(_) => Obx(
-        () => controller.isFinished
+        () => controller.isWorkshopFinished
             ? const FinishedView()
             : const ComponentsView(),
       );

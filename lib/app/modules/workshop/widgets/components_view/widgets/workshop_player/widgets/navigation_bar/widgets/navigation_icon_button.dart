@@ -25,6 +25,6 @@ class NavegationIconButton extends GetView<WorkshopController> {
         height: height,
         width: width,
         icon: icon,
-        onPressed: () => controller.navigateToPage(direction),
+        onPressed: () => controller.navigateTo(direction),
       );
 }

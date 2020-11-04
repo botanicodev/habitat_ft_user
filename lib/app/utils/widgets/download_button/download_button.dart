@@ -3,7 +3,7 @@ import 'package:get/state_manager.dart';
 import 'package:habitat_ft_user/app/utils/widgets/download_button/download_button_controller.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_button_with_icon.dart';
 
-class DownloadButton extends GetWidget<DownloadButtonController> {
+class DownloadButton extends GetView<DownloadButtonController> {
   final String text;
   final IconData icon;
 

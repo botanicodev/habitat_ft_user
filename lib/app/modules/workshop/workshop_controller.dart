@@ -12,53 +12,47 @@ import 'package:habitat_ft_user/app/utils/widgets/audio_player/audio_player_cont
 import 'package:habitat_ft_user/app/utils/widgets/download_button/download_button_controller.dart';
 import 'package:habitat_ft_user/app/utils/widgets/video_player/video_player_controller.dart';
 
-// TODO REFACTOR
 class WorkshopController extends GetxController {
-  final WorkshopRepository _workshopRepository = Get.find();
-  final SubscriptionRepository _subscriptionRepo = Get.find();
+  final _workshopRepo = Get.find<WorkshopRepository>();
+  final _subscriptionRepo = Get.find<SubscriptionRepository>();
   final Subscription _subscription = Get.arguments['subscription'];
 
-  PageController pageController = PageController(initialPage: 0);
-  RxList<Component> _components = <Component>[].obs;
-  RxBool _isFinished = false.obs;
+  PageController componentListPageController = PageController(initialPage: 0);
+  RxList<Component> _componentList = <Component>[].obs;
+  RxBool _isWorkshopFinished = false.obs;
 
-  List<Component> get components => _components;
-  bool get isFinished => _isFinished.value;
-  int get currentPage => pageController.page.round();
+  List<Component> get components => _componentList;
+  bool get isWorkshopFinished => _isWorkshopFinished.value;
   bool get isLastPage => currentPage == (components.length - 1);
-
-  set isFinished(bool value) => _isFinished.value = value;
-
-  @override
-  void onInit() => fetchComponents();
+  int get currentPage => componentListPageController.page.round();
+  int get previusPage => currentPage - 1;
+  int get nextPage => currentPage + 1;
 
   @override
-  void onClose() => pageController.dispose();
+  void onInit() => fetchComponentList();
 
-  void previusPage() => changePageTo(currentPage - 1);
-  void nextPage() => changePageTo(currentPage + 1);
+  void fetchComponentList() =>
+      _workshopRepo.getAllComponents(_subscription.id).then(_setComponentList);
 
-  void navigateToPage(NavigateDirection direction) =>
-      direction == NavigateDirection.previus ? previusPage() : nextPage();
+  void _setComponentList(List<Component> value) => _componentList.value = value;
 
-  void changePageTo(int page) => isLastPage ? finish() : _changePageTo(page);
-  void _changePageTo(int page) => pageController.animateToPage(
+  void navigateTo(NavigateDirection direction) =>
+      direction == NavigateDirection.previus ? toPreviusPage() : toNextPage();
+
+  void toPreviusPage() => changePageTo(previusPage);
+  void toNextPage() => isLastPage ? finish() : changePageTo(nextPage);
+
+  void changePageTo(int page) => componentListPageController.animateToPage(
         page,
         duration: Duration(milliseconds: 500),
         curve: Curves.easeIn,
       );
 
-  void fetchComponents() => _workshopRepository
-      .getAllComponents(_subscription.id)
-      .then(_setComponents);
-
-  void _setComponents(List<Component> value) => _components.value = value;
-
   Future<void> finish() async {
     try {
-      _subscription.status = SubscriptionStatus.completed;
+      _subscription.finish();
       await _subscriptionRepo.update(_subscription);
-      isFinished = true;
+      _isWorkshopFinished.value = true;
       _activateDestructorTimer();
     } catch (e) {
       CustomerSnackbar.error(
@@ -70,10 +64,13 @@ class WorkshopController extends GetxController {
   void _activateDestructorTimer() => Timer(Duration(milliseconds: 1000), leave);
 
   void leave() {
-    Get.delete<WorkshopController>();
-    Get.delete<AudioPlayerController>();
-    Get.delete<VideoPlayerController>();
-    Get.delete<DownloadButtonController>();
+    // Get.delete<AudioPlayerController>();
+    // Get.delete<VideoPlayerController>();
+    // Get.delete<DownloadButtonController>();
+    // Get.delete<WorkshopController>();
     Get.back();
   }
+
+  @override
+  void onClose() => componentListPageController?.dispose();
 }
