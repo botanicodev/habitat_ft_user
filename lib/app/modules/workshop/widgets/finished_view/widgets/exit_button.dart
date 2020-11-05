@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
-class ExitButton extends GetView<WorkshopController> {
+class ExitButton extends StatelessWidget {
   final String text;
 
   const ExitButton({
@@ -15,6 +14,6 @@ class ExitButton extends GetView<WorkshopController> {
   @override
   Widget build(_) => FlatButton(
         child: Text(text, style: style),
-        onPressed: controller.leave,
+        onPressed: Get.back,
       );
 }

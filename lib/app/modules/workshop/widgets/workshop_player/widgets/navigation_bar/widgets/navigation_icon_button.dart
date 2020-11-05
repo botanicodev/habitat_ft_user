@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_icon_button.dart';
 
-class NavegationIconButton extends GetView<WorkshopController> {
+import '../../../workshop_player_controller.dart';
+
+class NavegationIconButton extends GetView<WorkshopPlayerController> {
   final NavigateDirection direction;
   final IconData previusIcon, nextIcon;
   final double height, width;
