@@ -10,7 +10,8 @@ class Subscription {
 
   Subscription({this.id, this.title, this.status});
 
-  void finish() => status = SubscriptionStatus.completed;
+  void setComplete() => status = SubscriptionStatus.completed;
+  void setPending() => status = SubscriptionStatus.pending;
 
   static Subscription byQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
       Subscription.fromQueryDocumentSnapshot(doc);

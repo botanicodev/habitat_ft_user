@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/workshop/workshop_controller.dart';
 
-import 'widgets/components_page_view/components_page_view.dart';
+import 'widgets/component_view/component_view.dart';
+import 'widgets/components_page_view.dart';
 import 'widgets/navigation_bar/navigation_bar.dart';
+import 'workshop_player_controller.dart';
 
-class WorkshopPlayer extends GetView<WorkshopController> {
+class WorkshopPlayer extends GetView<WorkshopPlayerController> {
   const WorkshopPlayer();
 
   @override
   Widget build(_) => Column(children: [
-        const ComponentsPageView(),
+        ComponentsPageView(
+          pageController: controller.pageController,
+          componentList:
+              controller.componentList.map(ComponentView.byModel).toList(),
+        ),
         const NavigationBar(),
       ]);
 }

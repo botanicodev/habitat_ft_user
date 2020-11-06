@@ -18,6 +18,7 @@ abstract class BuildWidget {
     Widget leading,
     Widget title,
     Color backgroundColor = CustomerColors.CELESTE_HABITAT,
+    double elevation = 0,
   }) =>
       AppBar(
         backgroundColor: backgroundColor,
@@ -25,5 +26,6 @@ abstract class BuildWidget {
             title != null ? title : Image.asset(CustomerAssets.WHITE_LOGO_MIN),
         centerTitle: true,
         leading: leading,
+        elevation: elevation,
       );
 }

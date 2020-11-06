@@ -16,5 +16,5 @@ class ComponentView extends StatelessWidget {
         body: ComponentBody(component),
       );
 
-  static ComponentView byModel(Component component) => ComponentView(component);
+  static Widget byModel(Component component) => ComponentView(component);
 }
