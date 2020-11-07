@@ -6,5 +6,5 @@ abstract class Routes{
   static const SPLASH_SCREEN = '/splash-screen';
   static const HOME = '/home';
   static const LOGIN = '/login';
-  static const WORKSHOP = '/workshop';
+  static const SUBSCRIPTION = '/subscription';
 }

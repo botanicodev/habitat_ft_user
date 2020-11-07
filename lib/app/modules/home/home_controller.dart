@@ -48,5 +48,5 @@ class HomeController extends GetxController {
       );
 
   void onTap(Subscription subscription) =>
-      Get.toNamed(Routes.WORKSHOP, arguments: {"subscription": subscription});
+      Get.toNamed(Routes.SUBSCRIPTION, arguments: {"subscription": subscription});
 }

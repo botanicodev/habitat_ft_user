@@ -4,13 +4,13 @@ import 'package:habitat_ft_user/app/utils/widgets/audio_player/audio_player_cont
 import 'package:habitat_ft_user/app/utils/widgets/download_button/download_button_controller.dart';
 
 import 'widgets/workshop_player/workshop_player_controller.dart';
-import 'workshop_controller.dart';
+import 'subscription_controller.dart';
 
-class WorkshopBinding extends Bindings {
+class SubscriptionBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => WorkshopRepository());
-    Get.lazyPut(() => WorkshopController());
+    Get.lazyPut(() => SubscriptionController());
     Get.lazyPut(() => WorkshopPlayerController());
     Get.lazyPut(() => DownloadButtonController());
     Get.lazyPut(() => AudioPlayerController());

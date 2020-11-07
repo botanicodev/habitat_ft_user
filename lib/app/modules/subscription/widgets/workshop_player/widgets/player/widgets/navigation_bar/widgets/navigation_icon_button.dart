@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_icon_button.dart';
 
-import '../../../workshop_player_controller.dart';
+import '../../../../../workshop_player_controller.dart';
 
 class NavegationIconButton extends GetView<WorkshopPlayerController> {
   final NavigateDirection direction;

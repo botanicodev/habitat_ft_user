@@ -1,5 +1,5 @@
-import 'package:habitat_ft_user/app/modules/workshop/workshop_view.dart';
-import 'package:habitat_ft_user/app/modules/workshop/workshop_binding.dart';
+import 'package:habitat_ft_user/app/modules/subscription/subscription_view.dart';
+import 'package:habitat_ft_user/app/modules/subscription/subscription_binding.dart';
 import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_binding.dart';
@@ -27,9 +27,9 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: Routes.WORKSHOP,
-      page: () => WorkshopView(),
-      binding: WorkshopBinding(),
+      name: Routes.SUBSCRIPTION,
+      page: () => SubscriptionView(),
+      binding: SubscriptionBinding(),
     ),
   ];
 }
