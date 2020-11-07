@@ -13,12 +13,12 @@ class HomeView extends GetView<HomeController> {
   const HomeView();
 
   SubscriptionList get pendingSubcriptions => SubscriptionList(
-        controller.pending,
+        subscriptions: controller.pending,
         onTap: controller.onTap,
       );
 
   SubscriptionList get completedSubcriptions => SubscriptionList(
-        controller.completed,
+        subscriptions: controller.completed,
         onTap: controller.onTap,
       );
 

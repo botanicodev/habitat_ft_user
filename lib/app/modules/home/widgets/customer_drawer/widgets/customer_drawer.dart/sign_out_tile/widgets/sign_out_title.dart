@@ -8,5 +8,5 @@ class SignOutTitle extends StatelessWidget {
   TextStyle get style => CustomerStyles.TITULO_3_CELESTE;
 
   @override
-  Widget build(BuildContext context) => Text(title, style: style);
+  Widget build(_) => Text(title, style: style);
 }

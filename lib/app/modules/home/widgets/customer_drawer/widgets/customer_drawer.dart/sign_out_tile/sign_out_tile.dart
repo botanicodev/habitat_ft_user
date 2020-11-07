@@ -5,7 +5,6 @@ import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 import 'widgets/sign_out_alert_dialog.dart';
 
-// TODO REFACTOR
 class SignOutTile extends StatelessWidget {
   final double height, iconSize;
   final Color color, iconColor;
@@ -27,13 +26,13 @@ class SignOutTile extends StatelessWidget {
   void showSignOutAlertDialog() => Get.dialog(SignOutAlertDialog());
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(_) => Container(
         height: height,
         color: color,
         padding: padding,
         child: Center(
           child: ListTile(
-            leading: icon,
+            leading: Icon(Icons.logout, size: iconSize, color: iconColor),
             title: title,
             onTap: showSignOutAlertDialog,
           ),

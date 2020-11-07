@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
-import 'package:habitat_ft_user/app/utils/mapper.dart';
 
+// TODO REFACTOR DE TODO
 class Subscription {
   static const COLLECTION_NAME = 'subscriptions';
   String id;
@@ -13,23 +13,17 @@ class Subscription {
   void setComplete() => status = SubscriptionStatus.completed;
   void setPending() => status = SubscriptionStatus.pending;
 
-  static Subscription byQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
-      Subscription.fromQueryDocumentSnapshot(doc);
-
-  static Subscription byJson(Map<String, dynamic> json) =>
-      Subscription.fromJson(json);
-
   Subscription.fromQueryDocumentSnapshot(QueryDocumentSnapshot doc) {
     Map<String, dynamic> json = doc.data();
     id = doc.id;
     title = json['title'];
-    status = Mapper.intToSubscriptionStatus(json['status']);
+    status = Subscription.intToSubscriptionStatus(json['status']);
   }
 
   Subscription.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
-    status = Mapper.intToSubscriptionStatus(json['status']);
+    status = Subscription.intToSubscriptionStatus(json['status']);
   }
 
   Map<String, dynamic> toJson() {
@@ -37,6 +31,24 @@ class Subscription {
     data['title'] = this.title;
     data['status'] = this.status.index;
     return data;
+  }
+
+  static Subscription byQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
+      Subscription.fromQueryDocumentSnapshot(doc);
+
+  static Subscription byJson(Map<String, dynamic> json) =>
+      Subscription.fromJson(json);
+
+  static SubscriptionStatus intToSubscriptionStatus(int value) {
+    switch (value) {
+      case 0:
+        return SubscriptionStatus.pending;
+      case 1:
+        return SubscriptionStatus.completed;
+      default:
+        print('No se encontro un indice para mapear un Status');
+        return SubscriptionStatus.pending;
+    }
   }
 }
 

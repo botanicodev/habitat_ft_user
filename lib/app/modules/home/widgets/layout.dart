@@ -22,24 +22,22 @@ class Layout extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar,
-      drawer: drawer,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 40.0),
-          child: Column(
-            crossAxisAlignment: columnCrossAxisAlignment,
-            children: [
-              title,
-              pendingSubscriptions,
-              separator,
-              completedSubscriptions
-            ],
+  Widget build(_) => Scaffold(
+        appBar: appBar,
+        drawer: drawer,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 40.0),
+            child: Column(
+              crossAxisAlignment: columnCrossAxisAlignment,
+              children: [
+                title,
+                pendingSubscriptions,
+                separator,
+                completedSubscriptions
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

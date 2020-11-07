@@ -10,15 +10,13 @@ class SubscriptionList extends StatelessWidget {
   final void Function(Subscription subscription) onTap;
   final EdgeInsetsGeometry padding;
 
-  const SubscriptionList(
-    this.subscriptions, {
+  const SubscriptionList({
+    @required this.subscriptions,
     @required this.onTap,
     this.padding = const EdgeInsets.symmetric(vertical: 35),
   });
 
   get loading => CustomerLoading();
-
-  List<Widget> get subscriptionListView => subscriptions.map(toTile).toList();
 
   Widget toTile(Subscription subscription) =>
       SubscriptionTile(subscription, onTap: () => onTap(subscription));
@@ -28,6 +26,8 @@ class SubscriptionList extends StatelessWidget {
         padding: padding,
         child: subscriptions.isEmpty
             ? const WorkshopsNotFound()
-            : Column(children: subscriptionListView),
+            : Column(
+                children: subscriptions.map(toTile).toList(),
+              ),
       );
 }

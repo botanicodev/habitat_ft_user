@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/utils/mapper.dart';
 
 // TODO REFACTOR
 class WorkshopRepository extends GetxController {
@@ -20,6 +19,6 @@ class WorkshopRepository extends GetxController {
       (moment) => components.addAll(moment.data()["components"]),
     );
 
-    return components.map(Mapper.jsonToComponent).toList();
+    return components.map(Component.byJson).toList();
   }
 }

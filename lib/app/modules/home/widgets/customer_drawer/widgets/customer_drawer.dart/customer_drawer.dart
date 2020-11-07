@@ -14,19 +14,17 @@ class CustomerDrawer extends StatelessWidget {
   });
 
   @override
-  Widget build(_) {
-    return Drawer(
-      child: Container(
-        padding: padding,
-        color: color,
-        child: Column(
-          children: [
-            ProfileTile(),
-            const Spacer(),
-            const SignOutTile(),
-          ],
+  Widget build(_) => Drawer(
+        child: Container(
+          padding: padding,
+          color: color,
+          child: Column(
+            children: [
+              ProfileTile(),
+              const Spacer(),
+              const SignOutTile(),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

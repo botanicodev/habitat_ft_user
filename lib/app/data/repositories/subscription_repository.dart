@@ -15,12 +15,11 @@ class SubscriptionRepository extends GetxService {
   StreamSubscription listen({
     SubscriptionStatus status,
     void Function(List<Subscription> subscriptions) whenHasData,
-  }) {
-    void whenListen(QuerySnapshot querySnapshot) =>
-        whenHasData(SubscriptionList.byQuerySnapshot(querySnapshot));
-
-    return _query(status: status).snapshots().listen(whenListen);
-  }
+  }) =>
+      _query(status: status).snapshots().listen(
+            (querySnapshot) =>
+                whenHasData(SubscriptionList.byQuerySnapshot(querySnapshot)),
+          );
 
   Query _query({SubscriptionStatus status}) => status.isNull
       ? _collection

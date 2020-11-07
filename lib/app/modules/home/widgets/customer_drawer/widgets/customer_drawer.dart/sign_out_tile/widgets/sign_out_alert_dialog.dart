@@ -8,12 +8,10 @@ class SignOutAlertDialog extends StatelessWidget {
   const SignOutAlertDialog();
 
   @override
-  Widget build(BuildContext context) {
-    return CustomerAlertDialog(
-      children: [
-        const SignOutTitle(),
-        const SignOutConfirmAlertDialogButton(),
-      ],
-    );
-  }
+  Widget build(_) => CustomerAlertDialog(
+        children: [
+          const SignOutTitle(),
+          const SignOutConfirmAlertDialogButton(),
+        ],
+      );
 }

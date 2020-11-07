@@ -14,8 +14,5 @@ class ProfileRepository extends GetxService {
   Future<Profile> get() async =>
       Profile.fromDocumentSnapshot(await documentReference.get());
 
-  StreamSubscription listen(void Function(DocumentSnapshot) onData) =>
-      documentReference.snapshots().listen(onData);
-
   DocumentReference get documentReference => _collection.doc(_uid);
 }

@@ -7,7 +7,7 @@ class SignOutConfirmAlertDialogButton extends GetView<AuthRepository> {
   const SignOutConfirmAlertDialogButton();
 
   @override
-  Widget build(BuildContext context) => CustomerConfirmAlertButton(
+  Widget build(_) => CustomerConfirmAlertButton(
         onCancelPressed: Get.back,
         onConfirmPressed: controller.signOut,
       );
