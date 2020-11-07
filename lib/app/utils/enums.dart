@@ -1,3 +1,4 @@
 enum SubscriptionStatus { pending, completed }
-enum MediaType { video, image, file, audio }
+enum ComponentMediaType { video, image, file, audio }
 enum AudioPlayerStatus { playing, paused, error, loading }
+enum NavigateDirection { previus, next }

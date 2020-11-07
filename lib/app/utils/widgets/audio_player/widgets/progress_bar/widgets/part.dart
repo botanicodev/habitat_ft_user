@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/colors.dart';
 
+// TODO REFACTOR
 class Part extends StatelessWidget {
   static const _completedBorderRadius =
       BorderRadius.only(topLeft: _radius, bottomLeft: _radius);
@@ -28,16 +29,14 @@ class Part extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      flex: flex,
-      child: Container(
-        height: height,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: borderRadius,
+  Widget build(_) => Expanded(
+        flex: flex,
+        child: Container(
+          height: height,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: borderRadius,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

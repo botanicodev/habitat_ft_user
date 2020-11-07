@@ -17,14 +17,12 @@ class Layout extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        videoPlayer,
-        layout,
-      ],
-    );
-  }
+  Widget build(_) => Stack(
+        children: [
+          videoPlayer,
+          layout,
+        ],
+      );
 
   Widget get layout => Container(
         height: 50,

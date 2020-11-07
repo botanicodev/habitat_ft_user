@@ -6,15 +6,14 @@ import 'package:habitat_ft_user/app/utils/enums.dart';
 import '../../audio_player_controller.dart';
 import 'widgets/button.dart';
 
+// TODO REFACTOR
 class Board extends StatelessWidget {
   final AudioPlayerController audioPlayerController;
 
   const Board(this.audioPlayerController);
 
   @override
-  Widget build(BuildContext context) {
-    return Obx(buildByObx);
-  }
+  Widget build(_) => Obx(buildByObx);
 
   Widget buildByObx() {
     switch (audioPlayerController.status) {

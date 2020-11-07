@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class WelcomeTitle extends StatelessWidget {
-  const WelcomeTitle({Key key}) : super(key: key);
+  const WelcomeTitle();
+
+  String get text => '¡Bienvenido!';
+  TextStyle get style => CustomerStyles.TITULO_1_CELESTE;
 
   @override
-  Widget build(BuildContext context) {
-    return Text(
-      '¡Bienvenido!',
-      style: CustomerStyles.TITULO_1_CELESTE,
-    );
-  }
+  Widget build(_) => Text(text, style: style);
 }

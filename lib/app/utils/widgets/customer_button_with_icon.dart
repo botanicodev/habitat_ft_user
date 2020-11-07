@@ -3,13 +3,13 @@ import 'package:habitat_ft_user/app/utils/config/colors.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 class CustomerButtonWithIcon extends StatelessWidget {
-  final double height;
-  final double width;
+  final double height, width;
   final String text;
   final IconData icon;
   final void Function() onPressed;
-  final Color buttonColor;
-  final Color iconColor;
+  final Color buttonColor, iconColor;
+  final MainAxisAlignment rowWainAxisAlignment;
+  final ShapeBorder shape;
 
   const CustomerButtonWithIcon({
     @required this.text,
@@ -19,35 +19,31 @@ class CustomerButtonWithIcon extends StatelessWidget {
     this.width = 155,
     this.buttonColor = CustomerColors.CELESTE_HABITAT,
     this.iconColor = CustomerColors.BLANCO,
+    this.rowWainAxisAlignment = MainAxisAlignment.spaceEvenly,
+    this.shape = const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+    ),
   });
 
+  TextStyle get style => CustomerStyles.SUB_TITULO_1_BLANCO;
+
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      child: ButtonTheme(
-        buttonColor: buttonColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
-        ),
-        child: RaisedButton(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                text,
-                style: CustomerStyles.SUB_TITULO_1_BLANCO,
-              ),
-              Icon(
-                icon,
-                color: iconColor,
-              ),
-            ],
+  Widget build(_) => Container(
+        height: height,
+        width: width,
+        child: ButtonTheme(
+          buttonColor: buttonColor,
+          shape: shape,
+          child: RaisedButton(
+            onPressed: onPressed,
+            child: Row(
+              mainAxisAlignment: rowWainAxisAlignment,
+              children: [
+                Text(text, style: style),
+                Icon(icon, color: iconColor)
+              ],
+            ),
           ),
-          onPressed: onPressed,
         ),
-      ),
-    );
-  }
+      );
 }

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_controller.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 
-class SplashScreenView extends GetView<SplashScreenController> {
+class SplashScreenView extends StatelessWidget {
+  final String asset;
+
+  const SplashScreenView({
+    this.asset = CustomerAssets.SPLASH_SCREEN,
+  });
+
   @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          child: Image.asset(
-            CustomerAssets.SPLASH_SCREEN,
-            fit: BoxFit.cover,
-            height: Get.height,
-            width: Get.width,
-          ),
-        )
-      ],
-    );
-  }
+  Widget build(_) => Container(
+        child: Image.asset(
+          asset,
+          fit: BoxFit.cover,
+          height: Get.height,
+          width: Get.width,
+        ),
+      );
 }

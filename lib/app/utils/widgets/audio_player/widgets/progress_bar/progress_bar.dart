@@ -10,23 +10,15 @@ class ProgressBar extends StatelessWidget {
   const ProgressBar(this.controller);
 
   @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: [
-          completedPart,
-          indicator,
-          incompletePart,
-        ],
-      ),
-    );
-  }
-
-  Widget get indicator => Indicator();
-
-  //TODO Cambiar estos valores por la duracion del audio,
-  Widget get completedPart => Part.completed(flex: 0);
-
-  //TODO Cambiar estos valores por la duracion del audio,
-  Widget get incompletePart => Part.incomplete(flex: 1);
+  Widget build(_) => Expanded(
+        child: Row(
+          children: [
+            //TODO Cambiar estos valores por la duracion del audio,
+            Part.completed(flex: 0),
+            Indicator(),
+            //TODO Cambiar estos valores por la duracion del audio,
+            Part.incomplete(flex: 1),
+          ],
+        ),
+      );
 }

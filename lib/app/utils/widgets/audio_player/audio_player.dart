@@ -2,42 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/utils/widgets/audio_player/audio_player_controller.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
+import 'package:habitat_ft_user/app/utils/widgets/customer_loading.dart';
 
 import 'widgets/board/board.dart';
 import 'widgets/layout.dart';
 import 'widgets/duration.dart';
 import 'widgets/progress_bar/progress_bar.dart';
 
-class AudioPlayer extends GetWidget<AudioPlayerController> {
+class AudioPlayer extends GetView<AudioPlayerController> {
   AudioPlayer(String url) {
     controller.init(url);
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Obx(buildByOBx);
-  }
-
-  Widget buildByOBx() {
-    switch (controller.status) {
-      case AudioPlayerStatus.loading:
-        return loading;
-      case AudioPlayerStatus.error:
-        return error;
-      default:
-        return layout;
-    }
-  }
-
-  Widget get loading => Center(child: CircularProgressIndicator());
-  Widget get error => Text(controller.message);
-  Widget get layout => Layout(
-        videoPlayerController: controller.videoPlayerController,
-        buttonBoard: buttonBoard,
-        progressBar: progressBar,
-        duration: duration,
-      );
-  Widget get buttonBoard => Board(controller);
-  Widget get progressBar => ProgressBar(controller);
-  Widget get duration => Duration(controller);
+  Widget build(_) => Obx(() {
+        switch (controller.status) {
+          case AudioPlayerStatus.loading:
+            return const CustomerLoading();
+          case AudioPlayerStatus.error:
+            return Text(controller.message);
+          default:
+            return Layout(
+              videoPlayerController: controller.videoPlayerController,
+              buttonBoard: Board(controller),
+              progressBar: ProgressBar(controller),
+              duration: Duration(controller),
+            );
+        }
+      });
 }

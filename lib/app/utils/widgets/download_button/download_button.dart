@@ -3,20 +3,24 @@ import 'package:get/state_manager.dart';
 import 'package:habitat_ft_user/app/utils/widgets/download_button/download_button_controller.dart';
 import 'package:habitat_ft_user/app/utils/widgets/customer_button_with_icon.dart';
 
-class DownloadButton extends GetWidget<DownloadButtonController> {
-  DownloadButton(String url) {
+class DownloadButton extends GetView<DownloadButtonController> {
+  final String text;
+  final IconData icon;
+
+  DownloadButton(
+    String url, {
+    this.text = 'Descargar',
+    this.icon = Icons.cloud_download,
+  }) {
     controller.init(url);
   }
 
   @override
-  Widget build(BuildContext context) {
-    return CustomerButtonWithIcon(
-      text: text,
-      icon: icon,
-      onPressed: controller.download,
-    );
-  }
-
-  String get text => 'Descargar';
-  IconData get icon => Icons.cloud_download;
+  Widget build(_) => Center(
+        child: CustomerButtonWithIcon(
+          text: text,
+          icon: icon,
+          onPressed: controller.download,
+        ),
+      );
 }
