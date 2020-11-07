@@ -22,26 +22,24 @@ class Layout extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: backgroundColor,
-        child: Center(
-          child: Container(
-            padding: padding,
-            height: height,
-            width: width,
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: borderRadius,
-            ),
-            child: Column(
-              mainAxisAlignment: mainAxisAlignment,
-              children: children,
+  Widget build(_) => Scaffold(
+        body: Container(
+          color: backgroundColor,
+          child: Center(
+            child: Container(
+              padding: padding,
+              height: height,
+              width: width,
+              decoration: BoxDecoration(
+                color: cardColor,
+                borderRadius: borderRadius,
+              ),
+              child: Column(
+                mainAxisAlignment: mainAxisAlignment,
+                children: children,
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

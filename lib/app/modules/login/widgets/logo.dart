@@ -5,7 +5,5 @@ class Logo extends StatelessWidget {
   const Logo();
 
   @override
-  Widget build(BuildContext context) => Image.asset(asset);
-
-  String get asset => CustomerAssets.LIGHT_BLUE_LOGO;
+  Widget build(_) => Image.asset(CustomerAssets.LIGHT_BLUE_LOGO);
 }

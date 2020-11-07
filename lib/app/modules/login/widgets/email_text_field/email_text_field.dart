@@ -4,17 +4,17 @@ import 'package:habitat_ft_user/app/modules/login/widgets/email_text_field/email
 import 'package:habitat_ft_user/app/utils/widgets/customer_text_field/customer_text_field.dart';
 
 class EmailTextField extends GetView<EmailTextFieldController> {
-  const EmailTextField();
+  final String labelText;
+
+  const EmailTextField({this.labelText = 'Email'});
 
   @override
-  Widget build(BuildContext context) => Obx(() => textField);
-
-  Widget get textField => CustomerTextField(
-        labelText: labelText,
-        controller: controller.textFieldController,
-        errorText: controller.errorText(),
-        onChanged: controller.onChange,
+  Widget build(BuildContext context) => Obx(
+        () => CustomerTextField(
+          labelText: labelText,
+          controller: controller.textFieldController,
+          errorText: controller.errorText(),
+          onChanged: controller.onChange,
+        ),
       );
-
-  String get labelText => 'Email';
 }

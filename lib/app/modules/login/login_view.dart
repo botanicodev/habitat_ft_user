@@ -12,16 +12,14 @@ import 'widgets/login_button.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
-  Widget build(BuildContext context) {
-    return Layout(
-      children: [
-        const Logo(),
-        const WelcomeTitle(),
-        const Subtitle(),
-        const EmailTextField(),
-        const PasswordTextField(),
-        const LoginButton(),
-      ],
-    );
-  }
+  Widget build(_) => Layout(
+        children: [
+          const Logo(),
+          const WelcomeTitle(),
+          const Subtitle(),
+          const EmailTextField(),
+          const PasswordTextField(),
+          const LoginButton(),
+        ],
+      );
 }
