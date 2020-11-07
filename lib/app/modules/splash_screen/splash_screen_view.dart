@@ -10,12 +10,12 @@ class SplashScreenView extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Container(child: child);
-
-  Widget get child => Image.asset(
-        asset,
-        fit: BoxFit.cover,
-        height: Get.height,
-        width: Get.width,
+  Widget build(_) => Container(
+        child: Image.asset(
+          asset,
+          fit: BoxFit.cover,
+          height: Get.height,
+          width: Get.width,
+        ),
       );
 }
