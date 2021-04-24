@@ -12,7 +12,10 @@ class AuthRepository extends GetxService {
   User get user => _user.value;
 
   @override
-  void onInit() => fetch();
+  void onInit() {
+    super.onInit();
+    fetch();
+  }
 
   Future<void> signOut() => _auth.signOut();
 

@@ -13,7 +13,10 @@ class ProfileTileController extends GetxController {
       : '${profile.name.capitalizeFirst} ${profile.lastname.capitalizeFirst}';
 
   @override
-  void onInit() => fetch();
+  void onInit() {
+    super.onInit();
+    fetch();
+  }
 
   void fetch() => _profileRepo.get().then(_setProfile);
 

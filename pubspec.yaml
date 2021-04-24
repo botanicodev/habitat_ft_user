@@ -21,16 +21,17 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  get: 3.11.1
+  get: 3.25.4
   splashscreen:
-  google_fonts: ^1.1.0
-  firebase_core:
-  firebase_auth: ^0.18.1+2
-  cloud_firestore:
-  url_launcher: ^5.7.2
+  google_fonts: ^2.0.0
+  cloud_firestore: ^1.0.3
+  firebase_auth: ^1.0.1
+  firebase_core: ^1.0.2
+  firebase_storage: ^8.0.1
+  url_launcher: ^6.0.3
   video_player: ^0.11.0
   video_player_web: ^0.1.4
-  youtube_player_iframe: ^1.1.0
+  youtube_player_iframe: ^2.0.0
 
   flutter:
     sdk: flutter
