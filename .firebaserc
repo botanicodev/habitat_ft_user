@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "habitat-ft-admin"
+  },
+  "targets": {
+    "habitat-ft-admin": {
+      "hosting": {
+        "user": [
+          "habitat-ft-beneficiary"
+        ],
+        "participante": [
+          "participante-habitat"
+        ]
+      }
+    }
+  }
+}
