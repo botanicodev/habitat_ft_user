@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitat_ft_user/app/data/models/component_model.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class ComponentIcon extends StatelessWidget {
   final Component component;
@@ -11,7 +11,7 @@ class ComponentIcon extends StatelessWidget {
     this.component, {
     this.radius = 20,
     this.size = 25,
-    this.iconColor = CustomerColors.BLANCO,
+    this.iconColor = CustomColor.BLANCO,
   });
 
   @override

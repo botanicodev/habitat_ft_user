@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:video_player/video_player.dart';
 
 class Layout extends StatelessWidget {
@@ -27,7 +27,7 @@ class Layout extends StatelessWidget {
   Widget get layout => Container(
         height: 50,
         decoration: BoxDecoration(
-          color: CustomerColors.GRIS_05,
+          color: CustomColor.GRIS_05,
           borderRadius: BorderRadius.circular(100),
         ),
         child: Row(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class CustomerIconButton extends StatelessWidget {
   final double width, height, elevation;
@@ -14,9 +14,9 @@ class CustomerIconButton extends StatelessWidget {
     @required this.width,
     @required this.height,
     this.elevation = 0,
-    this.buttonColor = CustomerColors.CELESTE_HABITAT,
-    this.splashColor = CustomerColors.CELESTE_OSCURO_2,
-    this.iconColor = CustomerColors.BLANCO,
+    this.buttonColor = CustomColor.CELESTE_HABITAT,
+    this.splashColor = CustomColor.CELESTE_OSCURO_2,
+    this.iconColor = CustomColor.BLANCO,
     this.shape = const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(18.0)),
     ),

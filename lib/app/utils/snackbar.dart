@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'config/colors.dart';
+import 'config/custom_color.dart';
 
 abstract class CustomerSnackbar {
   static error({
@@ -11,9 +11,9 @@ abstract class CustomerSnackbar {
       Get.snackbar(
         title,
         message,
-        icon: Icon(Icons.error_outline, color: CustomerColors.CANCELAR),
+        icon: Icon(Icons.error_outline, color: CustomColor.CANCELAR),
         snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: CustomerColors.CELESTE_HABITAT,
-        colorText: CustomerColors.BLANCO,
+        backgroundColor: CustomColor.CELESTE_HABITAT,
+        colorText: CustomColor.BLANCO,
       );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 import 'widgets/sign_out_alert_dialog.dart';
@@ -12,9 +12,9 @@ class SignOutTile extends StatelessWidget {
 
   const SignOutTile({
     this.height = 78,
-    this.color = CustomerColors.CELESTE_HABITAT,
+    this.color = CustomColor.CELESTE_HABITAT,
     this.padding = const EdgeInsets.symmetric(horizontal: 20),
-    this.iconColor = CustomerColors.BLANCO,
+    this.iconColor = CustomColor.BLANCO,
     this.iconSize = 35,
   });
 

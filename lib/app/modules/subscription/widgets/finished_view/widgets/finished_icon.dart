@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class FinishedIcon extends StatelessWidget {
   final IconData iconData;
@@ -8,7 +8,7 @@ class FinishedIcon extends StatelessWidget {
 
   const FinishedIcon({
     this.iconData = Icons.check_circle_outline,
-    this.color = CustomerColors.BLANCO,
+    this.color = CustomColor.BLANCO,
     this.size = 150,
   });
 

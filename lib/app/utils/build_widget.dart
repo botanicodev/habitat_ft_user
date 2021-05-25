@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'config/assets.dart';
-import 'config/colors.dart';
+import 'config/custom_color.dart';
 
 abstract class BuildWidget {
   static Widget appBarBackButton({
     Widget icon = const Icon(
       Icons.arrow_back_ios,
-      color: CustomerColors.BLANCO,
+      color: CustomColor.BLANCO,
       size: 20,
     ),
   }) =>
@@ -17,7 +17,7 @@ abstract class BuildWidget {
   static Widget appBar({
     Widget leading,
     Widget title,
-    Color backgroundColor = CustomerColors.CELESTE_HABITAT,
+    Color backgroundColor = CustomColor.CELESTE_HABITAT,
     double elevation = 0,
   }) =>
       AppBar(

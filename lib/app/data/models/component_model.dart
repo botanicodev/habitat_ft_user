@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 // TODO refactor de todo
@@ -53,16 +53,16 @@ class Component {
   static Color mediaTypeToColor(ComponentMediaType mediaType) {
     switch (mediaType) {
       case ComponentMediaType.video:
-        return CustomerColors.COMPLEMENTO_1;
+        return CustomColor.COMPLEMENTO_1;
       case ComponentMediaType.image:
-        return CustomerColors.COMPLEMENTO_2;
+        return CustomColor.COMPLEMENTO_2;
       case ComponentMediaType.file:
-        return CustomerColors.COMPLEMENTO_3;
+        return CustomColor.COMPLEMENTO_3;
       case ComponentMediaType.audio:
-        return CustomerColors.COMPLEMENTO_4;
+        return CustomColor.COMPLEMENTO_4;
       default:
         print('No se encontro un indice para mapear un MediaType-Color');
-        return CustomerColors.CELESTE_HABITAT;
+        return CustomColor.CELESTE_HABITAT;
     }
   }
 

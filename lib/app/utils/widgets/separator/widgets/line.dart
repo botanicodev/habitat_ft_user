@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class Line extends StatelessWidget {
   final EdgeInsetsGeometry margin;
@@ -8,7 +8,7 @@ class Line extends StatelessWidget {
 
   const Line({
     this.margin = const EdgeInsets.symmetric(horizontal: 12),
-    this.lineColor = CustomerColors.CELESTE_HABITAT,
+    this.lineColor = CustomColor.CELESTE_HABITAT,
     this.lineHeight = 0.5,
   });
 

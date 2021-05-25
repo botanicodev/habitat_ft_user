@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
+import 'custom_color.dart';
 
 // TODO REFACTOR
 class CustomerStyles {
@@ -72,35 +72,31 @@ class CustomerStyles {
   );
 
   static final TITULO_1_CELESTE =
-      TITULO_1.copyWith(color: CustomerColors.CELESTE_HABITAT);
+      TITULO_1.copyWith(color: CustomColor.CELESTE_HABITAT);
 
-  static final TITULO_1_BLANCO =
-      TITULO_1.copyWith(color: CustomerColors.BLANCO);
+  static final TITULO_1_BLANCO = TITULO_1.copyWith(color: CustomColor.BLANCO);
 
   static final TITULO_2_CELESTE_OSCURO =
-      TITULO_2.copyWith(color: CustomerColors.CELESTE_OSCURO);
+      TITULO_2.copyWith(color: CustomColor.CELESTE_OSCURO);
 
-  static final TITULO_2_BLANCO =
-      TITULO_2.copyWith(color: CustomerColors.BLANCO);
+  static final TITULO_2_BLANCO = TITULO_2.copyWith(color: CustomColor.BLANCO);
 
-  static final TITULO_3_BLANCO =
-      TITULO_3.copyWith(color: CustomerColors.BLANCO);
+  static final TITULO_3_BLANCO = TITULO_3.copyWith(color: CustomColor.BLANCO);
 
   static final TITULO_3_CELESTE =
-      TITULO_3.copyWith(color: CustomerColors.CELESTE_HABITAT);
+      TITULO_3.copyWith(color: CustomColor.CELESTE_HABITAT);
 
   static final SUB_TITULO_1_BLANCO =
-      SUB_TITULO_1.copyWith(color: CustomerColors.BLANCO);
+      SUB_TITULO_1.copyWith(color: CustomColor.BLANCO);
 
   static final SUB_TITULO_2_GRIS_50 =
-      SUB_TITULO_2.copyWith(color: CustomerColors.GRIS_50);
+      SUB_TITULO_2.copyWith(color: CustomColor.GRIS_50);
 
   static final BOTONES_CELESTE =
-      BOTONES.copyWith(color: CustomerColors.CELESTE_HABITAT);
+      BOTONES.copyWith(color: CustomColor.CELESTE_HABITAT);
 
-  static final TAGS_CELESTE =
-      TAGS.copyWith(color: CustomerColors.CELESTE_HABITAT);
+  static final TAGS_CELESTE = TAGS.copyWith(color: CustomColor.CELESTE_HABITAT);
 
   static final LINK_BOTON_CANCELAR =
-      LINK_BOTON.copyWith(color: CustomerColors.CANCELAR);
+      LINK_BOTON.copyWith(color: CustomColor.CANCELAR);
 }

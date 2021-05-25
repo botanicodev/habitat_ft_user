@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:habitat_ft_user/app/utils/enums.dart';
 
 import '../../audio_player_controller.dart';
@@ -30,7 +30,7 @@ class Board extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Icon(
           Icons.error_outline,
-          color: CustomerColors.CANCELAR,
+          color: CustomColor.CANCELAR,
           size: 40,
         ),
       );

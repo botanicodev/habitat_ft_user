@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class CustomerListTile extends StatelessWidget {
   final EdgeInsetsGeometry margin;
@@ -11,7 +11,7 @@ class CustomerListTile extends StatelessWidget {
 
   const CustomerListTile({
     this.margin = const EdgeInsets.only(left: 12, right: 12, top: 12),
-    this.color = CustomerColors.BLANCO,
+    this.color = CustomColor.BLANCO,
     this.height = 75,
     this.borderRaidus = const BorderRadius.all(Radius.circular(10)),
     this.shadowBlurRadius = 12,

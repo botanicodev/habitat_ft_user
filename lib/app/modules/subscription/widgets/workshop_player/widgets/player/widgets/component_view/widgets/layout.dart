@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class Layout extends StatelessWidget {
   final Widget header, body;
@@ -14,7 +14,7 @@ class Layout extends StatelessWidget {
     @required this.body,
     this.padding = const EdgeInsets.all(20),
     this.margin = const EdgeInsets.all(20),
-    this.backgroundColor = CustomerColors.BLANCO,
+    this.backgroundColor = CustomColor.BLANCO,
     this.borderRadius = const BorderRadius.all(Radius.circular(10)),
     this.boxShadow = const BoxShadow(color: Colors.black12, blurRadius: 12),
     this.columnCrossAxisAlignment = CrossAxisAlignment.start,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 // TODO REFACTOR
 class Button extends StatelessWidget {
@@ -15,7 +15,7 @@ class Button extends StatelessWidget {
           padding: EdgeInsets.all(0),
           icon: Icon(
             icon,
-            color: CustomerColors.CELESTE_HABITAT,
+            color: CustomColor.CELESTE_HABITAT,
             size: 40,
           ),
           onPressed: onPressed,

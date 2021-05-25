@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class Indicator extends StatelessWidget {
   const Indicator();
@@ -9,7 +9,7 @@ class Indicator extends StatelessWidget {
         child: Container(
           height: 10,
           width: 10,
-          color: CustomerColors.CELESTE_OSCURO,
+          color: CustomColor.CELESTE_OSCURO,
         ),
       );
 }

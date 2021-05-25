@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 
 import 'profile_tile_controller.dart';
@@ -10,7 +10,7 @@ class ProfileTile extends GetView<ProfileTileController> {
   final double radius;
 
   ProfileTile({
-    this.circleAvatarbackgroundColor = CustomerColors.COMPLEMENTO_1,
+    this.circleAvatarbackgroundColor = CustomColor.COMPLEMENTO_1,
     this.radius = 40,
   });
 

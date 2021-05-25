@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 // TODO REFACTOR
 class Part extends StatelessWidget {
@@ -18,13 +18,13 @@ class Part extends StatelessWidget {
 
   const Part.completed({
     @required this.flex,
-    this.color = CustomerColors.CELESTE_HABITAT,
+    this.color = CustomColor.CELESTE_HABITAT,
     this.borderRadius = _completedBorderRadius,
   });
 
   const Part.incomplete({
     @required this.flex,
-    this.color = CustomerColors.GRIS_25,
+    this.color = CustomColor.GRIS_25,
     this.borderRadius = _incompleteBorderRadius,
   });
 

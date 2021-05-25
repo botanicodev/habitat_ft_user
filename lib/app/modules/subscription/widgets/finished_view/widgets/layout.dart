@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class Layout extends StatelessWidget {
   final Color backgroundColor;
@@ -7,7 +7,7 @@ class Layout extends StatelessWidget {
   final Widget text, icon, button;
 
   const Layout({
-    this.backgroundColor = CustomerColors.CELESTE_HABITAT,
+    this.backgroundColor = CustomColor.CELESTE_HABITAT,
     this.columnMainAxisAlignment = MainAxisAlignment.spaceAround,
     this.text,
     this.icon,

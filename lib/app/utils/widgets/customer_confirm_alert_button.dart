@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class CustomerConfirmAlertButton extends StatelessWidget {
   final MainAxisAlignment rowMainAxisAlignment;
@@ -14,11 +14,11 @@ class CustomerConfirmAlertButton extends StatelessWidget {
     this.iconSize = 60,
     this.confirmIcon = const Icon(
       Icons.highlight_remove_rounded,
-      color: CustomerColors.CANCELAR,
+      color: CustomColor.CANCELAR,
     ),
     this.cancelIcon = const Icon(
       Icons.check_circle_outline_rounded,
-      color: CustomerColors.CONFIRMAR,
+      color: CustomColor.CONFIRMAR,
     ),
   });
 

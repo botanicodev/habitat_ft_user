@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habitat_ft_user/app/utils/config/colors.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class CustomerAlertDialog extends StatelessWidget {
   final List<Widget> children;
@@ -10,7 +10,7 @@ class CustomerAlertDialog extends StatelessWidget {
 
   const CustomerAlertDialog({
     @required this.children,
-    this.backgroundColor = CustomerColors.GRIS_01,
+    this.backgroundColor = CustomColor.GRIS_01,
     this.height = 160,
     this.width = 274,
     this.columnMainAxisAlignment = MainAxisAlignment.spaceEvenly,
