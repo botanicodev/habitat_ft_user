@@ -9,5 +9,7 @@ class FinishedTitle extends StatelessWidget {
   TextStyle get style => CustomerStyles.TITULO_2_BLANCO;
 
   @override
-  Widget build(_) => Text(title, style: style);
+  Widget build(BuildContext context) {
+    return Text(title, style: style);
+  }
 }

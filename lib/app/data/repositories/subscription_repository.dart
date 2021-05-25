@@ -37,19 +37,10 @@ class SubscriptionRepository extends GetxService {
         .then((qs) => qs.docs.map((s) => Subscription.fromQuery(s)).toList());
   }
 
-  // StreamSubscription listen({
-  //   SubscriptionStatus status,
-  //   void Function(List<Subscription> subscriptions) whenHasData,
-  // }) =>
-  //     _query(status: status).snapshots().listen(
-  //           (querySnapshot) =>
-  //               whenHasData(SubscriptionList.byQuerySnapshot(querySnapshot)),
-  //         );
-
-  // Query _query({SubscriptionStatus status}) => status.isNull
-  //     ? _collection
-  //     : _collection.where('status', isEqualTo: status.index);
-
-  // Future<void> update(Subscription subscription) =>
-  //     _collection.doc(subscription.id).update(subscription.toJson());
+  Future<void> update(String competitorId, Subscription subscription) =>
+      _collectionProfiles
+          .doc(competitorId)
+          .collection(Subscription.COLLECTION_NAME)
+          .doc(subscription.id)
+          .update(subscription.toJson());
 }

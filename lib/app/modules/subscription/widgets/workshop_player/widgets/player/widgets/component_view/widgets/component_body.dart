@@ -17,12 +17,15 @@ class ComponentBody extends StatelessWidget {
   });
 
   @override
-  Widget build(_) {
+  Widget build(BuildContext context) {
     switch (component.mediaType) {
       case ComponentMediaType.video:
-        return Expanded(
-            child: VideoPlayer(
-                controller: VideoPlayer.newController(component.url)));
+        return Center(
+          child: Container(
+              constraints: BoxConstraints(maxWidth: 700),
+              child: VideoPlayer(
+                  controller: VideoPlayer.newController(component.url))),
+        );
       case ComponentMediaType.image:
         return Expanded(child: CustomerImage(component.url));
       case ComponentMediaType.file:

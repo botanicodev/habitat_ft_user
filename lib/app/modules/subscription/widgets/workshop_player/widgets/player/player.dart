@@ -16,6 +16,6 @@ class Player extends GetView<WorkshopPlayerController> {
           componentList:
               controller.componentList.map(ComponentView.byModel).toList(),
         ),
-        const NavigationBar(),
+        NavigationBar(),
       ]);
 }

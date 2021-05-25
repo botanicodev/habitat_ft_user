@@ -9,7 +9,9 @@ class WorkshopPlayer extends GetView<WorkshopPlayerController> {
   const WorkshopPlayer();
 
   @override
-  Widget build(_) => Obx(
-        () => controller.componentList.isEmpty ? CustomerLoading() : Player(),
-      );
+  Widget build(BuildContext context) {
+    return Obx(
+      () => controller.componentList.isEmpty ? CustomerLoading() : Player(),
+    );
+  }
 }

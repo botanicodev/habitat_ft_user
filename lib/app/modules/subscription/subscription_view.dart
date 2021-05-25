@@ -9,8 +9,10 @@ class SubscriptionView extends GetView<SubscriptionController> {
   const SubscriptionView();
 
   @override
-  Widget build(_) => Scaffold(
-        appBar: BuildWidget.appBarBackButton(),
-        body: const WorkshopPlayer(),
-      );
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: BuildWidget.appBarBackButton(),
+      body: const WorkshopPlayer(),
+    );
+  }
 }

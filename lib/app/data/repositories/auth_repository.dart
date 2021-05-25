@@ -22,6 +22,7 @@ class AuthRepository extends GetxService {
         .then((s) => s.docs.map((p) => Competitor.fromQuery(p)).first);
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('competitorId', currentUser.id);
     await prefs.setString('name', currentUser.name);
     await prefs.setString('lastName', currentUser.lastName);
 

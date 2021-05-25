@@ -23,6 +23,8 @@ class WorkshopPlayerController extends GetxController {
   int get nextPage => currentPage + 1;
   int get currentPage => pageController.page.round();
 
+  RxInt currentPageStream = 0.obs;
+
   @override
   void onInit() => fetchComponentList();
 
@@ -34,10 +36,15 @@ class WorkshopPlayerController extends GetxController {
   void navigateTo(NavigateDirection direction) =>
       direction == NavigateDirection.previus ? toPreviusPage() : toNextPage();
 
-  void toPreviusPage() => changePageTo(previusPage);
-  void toNextPage() => isLastComponent
-      ? _subscriptionController.finish()
-      : changePageTo(nextPage);
+  void toPreviusPage() {
+    currentPageStream.value = currentPageStream.value - 1;
+    changePageTo(previusPage);
+  }
+
+  void toNextPage() {
+    currentPageStream.value = currentPageStream.value + 1;
+    isLastComponent ? _subscriptionController.finish() : changePageTo(nextPage);
+  }
 
   void changePageTo(int page) => pageController.animateToPage(
         page,
