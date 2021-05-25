@@ -26,10 +26,12 @@ class SubscriptionTile extends StatelessWidget {
   TextStyle get stlye => CustomerStyles.TITULO_3_CELESTE;
 
   @override
-  Widget build(_) => CustomerListTile(
-        title: Text(subscription.title, style: stlye),
-        leading: leading,
-        trailing: trailing,
-        onTap: onTap,
-      );
+  Widget build(BuildContext context) {
+    return CustomerListTile(
+      title: Text(subscription.title, style: stlye),
+      leading: leading,
+      trailing: trailing,
+      onTap: onTap,
+    );
+  }
 }

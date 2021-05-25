@@ -22,12 +22,14 @@ class SubscriptionList extends StatelessWidget {
       SubscriptionTile(subscription, onTap: () => onTap(subscription));
 
   @override
-  Widget build(_) => Padding(
-        padding: padding,
-        child: subscriptions.isEmpty
-            ? const WorkshopsNotFound()
-            : Column(
-                children: subscriptions.map(toTile).toList(),
-              ),
-      );
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: padding,
+      child: subscriptions.isEmpty
+          ? const WorkshopsNotFound()
+          : Column(
+              children: subscriptions.map(toTile).toList(),
+            ),
+    );
+  }
 }

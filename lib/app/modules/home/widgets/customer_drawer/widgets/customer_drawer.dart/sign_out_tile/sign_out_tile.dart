@@ -26,16 +26,18 @@ class SignOutTile extends StatelessWidget {
   void showSignOutAlertDialog() => Get.dialog(SignOutAlertDialog());
 
   @override
-  Widget build(_) => Container(
-        height: height,
-        color: color,
-        padding: padding,
-        child: Center(
-          child: ListTile(
-            leading: Icon(Icons.logout, size: iconSize, color: iconColor),
-            title: title,
-            onTap: showSignOutAlertDialog,
-          ),
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      color: color,
+      padding: padding,
+      child: Center(
+        child: ListTile(
+          leading: Icon(Icons.logout, size: iconSize, color: iconColor),
+          title: title,
+          onTap: showSignOutAlertDialog,
         ),
-      );
+      ),
+    );
+  }
 }

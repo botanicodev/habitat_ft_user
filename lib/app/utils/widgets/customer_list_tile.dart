@@ -14,8 +14,8 @@ class CustomerListTile extends StatelessWidget {
     this.color = CustomColor.BLANCO,
     this.height = 75,
     this.borderRaidus = const BorderRadius.all(Radius.circular(10)),
-    this.shadowBlurRadius = 12,
-    this.shadowSpreadRadius = 0,
+    this.shadowBlurRadius = 7,
+    this.shadowSpreadRadius = 5,
     this.title,
     this.leading,
     this.trailing,
@@ -25,27 +25,33 @@ class CustomerListTile extends StatelessWidget {
   Color get shadowColor => Colors.black.withOpacity(0.1);
 
   @override
-  Widget build(_) => Container(
-        margin: margin,
-        height: height,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: borderRaidus,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: shadowBlurRadius,
-              spreadRadius: shadowSpreadRadius,
-              color: shadowColor,
-            )
-          ],
+  Widget build(BuildContext context) {
+    return Container(
+      margin: margin,
+      height: height,
+      constraints: BoxConstraints(
+        maxWidth: 700,
+      ),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: borderRaidus,
+        boxShadow: [
+          BoxShadow(
+            blurRadius: shadowBlurRadius,
+            spreadRadius: shadowSpreadRadius,
+            offset: Offset(5, 5),
+            color: shadowColor,
+          )
+        ],
+      ),
+      child: Center(
+        child: ListTile(
+          title: title,
+          leading: leading,
+          trailing: trailing,
+          onTap: onTap,
         ),
-        child: Center(
-          child: ListTile(
-            title: title,
-            leading: leading,
-            trailing: trailing,
-            onTap: onTap,
-          ),
-        ),
-      );
+      ),
+    );
+  }
 }

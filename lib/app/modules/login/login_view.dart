@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/data/models/competitor.dart';
 import 'package:habitat_ft_user/app/modules/home/home_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/modules/login/widgets/custom_text_field.dart';
@@ -8,8 +9,8 @@ import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/utils/widgets/custom_button.dart';
 
-class LoginView extends StatelessWidget {
-  final controller = Get.find<LoginController>();
+class LoginView extends GetView<LoginController> {
+  // final controller = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -86,17 +87,18 @@ class LoginView extends StatelessWidget {
                               controller.isLoading$.value = true;
                               controller.wasItValidated$.value = false;
 
-                              var isLoginOK =
+                              final Competitor competitor =
                                   await controller.signInWithEmailAndPassword(
                                       controller.email$.value,
                                       controller.password$.value);
 
                               controller.isLoading$.value = false;
 
-                              if (isLoginOK) {
+                              if (competitor != null) {
                                 controller.email$.value = '';
                                 controller.password$.value = '';
-                                Get.off(() => HomeView());
+                                Get.off(() => HomeView(),
+                                    arguments: competitor);
                               } else {
                                 showAlertErrorLogin(context);
                               }

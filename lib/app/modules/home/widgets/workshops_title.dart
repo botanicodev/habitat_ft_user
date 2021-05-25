@@ -8,5 +8,10 @@ class WorkshopsTitle extends StatelessWidget {
   TextStyle get style => CustomerStyles.TITULO_2_CELESTE_OSCURO;
 
   @override
-  Widget build(_) => Text(title, style: style);
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: Text(title, style: style),
+    );
+  }
 }

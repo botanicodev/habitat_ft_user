@@ -16,7 +16,7 @@ class SubscriptionController extends GetxController {
   Future<void> finish() async {
     try {
       subscription.setComplete();
-      await _subscriptionRepo.update(subscription);
+      // await _subscriptionRepo.update(subscription);
       Get.off(FinishedView());
     } catch (e) {
       CustomerSnackbar.error(

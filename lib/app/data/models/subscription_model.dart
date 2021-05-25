@@ -33,6 +33,13 @@ class Subscription {
     return data;
   }
 
+  Subscription.fromQuery(QueryDocumentSnapshot doc) {
+    Map<String, dynamic> map = doc.data();
+    id = doc.id;
+    title = map['title'];
+    status = intToSubscriptionStatus(map['status']);
+  }
+
   static Subscription byQueryDocumentSnapshot(QueryDocumentSnapshot doc) =>
       Subscription.fromQueryDocumentSnapshot(doc);
 
@@ -50,6 +57,9 @@ class Subscription {
         return SubscriptionStatus.pending;
     }
   }
+
+  @override
+  String toString() => 'id: $id, title: $title, status: $status';
 }
 
 abstract class SubscriptionList {
