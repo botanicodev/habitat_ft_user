@@ -1,21 +1,23 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:habitat_ft_user/app/routes/app_pages.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
+import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class SplashScreenView extends StatelessWidget {
-  final String asset;
-
-  const SplashScreenView({
-    this.asset = CustomerAssets.SPLASH_SCREEN,
-  });
+  SplashScreenView() {
+    Timer(Duration(seconds: 3), () => Get.offAllNamed(Routes.LOGIN));
+  }
 
   @override
-  Widget build(_) => Container(
-        child: Image.asset(
-          asset,
-          fit: BoxFit.cover,
-          height: Get.height,
-          width: Get.width,
-        ),
-      );
+  Widget build(BuildContext context) {
+    return Container(
+      color: CustomColor.CELESTE_HABITAT,
+      child: Image.asset(
+        CustomerAssets.SPLASH_SCREEN,
+      ),
+    );
+  }
 }

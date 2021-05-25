@@ -32,6 +32,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               this.text,

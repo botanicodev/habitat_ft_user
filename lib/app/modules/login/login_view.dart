@@ -52,6 +52,7 @@ class LoginView extends GetView<LoginController> {
                   wasItValidatedStream: controller.wasItValidated$,
                   hintText: 'Contraseña',
                   suffixIconData: Icons.lock,
+                  obscureText: true,
                 ),
                 const SizedBox(height: 10),
                 Obx(
