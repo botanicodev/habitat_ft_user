@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "habitat-ft"
+  },
+  "targets": {
+    "habitat-ft": {
+      "hosting": {
+        "1.0.0": [
+          "habitat-participante"
+        ]
+      }
+    }
   }
 }
