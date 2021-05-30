@@ -3,7 +3,7 @@ import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 
 class CustomerConfirmAlertButton extends StatelessWidget {
   final MainAxisAlignment rowMainAxisAlignment;
-  final void Function() onConfirmPressed, onCancelPressed;
+  final VoidCallback onConfirmPressed, onCancelPressed;
   final Widget confirmIcon, cancelIcon;
   final double iconSize;
 

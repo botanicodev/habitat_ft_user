@@ -14,27 +14,57 @@ class CustomerDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        padding: const EdgeInsets.only(top: 120, bottom: 44),
+        padding: const EdgeInsets.only(bottom: 44),
         color: CustomColor.CELESTE_OSCURO,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              title: FutureBuilder(
-                future: SharedPreferences.getInstance(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(snapshot.data.getString('name') +
-                        ' ' +
-                        snapshot.data.getString('lastName'));
-                  } else {
-                    return Text('');
-                  }
-                },
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Container(
+                margin: EdgeInsets.only(left: 15, top: 40, bottom: 40),
+                child: GestureDetector(
+                  child: Icon(
+                    Icons.close,
+                    size: 35,
+                    color: Colors.white,
+                  ),
+                  onTap: () => Get.back(),
+                ),
               ),
-              leading: CircleAvatar(
-                backgroundColor: CustomColor.COMPLEMENTO_1,
-                radius: 40,
-              ),
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 25, right: 10.0),
+                  child: CircleAvatar(
+                    backgroundColor: CustomColor.COMPLEMENTO_1,
+                    radius: 20,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: FutureBuilder(
+                    future: SharedPreferences.getInstance(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(
+                          snapshot.data.getString('name') +
+                              ' ' +
+                              snapshot.data.getString('lastName'),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500),
+                        );
+                      } else {
+                        return Text('');
+                      }
+                    },
+                  ),
+                )
+              ],
             ),
             const Spacer(),
             const SignOutTile(),

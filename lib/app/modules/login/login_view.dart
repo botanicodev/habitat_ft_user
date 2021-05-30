@@ -4,14 +4,13 @@ import 'package:habitat_ft_user/app/data/models/competitor.dart';
 import 'package:habitat_ft_user/app/modules/home/home_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/modules/login/widgets/custom_text_field.dart';
+import 'package:habitat_ft_user/app/routes/app_pages.dart';
 import 'package:habitat_ft_user/app/utils/config/assets.dart';
 import 'package:habitat_ft_user/app/utils/config/custom_color.dart';
 import 'package:habitat_ft_user/app/utils/config/styles.dart';
 import 'package:habitat_ft_user/app/utils/widgets/custom_button.dart';
 
 class LoginView extends GetView<LoginController> {
-  // final controller = Get.find<LoginController>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +97,7 @@ class LoginView extends GetView<LoginController> {
                               if (competitor != null) {
                                 controller.email$.value = '';
                                 controller.password$.value = '';
-                                Get.off(() => HomeView(),
+                                Get.offAllNamed(Routes.HOME,
                                     arguments: competitor);
                               } else {
                                 showAlertErrorLogin(context);

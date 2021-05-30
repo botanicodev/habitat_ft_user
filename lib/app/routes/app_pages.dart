@@ -1,3 +1,4 @@
+import 'package:habitat_ft_user/app/modules/splash_screen/splas_screen_binding.dart';
 import 'package:habitat_ft_user/app/modules/subscription/subscription_view.dart';
 import 'package:habitat_ft_user/app/modules/subscription/subscription_binding.dart';
 import 'package:habitat_ft_user/app/modules/splash_screen/splash_screen_view.dart';
@@ -14,6 +15,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.SPLASH_SCREEN,
+      binding: SplashScreenBinding(),
       page: () => SplashScreenView(),
     ),
     GetPage(

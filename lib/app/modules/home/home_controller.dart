@@ -1,9 +1,7 @@
-import 'dart:async';
-
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/competitor.dart';
-import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
 import 'package:habitat_ft_user/app/data/repositories/subscription_repository.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController {
   final subscriptionRepository = SubscriptionRepository();
@@ -19,6 +17,12 @@ class HomeController extends GetxController {
   void onInit() async {
     super.onInit();
     competitor = Get.arguments;
+
+    if (competitor == null) {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      competitor = new Competitor();
+      competitor.id = prefs.getString("competitorId");
+    }
 
     getPendingSubscriptions();
     getCompletedSubscriptions();

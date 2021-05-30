@@ -11,10 +11,10 @@ import 'package:habitat_ft_user/app/utils/widgets/separator/separator.dart';
 
 import 'widgets/workshops_title.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends GetView<HomeController> {
   HomeView({Key key});
 
-  final controller = Get.put(HomeController());
+  // final controller = Get.put(HomeController());
   final _workshopRepository = Get.put(WorkshopRepository());
 
   @override

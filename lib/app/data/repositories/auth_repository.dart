@@ -25,7 +25,14 @@ class AuthRepository extends GetxService {
     await prefs.setString('competitorId', currentUser.id);
     await prefs.setString('name', currentUser.name);
     await prefs.setString('lastName', currentUser.lastName);
+    await prefs.setBool('isLogin', true);
 
     return currentUser;
+  }
+
+  Future<void> signOut() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("isLogin", false);
+    // return _firebaseAuth.signOut();
   }
 }
