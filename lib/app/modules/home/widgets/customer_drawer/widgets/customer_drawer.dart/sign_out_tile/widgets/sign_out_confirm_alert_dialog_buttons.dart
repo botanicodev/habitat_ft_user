@@ -16,7 +16,7 @@ class SignOutConfirmAlertDialogButton extends StatelessWidget {
       },
       onConfirmPressed: () {
         AuthRepository().signOut();
-        Get.offNamed(Routes.LOGIN);
+        Get.offAllNamed(Routes.LOGIN);
       },
     );
   }

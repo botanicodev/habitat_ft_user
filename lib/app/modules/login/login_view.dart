@@ -37,6 +37,7 @@ class LoginView extends GetView<LoginController> {
                     style: CustomerStyles.SUB_TITULO_2_GRIS_50),
                 const SizedBox(height: 25),
                 CustomTextField(
+                  keyboardType: TextInputType.emailAddress,
                   height: 70,
                   textStream: controller.email$,
                   errorText$: controller.errorTextEmail$,
