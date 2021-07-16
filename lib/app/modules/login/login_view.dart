@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/competitor.dart';
-import 'package:habitat_ft_user/app/modules/home/home_view.dart';
 import 'package:habitat_ft_user/app/modules/login/login_controller.dart';
 import 'package:habitat_ft_user/app/modules/login/widgets/custom_text_field.dart';
 import 'package:habitat_ft_user/app/routes/app_pages.dart';

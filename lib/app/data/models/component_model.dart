@@ -8,12 +8,9 @@ class Component {
   String title;
   String url;
   ComponentMediaType mediaType;
+  String momentId;
 
-  Component({
-    this.title,
-    this.url,
-    this.mediaType,
-  });
+  Component({this.title, this.url, this.mediaType, this.momentId});
 
   Component.fromJson(Map<String, dynamic> json) {
     title = json['title'];

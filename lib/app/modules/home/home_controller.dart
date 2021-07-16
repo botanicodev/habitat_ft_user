@@ -13,6 +13,8 @@ class HomeController extends GetxController {
   RxBool isLoadingSubscriptionsPending$ = false.obs;
   RxBool isLoadingSubscriptionsCompleted$ = false.obs;
 
+  RxString currentWorkshopId = ''.obs;
+
   @override
   void onInit() async {
     super.onInit();

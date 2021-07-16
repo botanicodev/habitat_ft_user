@@ -23,15 +23,22 @@ class WorkshopRepository extends GetxService {
   }
 
   Future<List<Component>> getAllComponents(String workshopId) async {
-    List components = [];
+    List<Component> components = [];
     List<Moment> moments = [];
 
     moments = await getAllMoments(workshopId);
 
-    moments.forEach(
-      (m) => components.addAll(m.components),
-    );
+    for (var m in moments) {
+      for (var c in m.components) {
+        components.add(new Component(
+          momentId: m.id,
+          title: c['title'],
+          mediaType: Component.intToMediaType(c['media_type']),
+          url: c['url'],
+        ));
+      }
+    }
 
-    return components.map(Component.byJson).toList();
+    return components;
   }
 }

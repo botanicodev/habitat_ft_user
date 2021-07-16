@@ -1,12 +1,9 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:habitat_ft_user/app/data/models/profile_model.dart';
 import 'package:habitat_ft_user/app/data/models/subscription_model.dart';
-import 'package:habitat_ft_user/app/data/repositories/profile_repository.dart';
-import 'package:habitat_ft_user/app/utils/enums.dart';
 
 // TODO PROVIDER
 class SubscriptionRepository extends GetxService {

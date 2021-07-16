@@ -26,6 +26,9 @@ class NavegationIconButton extends GetView<WorkshopPlayerController> {
         height: height,
         width: width,
         icon: icon,
-        onPressed: () => controller.navigateTo(direction),
+        onPressed: () {
+          print('Click sobre el boton');
+          controller.navigateTo(direction);
+        },
       );
 }

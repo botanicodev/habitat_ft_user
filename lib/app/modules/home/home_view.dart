@@ -14,7 +14,6 @@ import 'widgets/workshops_title.dart';
 class HomeView extends GetView<HomeController> {
   HomeView({Key key});
 
-  // final controller = Get.put(HomeController());
   final _workshopRepository = Get.put(WorkshopRepository());
 
   @override
@@ -39,6 +38,8 @@ class HomeView extends GetView<HomeController> {
                               (s) => SubscriptionTile(s, onTap: () async {
                                 final components = await _workshopRepository
                                     .getAllComponents(s.id);
+
+                                controller.currentWorkshopId.value = s.id;
 
                                 if (components.length > 0) {
                                   Get.toNamed(Routes.SUBSCRIPTION,
@@ -67,6 +68,8 @@ class HomeView extends GetView<HomeController> {
                                 onTap: () async {
                                   final components = await _workshopRepository
                                       .getAllComponents(s.id);
+
+                                  controller.currentWorkshopId.value = s.id;
 
                                   if (components.length > 0) {
                                     Get.toNamed(Routes.SUBSCRIPTION,

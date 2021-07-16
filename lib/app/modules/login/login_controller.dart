@@ -5,8 +5,8 @@ import 'package:habitat_ft_user/app/data/repositories/auth_repository.dart';
 class LoginController extends GetxController {
   final _authRepository = Get.find<AuthRepository>();
 
-  final RxString email$ = ''.obs;
-  final RxString password$ = ''.obs;
+  final RxString email$ = 'user@user.com'.obs;
+  final RxString password$ = '12345678'.obs;
   final RxString errorTextEmail$ = ''.obs;
   final RxString errorTextPassword$ = ''.obs;
   final RxBool isLoading$ = false.obs;
