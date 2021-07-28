@@ -68,6 +68,13 @@ class CustomerDrawer extends StatelessWidget {
             ),
             const Spacer(),
             const SignOutTile(),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, top: 15),
+              child: Text(
+                'v 1.0.4',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),
